@@ -108,7 +108,78 @@ dialog .df{padding:.9rem 1.5rem;border-top:1px solid var(--ln);text-align:right}
 .lbody li::before{content:"";position:absolute;left:0;top:.85em;width:.4rem;height:.4rem;background:var(--ln);border:1px solid var(--ac)}
 .lbody .note{margin-top:.8rem}
 @media(max-width:700px){.lbody{padding:.3rem .9rem 1rem}}
+.anch{display:flex;flex-wrap:wrap;gap:.3rem 1rem;margin:-.6rem 0 1.1rem}
+.anch a{font:600 .9rem var(--hd);letter-spacing:.06em;color:var(--mu);text-decoration:none;border-bottom:2px solid var(--ln);padding:.15rem .1rem}
+.anch a:hover{color:var(--ac);border-color:var(--ac)}
+.p0{display:grid;grid-template-columns:minmax(15rem,1fr) 2fr;border:1px solid var(--r);border-left:.5rem solid var(--r);background:linear-gradient(90deg,rgba(239,68,68,.16),rgba(239,68,68,.04));margin-bottom:.9rem}
+.p0 .l{padding:1rem 1.2rem}
+.p0 h2{font-size:clamp(1.6rem,2.6vw,2.6rem);color:var(--r)}
+.p0 .l p{font-size:1.02rem;margin-top:.4rem}
+.p0 .rr{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;padding:.8rem}
+.p0 .rr>div{background:rgba(0,0,0,.3);border:1px solid var(--ln);padding:.7rem .9rem}
+.p0 .y{border-top:.25rem solid var(--r)}.p0 .n{border-top:.25rem solid var(--g)}
+.p0 h3{font-size:1.4rem}.p0 .y h3{color:var(--r)}.p0 .n h3{color:var(--g)}
+.p0 .rr p{font-size:.93rem;margin-top:.5rem}
+.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.55rem;margin:0 0 .6rem}
+.quick button{text-align:left;background:var(--p);color:var(--tx);border:1px solid var(--ln);border-left:.25rem solid var(--ac);padding:.6rem .8rem;cursor:pointer;font:inherit;transition:.15s}
+.quick button:hover,.quick button:focus-visible{border-color:var(--ac);background:var(--p2);outline:none}
+.quick b{display:block;font:600 1.15rem var(--hd);letter-spacing:.03em;color:var(--ac)}
+.quick span{font-size:.88rem}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));gap:.6rem;margin-bottom:1.5rem}
+.strip>div{background:var(--p);border:1px solid var(--ln);padding:.7rem .9rem;font-size:.9rem}
+.strip h4{font:600 1.05rem var(--hd);color:var(--mu);letter-spacing:.06em;margin-bottom:.35rem}
+.pill{display:inline-block;margin:.12rem .2rem .12rem 0;padding:.12rem .6rem;border:1px solid var(--r);background:var(--bg);font-size:.84rem;text-decoration:none;color:var(--tx)}
+.pill:hover{background:var(--r);color:#fff}
+.dot{display:inline-block;width:.7rem;height:.7rem;border-radius:50%;margin-right:.4rem;background:var(--c);box-shadow:0 0 .5rem var(--c)}
+@media(max-width:900px){.p0,.p0 .rr{grid-template-columns:1fr}}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(26rem,1fr));gap:.9rem}
+.rg{background:var(--p);border:1px solid var(--ln);border-top:.25rem solid var(--ac)}
+.rg.cli{border-top-color:var(--y)}.rg.aut{border-top-color:var(--r)}
+.rg h3{font-size:1.4rem;padding:.7rem 1rem .1rem}
+.rg dl{padding:0 1rem .9rem;margin:0}
+.rg dt{font-weight:600;font-size:.95rem;margin-top:.55rem}
+.rg dd{margin:0;font-size:.88rem;color:var(--mu)}
+.route{margin:.2rem 0 1rem}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.9rem;align-items:center}
+.legend .btn{margin:0;padding:.3rem .7rem}
+.legend small{color:var(--mu);font-size:.8rem;flex-basis:100%}
+.tg{display:inline-block;font:700 .62rem var(--bd);letter-spacing:.06em;padding:0 .35rem;margin-right:.5rem;border:1px solid;vertical-align:.12em}
+.tgK{color:var(--y)}.tgC{color:var(--ac)}.tgE{color:var(--r)}
+.lbody li{padding-left:0}.lbody li::before{display:none}
+.fform{display:grid;gap:.8rem}
+#fiAll{margin-top:.2rem}
+#fiAll>.fform{padding:.3rem 1rem 1rem}
+#fiAll>summary h3{font-size:1.25rem;margin:0}
+.fb{background:var(--p);border:1px solid var(--ln);border-left:.3rem solid var(--ac);padding:.8rem 1rem;break-inside:avoid}
+.fb h3{font-size:1.25rem;color:var(--ac);margin-bottom:.5rem}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.6rem}
+.f{display:flex;flex-direction:column;gap:.2rem;border:0;padding:0;min-width:0}
+.f.w{grid-column:1/-1}
+.f>span,.f legend{font-size:.8rem;color:var(--mu);padding:0}
+.f input[type=text],.f textarea{background:var(--bg);border:1px solid var(--ln);color:var(--tx);padding:.4rem .55rem;font:inherit;font-size:.93rem;width:100%}
+.f textarea{resize:vertical}
+.f input:focus,.f textarea:focus{outline:2px solid var(--ac)}
+.o{display:inline-flex;align-items:center;gap:.35rem;margin:.15rem 1rem .15rem 0;font-size:.92rem;cursor:pointer}
+.f input[type=checkbox],.f input[type=radio]{accent-color:var(--ac);width:1rem;height:1rem}
+.fnote{display:none}
+@page{size:A4;margin:12mm}
+@media print{
+ body.pf{background:#fff!important}
+ body.pf main>:not(#ficha){display:none!important}
+ body.pf main{padding:0;width:100%}
+ body.pf #ficha{margin:0}
+ body.pf #ficha>h2{color:#000;border-color:#000;font-size:1.6rem}
+ body.pf #ficha>p,body.pf #ficha .tools2{display:none}
+ body.pf #ficha .fnote{display:block;font-size:.7rem;margin-top:.5rem}
+ body.pf #ficha *{color:#000!important;background:#fff!important;border-color:#555!important;box-shadow:none!important}
+ body.pf .fb{border-left-width:3px;padding:.4rem .6rem}
+ body.pf #fiAll{border:0!important;margin:0}
+ body.pf #fiAll>summary{display:none!important}
+ body.pf #fiAll>.fform{display:grid!important;padding:0}
+ body.pf .f input[type=text],body.pf .f textarea{border:0;border-bottom:1px solid #555!important;padding:.1rem 0}
+}
 </style>
+
 
 </head>
 <body>
@@ -124,17 +195,23 @@ dialog .df{padding:.9rem 1.5rem;border-top:1px solid var(--ln);text-align:right}
 </div>
 </div>
 
+<nav class="anch" id="anch"></nav>
+<section class="p0" id="p0"></section>
 <nav class="chain" id="chain"></nav>
+<div class="strip" id="strip"></div>
 <section class="tx" id="tx"></section>
 
-<div class="bar"><h2 id="phT"></h2><span><button class="btn" id="open"></button><button class="btn" id="close"></button></span></div>
+<div class="bar" id="protocolo"><h2 id="phT"></h2><span><button class="btn" id="open"></button><button class="btn" id="close"></button></span></div>
 <div id="acc"></div>
 
 <section class="sec" id="escalacion"><h2 id="escT"></h2><p id="escP"></p><div class="gates" id="gates"></div></section>
 <section class="sec" id="semaforo"><h2 id="semT"></h2><p id="semP"></p><div class="sem" id="sem"></div></section>
 
+<section class="sec" id="roles"><h2 id="rolT"></h2><p id="rolP"></p><div class="flow route" id="route"></div><div class="roles" id="rolG"></div></section>
+<section class="sec" id="ficha"><h2 id="fiT"></h2><p id="fiP"></p><div class="tools2" style="display:flex;gap:.5rem;margin:.6rem 0 1rem"><button class="btn" id="fiPrint"></button><button class="btn" id="fiClear"></button></div><details id="fiAll"><summary><h3 id="fiS"></h3></summary><div class="fform" id="fiForm"></div></details><div class="fnote">Protocol prepared by Erinson Villarroel, Industrial Electrical Engineer.</div></section>
 <section class="sec lib" id="biblioteca"><h2 id="libT"></h2><p id="libP"></p><div class="note" id="libN"></div>
 <div class="tools2"><input id="q" type="search"><span class="cnt" id="cnt"></span><button class="btn" id="lopen"></button><button class="btn" id="lclose"></button></div>
+<div class="legend" id="legend"></div>
 <div id="libAcc"></div></section>
 <footer>
 <div id="chainF"></div>
@@ -309,1184 +386,1257 @@ render();
 if(!st.get('srr_disc_seen')){st.set('srr_disc_seen','1');$('disc').showModal()}
 </script>
 <script>
-const U={es:{t:'Biblioteca de problemas',p:'Catálogo de problemas frecuentes y poco frecuentes de obra, escrito por el autor entre 2003 y 2020. No incluye soluciones: cada problema se trata aplicando el protocolo SRiRR (① a ⑨).',n:'Cómo usarla: localiza el problema → descríbelo en ① PROBLEMA → sigue el protocolo completo y las puertas de escalación.',ph:'Buscar problema…',open:'Abrir todo',close:'Cerrar todo',of:'de',it:'problemas',none:'Sin resultados.'},
-pl:{t:'Biblioteka problemów',p:'Katalog częstych i rzadkich problemów budowy, napisany przez autora w latach 2003–2006. Nie zawiera rozwiązań: każdy problem rozpatruje się, stosując protokół SRiRR (① do ⑨).',n:'Jak korzystać: znajdź problem → opisz go w ① PROBLEM → przejdź cały protokół i bramki eskalacji.',ph:'Szukaj problemu…',open:'Rozwiń wszystko',close:'Zwiń wszystko',of:'z',it:'problemów',none:'Brak wyników.'}};
+const U={es:{t:'Biblioteca de problemas',p:'Catálogo de problemas frecuentes y poco frecuentes de obra, compilado por el autor entre 2003 y 2020 a partir de su experiencia y de experiencias conocidas de otros profesionales. No incluye soluciones: cada problema se trata aplicando el protocolo SRiRR (① a ⑨).',n:'Cómo usarla: localiza el problema → descríbelo en ① PROBLEMA → sigue el protocolo completo y las puertas de escalación.',ph:'Buscar problema…',open:'Abrir todo',close:'Cerrar todo',of:'de',it:'problemas',none:'Sin resultados.',all:'Todos',tga:{K:'CAU',C:'CON',E:'EVE'},tgl:{K:'Causa',C:'Condición',E:'Evento'},tgd:{K:'lo que origina o facilita el problema',C:'estado o situación existente',E:'hecho que ocurre'}},
+pl:{t:'Biblioteka problemów',p:'Katalog częstych i rzadkich problemów budowy, opracowany przez autora w latach 2003–2020 na podstawie własnego doświadczenia oraz doświadczeń innych profesjonalistów. Nie zawiera rozwiązań: każdy problem rozpatruje się, stosując protokół SRiRR (① do ⑨).',n:'Jak korzystać: znajdź problem → opisz go w ① PROBLEM → przejdź cały protokół i bramki eskalacji.',ph:'Szukaj problemu…',open:'Rozwiń wszystko',close:'Zwiń wszystko',of:'z',it:'problemów',none:'Brak wyników.',all:'Wszystkie',tga:{K:'PRZ',C:'STA',E:'ZDA'},tgl:{K:'Przyczyna',C:'Stan',E:'Zdarzenie'},tgd:{K:'co powoduje lub ułatwia problem',C:'istniejący stan lub sytuacja',E:'fakt, który się wydarzył'}}};
 const LIB={es:`
 @Personal y recursos humanos
 #Disponibilidad
-Falta de personal.
-Personal insuficiente para el volumen de trabajo.
-Personal que llega tarde.
-Personal que abandona el puesto.
-Personal que no se presenta.
-Ausencias imprevistas.
-Baja médica.
-Rotación excesiva.
-Personal sustituido sin transferencia de información.
-Personal clave ausente.
-Falta de supervisor.
-Falta de jefe de equipo.
-Falta de personal cualificado.
-Personal cualificado asignado a otra zona.
-Personal compartido entre varios frentes.
-Cuadrillas sobredimensionadas.
-Cuadrillas insuficientes.
-Personal esperando instrucciones.
-Personal esperando materiales.
-Personal esperando maquinaria.
-Personal esperando permisos.
-Personal esperando inspección.
-Personal esperando una decisión técnica.
+Falta de personal.||K
+Personal insuficiente para el volumen de trabajo.||K
+Personal que llega tarde.||E
+Personal que abandona el puesto.||E
+Personal que no se presenta.||E
+Ausencias imprevistas.||E
+Baja médica.||E
+Rotación excesiva.||K
+Personal sustituido sin transferencia de información.||K
+Personal clave ausente.||K
+Falta de supervisor.||K
+Falta de jefe de equipo.||K
+Falta de personal cualificado.||K
+Personal cualificado asignado a otra zona.||K
+Personal compartido entre varios frentes.||K
+Cuadrillas sobredimensionadas.||K
+Cuadrillas insuficientes.||K
+Personal esperando instrucciones.||C
+Personal esperando materiales.||C
+Personal esperando maquinaria.||C
+Personal esperando permisos.||C
+Personal esperando inspección.||C
+Personal esperando una decisión técnica.||C
 #Competencia
-Trabajador sin formación suficiente.
-Trabajador realizando una tarea para la que no está autorizado.
-Certificación caducada.
-Certificación inexistente.
-Operador sin autorización.
-Electricista sin habilitación requerida.
-Personal que desconoce el procedimiento.
-Personal que interpreta incorrectamente un plano.
-Personal que desconoce los riesgos.
-Personal nuevo sin inducción.
-Personal extranjero que no comprende correctamente las instrucciones.
-Problemas de idioma.
-Problemas de comunicación entre cuadrillas.
-Información transmitida verbalmente y posteriormente negada.
+Trabajador sin formación suficiente.||K
+Trabajador realizando una tarea para la que no está autorizado.||K
+Certificación caducada.||C
+Certificación inexistente.||C
+Operador sin autorización.||K
+Electricista sin habilitación requerida.||K
+Personal que desconoce el procedimiento.||K
+Personal que interpreta incorrectamente un plano.||K
+Personal que desconoce los riesgos.||K
+Personal nuevo sin inducción.||K
+Personal extranjero que no comprende correctamente las instrucciones.||K
+Problemas de idioma.||K
+Problemas de comunicación entre cuadrillas.||K
+Información transmitida verbalmente y posteriormente negada.||E
 @Fatiga y comportamiento humano
 !SRiRR no diagnostica a las personas. Registra hechos observables, medidas adoptadas y evidencia, especialmente en cuestiones sensibles.
 #Fatiga
-Exceso de horas de trabajo.
-Turnos demasiado largos.
-Falta de descanso.
-Trabajo nocturno acumulado.
-Fatiga por varios días consecutivos.
-Trabajador somnoliento.
-Disminución de concentración.
-Errores provocados por cansancio.
+Exceso de horas de trabajo.||K
+Turnos demasiado largos.||K
+Falta de descanso.||K
+Trabajo nocturno acumulado.||K
+Fatiga por varios días consecutivos.||K
+Trabajador somnoliento.||C
+Disminución de concentración.||C
+Errores provocados por cansancio.||E
 #Alcohol, sustancias y medicación
-Trabajador trabajando bajo efectos del alcohol.
-Sospecha de consumo de sustancias.
-Trabajador que se presenta incapacitado para trabajar.
-Consumo de alcohol durante la jornada.
-Consumo de sustancias durante la jornada.
-Medicación que pueda afectar a la capacidad para realizar determinadas tareas.
+Trabajador trabajando bajo efectos del alcohol.||C
+Sospecha de consumo de sustancias.||C
+Trabajador que se presenta incapacitado para trabajar.||E
+Consumo de alcohol durante la jornada.||E
+Consumo de sustancias durante la jornada.||E
+Medicación que pueda afectar a la capacidad para realizar determinadas tareas.||C
 #Fumar y riesgo de incendio
-Trabajador fumando en zona prohibida.
-Fumar cerca de materiales inflamables.
-Fumar en zona con riesgo de explosión.
-Uso incorrecto de cigarrillos electrónicos donde esté prohibido.
+Trabajador fumando en zona prohibida.||E
+Fumar cerca de materiales inflamables.||E
+Fumar en zona con riesgo de explosión.||E
+Uso incorrecto de cigarrillos electrónicos donde esté prohibido.||E
 #Conflictos y conducta
-Peleas entre trabajadores.
-Amenazas.
-Acoso.
-Conductas agresivas.
-Conductas negligentes.
+Peleas entre trabajadores.||E
+Amenazas.||E
+Acoso.||E
+Conductas agresivas.||E
+Conductas negligentes.||E
 #Incumplimiento de seguridad
-Incumplimiento deliberado de procedimientos.
-Trabajador que se niega a utilizar EPI.
-Trabajador que retira una protección.
-Trabajador que trabaja deliberadamente de forma insegura.
+Incumplimiento deliberado de procedimientos.||E
+Trabajador que se niega a utilizar EPI.||E
+Trabajador que retira una protección.||E
+Trabajador que trabaja deliberadamente de forma insegura.||E
 #Presión y ocultación
-Presión excesiva para terminar el trabajo.
-Cultura de "hazlo rápido y luego lo arreglamos".
-Ocultación de errores.
-Ocultación de accidentes.
-Ocultación de daños.
-Falsificación de registros.
+Presión excesiva para terminar el trabajo.||K
+Cultura de "hazlo rápido y luego lo arreglamos".||K
+Ocultación de errores.||E
+Ocultación de accidentes.||E
+Ocultación de daños.||E
+Falsificación de registros.||E
 @Organización del trabajo
-Trabajo sin planificación.
-Planificación insuficiente.
-Planificación incompatible con las condiciones reales.
-Secuencia incorrecta.
-Secuencia modificada sin actualizar el programa.
-Dos equipos programados simultáneamente en la misma zona.
-Trabajo posterior iniciado antes de terminar el trabajo anterior.
-Frente de trabajo no preparado.
-Actividad programada sin recursos.
-Actividad programada sin material.
-Actividad programada sin documentación.
-Actividad programada sin autorización.
-Actividad programada sin inspección previa.
-Dependencia entre actividades no identificada.
-Dependencia entre contratistas no identificada.
-Trabajo crítico sin contingencia.
-Cambio urgente de prioridades.
-Reprogramación continua.
-Planificación optimista.
-Duraciones irreales.
-Productividad inferior a la prevista.
-Productividad superior a la prevista pero sin actualizar planificación.
-Falta de coordinación entre turnos.
+Trabajo sin planificación.||K
+Planificación insuficiente.||K
+Planificación incompatible con las condiciones reales.||K
+Secuencia incorrecta.||K
+Secuencia modificada sin actualizar el programa.||K
+Dos equipos programados simultáneamente en la misma zona.||C
+Trabajo posterior iniciado antes de terminar el trabajo anterior.||E
+Frente de trabajo no preparado.||C
+Actividad programada sin recursos.||K
+Actividad programada sin material.||K
+Actividad programada sin documentación.||K
+Actividad programada sin autorización.||K
+Actividad programada sin inspección previa.||K
+Dependencia entre actividades no identificada.||K
+Dependencia entre contratistas no identificada.||K
+Trabajo crítico sin contingencia.||K
+Cambio urgente de prioridades.||E
+Reprogramación continua.||K
+Planificación optimista.||K
+Duraciones irreales.||K
+Productividad inferior a la prevista.||C
+Productividad superior a la prevista pero sin actualizar planificación.||C
+Falta de coordinación entre turnos.||K
 @Interferencias entre contratistas
-Dos contratistas necesitan el mismo espacio.
-Dos contratistas necesitan la misma grúa.
-Dos contratistas necesitan el mismo acceso.
-Dos contratistas necesitan el mismo equipo.
-Un contratista bloquea a otro.
-Un contratista trabaja en una zona necesaria para otro.
-Un contratista modifica un trabajo realizado por otro.
-Un contratista daña trabajo ajeno.
-Un contratista desmonta algo instalado por otro.
-Un contratista cubre un trabajo que debía inspeccionarse.
-Un contratista instala algo antes de que otro termine.
-Secuencias incompatibles.
-Responsabilidad sobre una interfaz no definida.
-Ningún contratista acepta responsabilidad.
-Ambos contratistas consideran que el otro es responsable.
-Disputa sobre límites de trabajo.
-Disputa sobre alcance.
-Disputa sobre acceso.
-Disputa sobre tiempos.
-Disputa sobre daños.
-Disputa sobre calidad.
-Disputa sobre mediciones.
-Disputa sobre trabajos adicionales.
+Dos contratistas necesitan el mismo espacio.||C
+Dos contratistas necesitan la misma grúa.||C
+Dos contratistas necesitan el mismo acceso.||C
+Dos contratistas necesitan el mismo equipo.||C
+Un contratista bloquea a otro.||E
+Un contratista trabaja en una zona necesaria para otro.||E
+Un contratista modifica un trabajo realizado por otro.||E
+Un contratista daña trabajo ajeno.||E
+Un contratista desmonta algo instalado por otro.||E
+Un contratista cubre un trabajo que debía inspeccionarse.||E
+Un contratista instala algo antes de que otro termine.||E
+Secuencias incompatibles.||C
+Responsabilidad sobre una interfaz no definida.||K
+Ningún contratista acepta responsabilidad.||C
+Ambos contratistas consideran que el otro es responsable.||C
+Disputa sobre límites de trabajo.||E
+Disputa sobre alcance.||E
+Disputa sobre acceso.||E
+Disputa sobre tiempos.||E
+Disputa sobre daños.||E
+Disputa sobre calidad.||E
+Disputa sobre mediciones.||E
+Disputa sobre trabajos adicionales.||E
 @Materiales
-Material inexistente.
-Material insuficiente.
-Material incorrecto.
-Material incompatible.
-Material de especificación incorrecta.
-Material de fabricante incorrecto.
-Material sin certificación.
-Material sin documentación.
-Material sin trazabilidad.
-Material dañado.
-Material contaminado.
-Material caducado.
-Material almacenado incorrectamente.
-Material expuesto a humedad.
-Material expuesto a temperatura incorrecta.
-Material perdido.
-Material robado.
-Material almacenado demasiado lejos.
-Material bloqueado por otro contratista.
-Material entregado tarde.
-Material entregado demasiado pronto.
-Material entregado fuera de secuencia.
-Cantidad incorrecta.
-Material pedido incorrectamente.
-Material pedido demasiado tarde.
-Material recibido diferente al pedido.
-Material sin inspección de recepción.
-Material sin identificación.
-Material mezclado con otros materiales.
-Material que no puede utilizarse por cambio de proyecto.
+Material inexistente.||C
+Material insuficiente.||C
+Material incorrecto.||C
+Material incompatible.||C
+Material de especificación incorrecta.||C
+Material de fabricante incorrecto.||C
+Material sin certificación.||C
+Material sin documentación.||C
+Material sin trazabilidad.||C
+Material dañado.||C
+Material contaminado.||C
+Material caducado.||C
+Material almacenado incorrectamente.||C
+Material expuesto a humedad.||C
+Material expuesto a temperatura incorrecta.||C
+Material perdido.||E
+Material robado.||E
+Material almacenado demasiado lejos.||C
+Material bloqueado por otro contratista.||C
+Material entregado tarde.||E
+Material entregado demasiado pronto.||E
+Material entregado fuera de secuencia.||E
+Cantidad incorrecta.||C
+Material pedido incorrectamente.||K
+Material pedido demasiado tarde.||K
+Material recibido diferente al pedido.||E
+Material sin inspección de recepción.||C
+Material sin identificación.||C
+Material mezclado con otros materiales.||C
+Material que no puede utilizarse por cambio de proyecto.||C
 @Transporte y logística
-Camión retrasado.
-Camión que no puede entrar.
-Acceso bloqueado.
-Vehículo incorrecto.
-Vehículo sin autorización.
-Vehículo demasiado grande.
-Ruta bloqueada.
-Condiciones meteorológicas impiden transporte.
-Entrega en horario incorrecto.
-Entrega sin coordinación.
-Descarga imposible.
-Falta de espacio para descarga.
-Grúa no disponible.
-Grúa ocupada.
-Grúa averiada.
-Equipo de elevación insuficiente.
-Carga mal preparada.
-Carga dañada durante transporte.
-Material descargado en lugar incorrecto.
-Material entregado en orden incorrecto.
+Camión retrasado.||E
+Camión que no puede entrar.||C
+Acceso bloqueado.||C
+Vehículo incorrecto.||C
+Vehículo sin autorización.||C
+Vehículo demasiado grande.||C
+Ruta bloqueada.||C
+Condiciones meteorológicas impiden transporte.||C
+Entrega en horario incorrecto.||K
+Entrega sin coordinación.||K
+Descarga imposible.||C
+Falta de espacio para descarga.||C
+Grúa no disponible.||C
+Grúa ocupada.||C
+Grúa averiada.||E
+Equipo de elevación insuficiente.||C
+Carga mal preparada.||K
+Carga dañada durante transporte.||E
+Material descargado en lugar incorrecto.||E
+Material entregado en orden incorrecto.||E
 @Maquinaria y herramientas
-Máquina averiada.
-Herramienta averiada.
-Herramienta incorrecta.
-Herramienta insuficiente.
-Herramienta compartida.
-Herramienta sin inspección.
-Equipo sin certificado.
-Equipo con certificado caducado.
-Equipo utilizado incorrectamente.
-Máquina incompatible con el trabajo.
-Falta de combustible.
-Falta de operador.
-Operador no cualificado.
-Equipo ocupado por otra cuadrilla.
-Mantenimiento no realizado.
-Fallo durante operación.
-Repuesto no disponible.
+Máquina averiada.||C
+Herramienta averiada.||C
+Herramienta incorrecta.||C
+Herramienta insuficiente.||C
+Herramienta compartida.||C
+Herramienta sin inspección.||C
+Equipo sin certificado.||C
+Equipo con certificado caducado.||C
+Equipo utilizado incorrectamente.||E
+Máquina incompatible con el trabajo.||C
+Falta de combustible.||C
+Falta de operador.||C
+Operador no cualificado.||C
+Equipo ocupado por otra cuadrilla.||C
+Mantenimiento no realizado.||K
+Fallo durante operación.||E
+Repuesto no disponible.||C
 @Electricidad
-Falta de alimentación temporal.
-Alimentación insuficiente.
-Cuadro temporal sobrecargado.
-Protección incorrecta.
-Cable temporal dañado.
-Cable sin protección mecánica.
-Conexión incorrecta.
-Puesta a tierra deficiente.
-Falta de equipotencialidad.
-Identificación incorrecta de circuitos.
-Cable incorrectamente identificado.
-Circuito incorrecto.
-Tensión incorrecta.
-Secuencia de fases incorrecta.
-Polaridad incorrecta.
-Cortocircuito.
-Disparo de protección.
-Aislamiento insuficiente.
-Resultado de medición fuera de tolerancia.
-Equipo eléctrico incompatible.
-Interferencia electromagnética.
-Cableado incorrecto.
-Bandeja de cables llena.
-Radio de curvatura incorrecto.
-Cable demasiado corto.
-Cable demasiado largo.
-Ruta de cable bloqueada.
-Penetración no preparada.
-Prensaestopa incorrecto.
-Sellado incorrecto.
-Conexión sin torque adecuado.
-Torque no registrado.
-Terminal incorrecto.
-Bornera incorrecta.
-Etiquetado incorrecto.
-Falta de documentación de pruebas.
-Prueba no realizada.
-Prueba fallida.
-Equipo no liberado para energización.
+!Ver también en «Calidad»: Prueba fallida.
+Falta de alimentación temporal.||C
+Alimentación insuficiente.||C
+Cuadro temporal sobrecargado.||C
+Protección incorrecta.||C
+Cable temporal dañado.||C
+Cable sin protección mecánica.||C
+Conexión incorrecta.||C
+Puesta a tierra deficiente.||C
+Falta de equipotencialidad.||C
+Identificación incorrecta de circuitos.||C
+Cable incorrectamente identificado.||C
+Circuito incorrecto.||C
+Tensión incorrecta.||C
+Secuencia de fases incorrecta.||C
+Polaridad incorrecta.||C
+Cortocircuito.||E
+Disparo de protección.||E
+Aislamiento insuficiente.||C
+Resultado de medición fuera de tolerancia.||C
+Equipo eléctrico incompatible.||C
+Interferencia electromagnética.||C
+Cableado incorrecto.||C
+Bandeja de cables llena.||C
+Radio de curvatura incorrecto.||C
+Cable demasiado corto.||C
+Cable demasiado largo.||C
+Ruta de cable bloqueada.||C
+Penetración no preparada.||C
+Prensaestopa incorrecto.||C
+Sellado incorrecto.||C
+Conexión sin torque adecuado.||C
+Torque no registrado.||C
+Terminal incorrecto.||C
+Bornera incorrecta.||C
+Etiquetado incorrecto.||C
+Falta de documentación de pruebas.||C
+Prueba no realizada.||K
+Equipo no liberado para energización.||C
 @Trabajos ocultos
 !Regla: antes de perder la visibilidad de un trabajo, generar evidencia suficiente para poder reconstruirlo posteriormente.
-Cable enterrado.
-Tubería enterrada.
-Puesta a tierra enterrada.
-Conexión bajo tierra.
-Armadura cubierta por hormigón.
-Instalación dentro de muro.
-Instalación bajo pavimento.
-Impermeabilización cubierta.
-Aislamiento posteriormente inaccesible.
-Anclajes cubiertos.
-Soldadura posteriormente inaccesible.
-Conexión posteriormente cubierta.
-Elemento estructural posteriormente oculto.
-Trabajo ejecutado sin fotografía.
-Trabajo ejecutado sin medición.
-Trabajo ejecutado sin inspección.
-Trabajo cubierto antes de aprobación.
-Ubicación real diferente del plano.
-Falta de registro "as built".
-Documentación que no corresponde con lo ejecutado.
-Imposibilidad de determinar posteriormente quién ejecutó el trabajo.
-Imposibilidad de demostrar cómo estaba instalado antes de cubrirlo.
+!Ver también en «Documentación»: Falta de registro "as built".
+Cable enterrado.||C
+Tubería enterrada.||C
+Puesta a tierra enterrada.||C
+Conexión bajo tierra.||C
+Armadura cubierta por hormigón.||C
+Instalación dentro de muro.||C
+Instalación bajo pavimento.||C
+Impermeabilización cubierta.||C
+Aislamiento posteriormente inaccesible.||C
+Anclajes cubiertos.||C
+Soldadura posteriormente inaccesible.||C
+Conexión posteriormente cubierta.||C
+Elemento estructural posteriormente oculto.||C
+Trabajo ejecutado sin fotografía.||K
+Trabajo ejecutado sin medición.||K
+Trabajo ejecutado sin inspección.||K
+Trabajo cubierto antes de aprobación.||K
+Ubicación real diferente del plano.||C
+Documentación que no corresponde con lo ejecutado.||C
+Imposibilidad de determinar posteriormente quién ejecutó el trabajo.||C
+Imposibilidad de demostrar cómo estaba instalado antes de cubrirlo.||C
 @Documentación
-Plano inexistente.
-Plano incompleto.
-Plano incorrecto.
-Plano obsoleto.
-Dos planos diferentes para la misma instalación.
-Especificación contradictoria.
-Documento sin revisión.
-Revisión incorrecta.
-Documento no aprobado.
-Documento aprobado pero no distribuido.
-Documento distribuido a una versión incorrecta.
-Información verbal no documentada.
-RFI sin respuesta.
-RFI respondida tarde.
-RFI respondida ambiguamente.
-Documentación de un contratista contradice la de otro.
-Diferentes nombres para el mismo elemento.
-Diferentes códigos para el mismo elemento.
-Dimensiones diferentes.
-Coordenadas diferentes.
-Elevaciones diferentes.
-"As built" incorrecto.
-"As built" inexistente.
-Registro de inspección incompleto.
-Registro firmado por persona incorrecta.
-Evidencia fotográfica insuficiente.
-Fotografía sin ubicación.
-Fotografía sin fecha.
-Documento sin trazabilidad.
+Plano inexistente.||C
+Plano incompleto.||C
+Plano incorrecto.||C
+Plano obsoleto.||C
+Dos planos diferentes para la misma instalación.||C
+Especificación contradictoria.||C
+Documento sin revisión.||C
+Revisión incorrecta.||C
+Documento no aprobado.||C
+Documento aprobado pero no distribuido.||K
+Documento distribuido a una versión incorrecta.||K
+Información verbal no documentada.||K
+RFI sin respuesta.||C
+RFI respondida tarde.||C
+RFI respondida ambiguamente.||C
+Documentación de un contratista contradice la de otro.||C
+Diferentes nombres para el mismo elemento.||C
+Diferentes códigos para el mismo elemento.||C
+Dimensiones diferentes.||C
+Coordenadas diferentes.||C
+Elevaciones diferentes.||C
+"As built" incorrecto.||C
+"As built" inexistente.||C
+Registro de inspección incompleto.||C
+Registro firmado por persona incorrecta.||C
+Evidencia fotográfica insuficiente.||C
+Fotografía sin ubicación.||C
+Fotografía sin fecha.||C
+Documento sin trazabilidad.||C
 @Calidad
-No conformidad.
-Defecto visible.
-Defecto oculto.
-Trabajo fuera de tolerancia.
-Material fuera de especificación.
-Instalación incorrecta.
-Retrabajo.
-Repetición de defectos.
-Inspección fallida.
-Prueba fallida.
-Trabajo ejecutado sin inspección.
-Trabajo cubierto antes de inspección.
-Falta de documentación de calidad.
-Falta de certificado.
-Falta de protocolo de prueba.
-Resultado de prueba incorrecto.
-Equipo rechazado.
-Reparación temporal sin autorización.
-Solución temporal convertida accidentalmente en permanente.
+!Ver también en «Decisiones»: Solución temporal convertida accidentalmente en permanente.
+!Ver también en «Trabajos ocultos»: Trabajo ejecutado sin inspección, Trabajo cubierto antes de inspección.
+No conformidad.||C
+Defecto visible.||C
+Defecto oculto.||C
+Trabajo fuera de tolerancia.||C
+Material fuera de especificación.||C
+Instalación incorrecta.||C
+Retrabajo.||E
+Repetición de defectos.||E
+Inspección fallida.||E
+Prueba fallida.||E
+Falta de documentación de calidad.||C
+Falta de certificado.||C
+Falta de protocolo de prueba.||C
+Resultado de prueba incorrecto.||C
+Equipo rechazado.||E
+Reparación temporal sin autorización.||K
 @Seguridad / HSE
-Falta de EPI.
-EPI incorrecto.
-EPI dañado.
-No utilización de EPI.
-Trabajo en altura sin protección.
-Riesgo de caída.
-Caída de objetos.
-Trabajo debajo de cargas suspendidas.
-Izaje incorrecto.
-Excavación insegura.
-Zanja sin protección.
-Riesgo eléctrico.
-Energización accidental.
-Bloqueo/etiquetado incorrecto.
-Falta de LOTO.
-Trabajo en espacio confinado.
-Falta de permiso de entrada.
-Atmósfera peligrosa.
-Riesgo de incendio.
-Material inflamable mal almacenado.
-Soldadura sin permiso.
-Trabajo en caliente sin protección.
-Salida de emergencia bloqueada.
-Extintor inaccesible.
-Señalización insuficiente.
-Iluminación insuficiente.
-Ventilación insuficiente.
-Ruta de evacuación bloqueada.
-Derrame.
-Contaminación.
-Accidente.
-Casi accidente.
-Incidente.
-Condición insegura.
-Acto inseguro.
+!Ver también en «Emergencias»: Derrame, Accidente, Energización accidental.
+Falta de EPI.||C
+EPI incorrecto.||C
+EPI dañado.||C
+No utilización de EPI.||E
+Trabajo en altura sin protección.||C
+Riesgo de caída.||C
+Caída de objetos.||E
+Trabajo debajo de cargas suspendidas.||C
+Izaje incorrecto.||E
+Excavación insegura.||C
+Zanja sin protección.||C
+Riesgo eléctrico.||C
+Bloqueo/etiquetado incorrecto.||C
+Falta de LOTO.||C
+Trabajo en espacio confinado.||C
+Falta de permiso de entrada.||C
+Atmósfera peligrosa.||C
+Riesgo de incendio.||C
+Material inflamable mal almacenado.||C
+Soldadura sin permiso.||C
+Trabajo en caliente sin protección.||C
+Salida de emergencia bloqueada.||C
+Extintor inaccesible.||C
+Señalización insuficiente.||C
+Iluminación insuficiente.||C
+Ventilación insuficiente.||C
+Ruta de evacuación bloqueada.||C
+Contaminación.||E
+Casi accidente.||E
+Incidente.||E
+Condición insegura.||C
+Acto inseguro.||E
 @Permisos y autorizaciones
-Permiso inexistente.
-Permiso caducado.
-Permiso incorrecto.
-Permiso para zona incorrecta.
-Permiso para actividad incorrecta.
-Trabajo iniciado antes del permiso.
-Permiso firmado por persona incorrecta.
-Condiciones del permiso no cumplidas.
-Cambio de condiciones después de emitir el permiso.
-Permiso no comunicado a la cuadrilla.
-Permiso cerrado antes de terminar.
-Trabajo que requiere autorización adicional no identificada.
+Permiso inexistente.||C
+Permiso caducado.||C
+Permiso incorrecto.||C
+Permiso para zona incorrecta.||C
+Permiso para actividad incorrecta.||C
+Trabajo iniciado antes del permiso.||E
+Permiso firmado por persona incorrecta.||C
+Condiciones del permiso no cumplidas.||C
+Cambio de condiciones después de emitir el permiso.||E
+Permiso no comunicado a la cuadrilla.||K
+Permiso cerrado antes de terminar.||E
+Trabajo que requiere autorización adicional no identificada.||C
 @Contratos y alcance
-Trabajo fuera del alcance.
-Trabajo incluido pero considerado adicional.
-Trabajo adicional solicitado verbalmente.
-Cambio sin orden formal.
-Disputa sobre responsabilidad.
-Disputa sobre medición.
-Disputa sobre cantidades.
-Disputa sobre calidad.
-Disputa sobre plazo.
-Contratista que reclama coste adicional.
-Contratista que rechaza una instrucción.
-Subcontratista cuyo contrato no está disponible para el equipo de ejecución.
-Límites de responsabilidad desconocidos.
-Interfaces contractuales no definidas.
-Obligaciones de un contratista desconocidas por otro.
-Trabajo realizado sin autorización contractual.
+!Ver también en «Interferencias entre contratistas»: Disputa sobre medición, Disputa sobre calidad, Disputa sobre plazo.
+Trabajo fuera del alcance.||C
+Trabajo incluido pero considerado adicional.||C
+Trabajo adicional solicitado verbalmente.||K
+Cambio sin orden formal.||K
+Disputa sobre responsabilidad.||E
+Disputa sobre cantidades.||E
+Contratista que reclama coste adicional.||E
+Contratista que rechaza una instrucción.||E
+Subcontratista cuyo contrato no está disponible para el equipo de ejecución.||K
+Límites de responsabilidad desconocidos.||K
+Interfaces contractuales no definidas.||K
+Obligaciones de un contratista desconocidas por otro.||K
+Trabajo realizado sin autorización contractual.||K
 @Costes y avance
-Avance físico incorrectamente declarado.
-Avance documental diferente al físico.
-Facturación superior al avance real.
-Medición incorrecta.
-Cantidad ejecutada incorrecta.
-Cantidad certificada incorrecta.
-Trabajo pagado pero no terminado.
-Material facturado pero no instalado.
-Material almacenado pero facturado incorrectamente.
-Doble contabilización.
-Trabajo adicional no documentado.
-Retrabajo no identificado.
-Coste causado por otro contratista.
-Coste causado por cambio del cliente.
-Coste causado por retraso.
-Coste causado por interferencia.
+Avance físico incorrectamente declarado.||C
+Avance documental diferente al físico.||C
+Facturación superior al avance real.||C
+Medición incorrecta.||C
+Cantidad ejecutada incorrecta.||C
+Cantidad certificada incorrecta.||C
+Trabajo pagado pero no terminado.||C
+Material facturado pero no instalado.||C
+Material almacenado pero facturado incorrectamente.||C
+Doble contabilización.||E
+Trabajo adicional no documentado.||C
+Retrabajo no identificado.||C
+Coste causado por otro contratista.||E
+Coste causado por cambio del cliente.||E
+Coste causado por retraso.||E
+Coste causado por interferencia.||E
 @Planificación y retrasos
-Retraso de material.
-Retraso de diseño.
-Retraso de aprobación.
-Retraso de inspección.
-Retraso de subcontratista.
-Retraso por falta de personal.
-Retraso por maquinaria.
-Retraso por clima.
-Retraso por seguridad.
-Retraso por cambio.
-Retraso por información.
-Retraso por otro contratista.
-Retraso por decisión del cliente.
-Retraso por defecto.
-Retraso por retrabajo.
-Retraso por documentación.
-Retraso acumulativo.
-Retraso en una actividad que bloquea varias posteriores.
+Retraso de material.||E
+Retraso de diseño.||E
+Retraso de aprobación.||E
+Retraso de inspección.||E
+Retraso de subcontratista.||E
+Retraso por falta de personal.||E
+Retraso por maquinaria.||E
+Retraso por clima.||E
+Retraso por seguridad.||E
+Retraso por cambio.||E
+Retraso por información.||E
+Retraso por otro contratista.||E
+Retraso por decisión del cliente.||E
+Retraso por defecto.||E
+Retraso por retrabajo.||E
+Retraso por documentación.||E
+Retraso acumulativo.||E
+Retraso en una actividad que bloquea varias posteriores.||E
 @Interfaz técnica entre disciplinas
-Electricidad vs estructura.
-Electricidad vs HVAC.
-Electricidad vs fontanería.
-Electricidad vs protección contra incendios.
-Electricidad vs arquitectura.
-Bandeja de cables ocupando espacio necesario para tuberías.
-Tubería ocupando espacio de bandeja.
-Instalación atravesando estructura.
-Instalación incompatible con puerta.
-Equipo incompatible con espacio disponible.
-Penetración inexistente.
-Penetración en ubicación incorrecta.
-Reserva insuficiente.
-Dimensiones reales diferentes al modelo.
-BIM diferente de realidad.
-Diseño eléctrico incompatible con instalación mecánica.
-Secuencia de instalación incompatible entre disciplinas.
+Electricidad vs estructura.||C
+Electricidad vs HVAC.||C
+Electricidad vs fontanería.||C
+Electricidad vs protección contra incendios.||C
+Electricidad vs arquitectura.||C
+Bandeja de cables ocupando espacio necesario para tuberías.||C
+Tubería ocupando espacio de bandeja.||C
+Instalación atravesando estructura.||C
+Instalación incompatible con puerta.||C
+Equipo incompatible con espacio disponible.||C
+Penetración inexistente.||C
+Penetración en ubicación incorrecta.||C
+Reserva insuficiente.||C
+Dimensiones reales diferentes al modelo.||C
+BIM diferente de realidad.||C
+Diseño eléctrico incompatible con instalación mecánica.||K
+Secuencia de instalación incompatible entre disciplinas.||K
 @Condiciones físicas del lugar
-Espacio insuficiente.
-Acceso difícil.
-Acceso inexistente.
-Altura insuficiente.
-Obstáculo no previsto.
-Condición del terreno diferente.
-Agua subterránea.
-Terreno inestable.
-Nivel freático.
-Estructura existente desconocida.
-Instalación existente desconocida.
-Cable existente no documentado.
-Tubería existente no documentada.
-Asbestos u otro material peligroso descubierto.
-Contaminación del terreno.
-Condiciones distintas a las previstas en proyecto.
+!Ver también en «Problemas con instalaciones existentes»: Instalación existente desconocida, Cable existente no documentado, Tubería existente no documentada.
+Espacio insuficiente.||C
+Acceso difícil.||C
+Acceso inexistente.||C
+Altura insuficiente.||C
+Obstáculo no previsto.||C
+Condición del terreno diferente.||C
+Agua subterránea.||C
+Terreno inestable.||C
+Nivel freático.||C
+Estructura existente desconocida.||C
+Asbestos u otro material peligroso descubierto.||C
+Contaminación del terreno.||C
+Condiciones distintas a las previstas en proyecto.||C
 @Meteorología y factores externos
-Lluvia.
-Nieve.
-Hielo.
-Viento.
-Temperatura extrema.
-Tormenta.
-Inundación.
-Ola de calor.
-Condiciones que impiden izaje.
-Condiciones que impiden trabajo en altura.
-Condiciones que afectan materiales.
-Condiciones que afectan hormigonado.
-Condiciones que afectan excavación.
-Condiciones que afectan transporte.
+!Ver también en «Emergencias»: Inundación.
+Lluvia.||C
+Nieve.||C
+Hielo.||C
+Viento.||C
+Temperatura extrema.||C
+Tormenta.||C
+Ola de calor.||C
+Condiciones que impiden izaje.||C
+Condiciones que impiden trabajo en altura.||C
+Condiciones que afectan materiales.||C
+Condiciones que afectan hormigonado.||C
+Condiciones que afectan excavación.||C
+Condiciones que afectan transporte.||C
 @Comunicación
-Instrucción verbal.
-Instrucción contradictoria.
-Información no transmitida.
-Información transmitida demasiado tarde.
-Idioma.
-Traducción incorrecta.
-Reunión sin acta.
-Acta no distribuida.
-Responsable desconocido.
-Decisión sin responsable.
-Responsable sin autoridad.
-Información enviada a persona equivocada.
-Equipo de noche sin información del turno anterior.
-Cambio comunicado a un contratista pero no a los demás.
+!Ver también en «Personal y recursos humanos»: Idioma.
+Instrucción verbal.||K
+Instrucción contradictoria.||K
+Información no transmitida.||K
+Información transmitida demasiado tarde.||K
+Traducción incorrecta.||K
+Reunión sin acta.||K
+Acta no distribuida.||K
+Responsable desconocido.||C
+Decisión sin responsable.||C
+Responsable sin autoridad.||C
+Información enviada a persona equivocada.||K
+Equipo de noche sin información del turno anterior.||K
+Cambio comunicado a un contratista pero no a los demás.||K
 @Decisiones
-Nadie toma la decisión.
-Decisión retrasada.
-Decisión tomada sin información suficiente.
-Decisión tomada sin consultar al responsable.
-Decisión técnica sin autorización.
-Dos responsables dan instrucciones diferentes.
-Decisión verbal no documentada.
-Decisión provisional no cerrada.
-Solución temporal que se convierte en permanente.
-Problema escalado demasiado tarde.
-Problema escalado innecesariamente.
-Nadie sabe quién tiene autoridad para decidir.
+Nadie toma la decisión.||K
+Decisión retrasada.||E
+Decisión tomada sin información suficiente.||K
+Decisión tomada sin consultar al responsable.||K
+Decisión técnica sin autorización.||K
+Dos responsables dan instrucciones diferentes.||K
+Decisión verbal no documentada.||K
+Decisión provisional no cerrada.||C
+Solución temporal que se convierte en permanente.||K
+Problema escalado demasiado tarde.||E
+Problema escalado innecesariamente.||E
+Nadie sabe quién tiene autoridad para decidir.||C
 @Cambios
-Cambio de diseño.
-Cambio de material.
-Cambio de fabricante.
-Cambio de ruta.
-Cambio de secuencia.
-Cambio de alcance.
-Cambio solicitado por cliente.
-Cambio solicitado por contratista.
-Cambio provocado por una interferencia.
-Cambio provocado por condiciones reales.
-Cambio no reflejado en planos.
-Cambio ejecutado sin aprobación.
-Cambio aprobado pero no comunicado.
-Cambio que afecta a otros contratistas.
-Cambio que genera retrabajo.
+Cambio de diseño.||K
+Cambio de material.||K
+Cambio de fabricante.||K
+Cambio de ruta.||K
+Cambio de secuencia.||K
+Cambio de alcance.||K
+Cambio solicitado por cliente.||K
+Cambio solicitado por contratista.||K
+Cambio provocado por una interferencia.||K
+Cambio provocado por condiciones reales.||K
+Cambio no reflejado en planos.||C
+Cambio ejecutado sin aprobación.||E
+Cambio aprobado pero no comunicado.||K
+Cambio que afecta a otros contratistas.||E
+Cambio que genera retrabajo.||E
 @Problemas de información
-Información inexistente.
-Información incompleta.
-Información contradictoria.
-Información obsoleta.
-Información no accesible.
-Información en otro idioma.
-Información difícil de interpretar.
-Información distribuida parcialmente.
-Información sin responsable.
-Información sin fecha.
-Información sin revisión.
-Información sin trazabilidad.
+Información inexistente.||C
+Información incompleta.||C
+Información contradictoria.||C
+Información obsoleta.||C
+Información no accesible.||C
+Información en otro idioma.||C
+Información difícil de interpretar.||C
+Información distribuida parcialmente.||C
+Información sin responsable.||C
+Información sin fecha.||C
+Información sin revisión.||C
+Información sin trazabilidad.||C
 @Problemas con instalaciones existentes
-Cable existente desconocido.
-Tubería existente desconocida.
-Circuito existente no documentado.
-Equipo existente diferente al plano.
-Instalación existente modificada anteriormente.
-Etiquetado incorrecto.
-Instalación energizada que debería estar aislada.
-Servicio existente que no puede detenerse.
-Interfaz con instalación antigua.
-Documentación histórica incorrecta.
-Riesgo de dañar infraestructura existente.
+!Ver también en «Electricidad»: Etiquetado incorrecto.
+Cable existente desconocido.||C
+Tubería existente desconocida.||C
+Circuito existente no documentado.||C
+Equipo existente diferente al plano.||C
+Instalación existente modificada anteriormente.||C
+Instalación energizada que debería estar aislada.||C
+Servicio existente que no puede detenerse.||C
+Interfaz con instalación antigua.||C
+Documentación histórica incorrecta.||C
+Riesgo de dañar infraestructura existente.||C
 @Emergencias
-Corte eléctrico.
-Incendio.
-Inundación.
-Derrame.
-Accidente.
-Lesión.
-Evacuación.
-Fallo de equipo crítico.
-Daño estructural.
-Rotura de tubería.
-Fuga.
-Energización accidental.
-Pérdida de comunicación.
-Bloqueo de acceso.
-Evento meteorológico extremo.
+!Ver también en «Transporte y logística»: Bloqueo de acceso.
+Corte eléctrico.||E
+Incendio.||E
+Inundación.||E
+Derrame.||E
+Accidente.||E
+Lesión.||E
+Evacuación.||E
+Fallo de equipo crítico.||E
+Daño estructural.||E
+Rotura de tubería.||E
+Fuga.||E
+Energización accidental.||E
+Pérdida de comunicación.||E
+Evento meteorológico extremo.||E
 @Problemas "raros" pero posibles
-Material desaparece del almacén.
-Equipo desaparece.
-Persona no autorizada entra en zona restringida.
-Persona utiliza una identificación de otra persona.
-Contratista abandona repentinamente el proyecto.
-Subcontratista entra en insolvencia.
-Proveedor deja de suministrar un componente.
-Fabricante deja de producir un equipo.
-Equipo instalado resulta posteriormente obsoleto.
-Certificado resulta inválido.
-Documento resulta falso.
-Material entregado con documentación perteneciente a otro lote.
-Equipo llega con número de serie diferente.
-Plano de fabricante contradice plano del proyecto.
-Software de programación incompatible.
-Archivo de proyecto corrupto.
-Pérdida de datos.
-Pérdida de documentación histórica.
-Cambio de normativa durante el proyecto.
-Interpretación diferente de una norma.
-Requisito del cliente incompatible con una solución previamente aprobada.
-Descubrimiento de una condición que nadie había previsto.
-Decisión aparentemente correcta que genera un problema secundario.
+Material desaparece del almacén.||E
+Equipo desaparece.||E
+Persona no autorizada entra en zona restringida.||E
+Persona utiliza una identificación de otra persona.||E
+Contratista abandona repentinamente el proyecto.||E
+Subcontratista entra en insolvencia.||E
+Proveedor deja de suministrar un componente.||E
+Fabricante deja de producir un equipo.||E
+Equipo instalado resulta posteriormente obsoleto.||C
+Certificado resulta inválido.||C
+Documento resulta falso.||C
+Material entregado con documentación perteneciente a otro lote.||E
+Equipo llega con número de serie diferente.||E
+Plano de fabricante contradice plano del proyecto.||C
+Software de programación incompatible.||C
+Archivo de proyecto corrupto.||C
+Pérdida de datos.||E
+Pérdida de documentación histórica.||E
+Cambio de normativa durante el proyecto.||E
+Interpretación diferente de una norma.||C
+Requisito del cliente incompatible con una solución previamente aprobada.||C
+Descubrimiento de una condición que nadie había previsto.||E
+Decisión aparentemente correcta que genera un problema secundario.||K
 `,
 pl:`
 @Personel i zasoby ludzkie
 #Dostępność
-Brak personelu.
-Niewystarczająca liczba osób do zakresu pracy.
-Personel spóźniający się.
-Personel opuszczający stanowisko.
-Personel, który nie stawia się do pracy.
-Nieprzewidziane nieobecności.
-Zwolnienie lekarskie.
-Nadmierna rotacja.
-Personel zastąpiony bez przekazania informacji.
-Brak kluczowej osoby.
-Brak nadzoru.
-Brak brygadzisty.
-Brak wykwalifikowanego personelu.
-Wykwalifikowany personel przypisany do innej strefy.
-Personel dzielony między kilka frontów robót.
-Brygady przewymiarowane.
-Brygady zbyt małe.
-Personel czekający na polecenia.
-Personel czekający na materiały.
-Personel czekający na maszyny.
-Personel czekający na zezwolenia.
-Personel czekający na odbiór lub kontrolę.
-Personel czekający na decyzję techniczną.
+Brak personelu.||K
+Niewystarczająca liczba osób do zakresu pracy.||K
+Personel spóźniający się.||E
+Personel opuszczający stanowisko.||E
+Personel, który nie stawia się do pracy.||E
+Nieprzewidziane nieobecności.||E
+Zwolnienie lekarskie.||E
+Nadmierna rotacja.||K
+Personel zastąpiony bez przekazania informacji.||K
+Brak kluczowej osoby.||K
+Brak nadzoru.||K
+Brak brygadzisty.||K
+Brak wykwalifikowanego personelu.||K
+Wykwalifikowany personel przypisany do innej strefy.||K
+Personel dzielony między kilka frontów robót.||K
+Brygady przewymiarowane.||K
+Brygady zbyt małe.||K
+Personel czekający na polecenia.||C
+Personel czekający na materiały.||C
+Personel czekający na maszyny.||C
+Personel czekający na zezwolenia.||C
+Personel czekający na odbiór lub kontrolę.||C
+Personel czekający na decyzję techniczną.||C
 #Kompetencje
-Pracownik bez wystarczającego przeszkolenia.
-Pracownik wykonujący zadanie, do którego nie ma uprawnień.
-Wygasłe uprawnienia lub certyfikaty.
-Brak uprawnień lub certyfikatów.
-Operator bez upoważnienia.
-Elektryk bez wymaganych uprawnień.
-Personel nieznający procedury.
-Personel błędnie interpretujący rysunek.
-Personel nieświadomy zagrożeń.
-Nowy personel bez szkolenia wstępnego.
-Pracownik z zagranicy, który nie rozumie dobrze poleceń.
-Problemy językowe.
-Problemy komunikacji między brygadami.
-Informacja przekazana ustnie, a następnie zaprzeczona.
+Pracownik bez wystarczającego przeszkolenia.||K
+Pracownik wykonujący zadanie, do którego nie ma uprawnień.||K
+Wygasłe uprawnienia lub certyfikaty.||C
+Brak uprawnień lub certyfikatów.||C
+Operator bez upoważnienia.||K
+Elektryk bez wymaganych uprawnień.||K
+Personel nieznający procedury.||K
+Personel błędnie interpretujący rysunek.||K
+Personel nieświadomy zagrożeń.||K
+Nowy personel bez szkolenia wstępnego.||K
+Pracownik z zagranicy, który nie rozumie dobrze poleceń.||K
+Problemy językowe.||K
+Problemy komunikacji między brygadami.||K
+Informacja przekazana ustnie, a następnie zaprzeczona.||E
 @Zmęczenie i zachowania ludzi
 !SRiRR nie diagnozuje osób. Rejestruje fakty możliwe do zaobserwowania, podjęte środki i dowody, zwłaszcza w sprawach wrażliwych.
 #Zmęczenie
-Nadmierna liczba godzin pracy.
-Zbyt długie zmiany.
-Brak odpoczynku.
-Skumulowana praca nocna.
-Zmęczenie po kilku dniach pracy z rzędu.
-Pracownik senny.
-Spadek koncentracji.
-Błędy spowodowane zmęczeniem.
+Nadmierna liczba godzin pracy.||K
+Zbyt długie zmiany.||K
+Brak odpoczynku.||K
+Skumulowana praca nocna.||K
+Zmęczenie po kilku dniach pracy z rzędu.||K
+Pracownik senny.||C
+Spadek koncentracji.||C
+Błędy spowodowane zmęczeniem.||E
 #Alkohol, substancje i leki
-Pracownik pracujący pod wpływem alkoholu.
-Podejrzenie użycia substancji.
-Pracownik zgłaszający się do pracy niezdolny do jej wykonywania.
-Spożywanie alkoholu w trakcie zmiany.
-Używanie substancji w trakcie zmiany.
-Leki, które mogą wpływać na zdolność wykonywania określonych zadań.
+Pracownik pracujący pod wpływem alkoholu.||C
+Podejrzenie użycia substancji.||C
+Pracownik zgłaszający się do pracy niezdolny do jej wykonywania.||E
+Spożywanie alkoholu w trakcie zmiany.||E
+Używanie substancji w trakcie zmiany.||E
+Leki, które mogą wpływać na zdolność wykonywania określonych zadań.||C
 #Palenie i ryzyko pożaru
-Pracownik palący w strefie zakazanej.
-Palenie w pobliżu materiałów łatwopalnych.
-Palenie w strefie zagrożenia wybuchem.
-Niewłaściwe używanie e-papierosów tam, gdzie jest to zabronione.
+Pracownik palący w strefie zakazanej.||E
+Palenie w pobliżu materiałów łatwopalnych.||E
+Palenie w strefie zagrożenia wybuchem.||E
+Niewłaściwe używanie e-papierosów tam, gdzie jest to zabronione.||E
 #Konflikty i zachowanie
-Bójki między pracownikami.
-Groźby.
-Nękanie.
-Zachowania agresywne.
-Zachowania niedbałe.
+Bójki między pracownikami.||E
+Groźby.||E
+Nękanie.||E
+Zachowania agresywne.||E
+Zachowania niedbałe.||E
 #Naruszanie zasad bezpieczeństwa
-Umyślne naruszanie procedur.
-Pracownik odmawiający używania ŚOI.
-Pracownik usuwający osłonę lub zabezpieczenie.
-Pracownik celowo pracujący w sposób niebezpieczny.
+Umyślne naruszanie procedur.||E
+Pracownik odmawiający używania ŚOI.||E
+Pracownik usuwający osłonę lub zabezpieczenie.||E
+Pracownik celowo pracujący w sposób niebezpieczny.||E
 #Presja i ukrywanie
-Nadmierna presja na zakończenie pracy.
-Kultura „zrób szybko, potem to naprawimy”.
-Ukrywanie błędów.
-Ukrywanie wypadków.
-Ukrywanie uszkodzeń.
-Fałszowanie zapisów.
+Nadmierna presja na zakończenie pracy.||K
+Kultura „zrób szybko, potem to naprawimy”.||K
+Ukrywanie błędów.||E
+Ukrywanie wypadków.||E
+Ukrywanie uszkodzeń.||E
+Fałszowanie zapisów.||E
 @Organizacja pracy
-Praca bez planowania.
-Niewystarczające planowanie.
-Planowanie niezgodne z warunkami rzeczywistymi.
-Nieprawidłowa sekwencja robót.
-Sekwencja zmieniona bez aktualizacji harmonogramu.
-Dwie ekipy zaplanowane jednocześnie w tej samej strefie.
-Kolejne roboty rozpoczęte przed zakończeniem poprzednich.
-Front robót nieprzygotowany.
-Czynność zaplanowana bez zasobów.
-Czynność zaplanowana bez materiału.
-Czynność zaplanowana bez dokumentacji.
-Czynność zaplanowana bez zezwolenia.
-Czynność zaplanowana bez wcześniejszej kontroli.
-Niezidentyfikowana zależność między czynnościami.
-Niezidentyfikowana zależność między wykonawcami.
-Praca krytyczna bez planu awaryjnego.
-Nagła zmiana priorytetów.
-Ciągłe przeplanowywanie.
-Zbyt optymistyczne planowanie.
-Nierealne czasy trwania.
-Wydajność niższa od planowanej.
-Wydajność wyższa od planowanej, ale bez aktualizacji planu.
-Brak koordynacji między zmianami.
+Praca bez planowania.||K
+Niewystarczające planowanie.||K
+Planowanie niezgodne z warunkami rzeczywistymi.||K
+Nieprawidłowa sekwencja robót.||K
+Sekwencja zmieniona bez aktualizacji harmonogramu.||K
+Dwie ekipy zaplanowane jednocześnie w tej samej strefie.||C
+Kolejne roboty rozpoczęte przed zakończeniem poprzednich.||E
+Front robót nieprzygotowany.||C
+Czynność zaplanowana bez zasobów.||K
+Czynność zaplanowana bez materiału.||K
+Czynność zaplanowana bez dokumentacji.||K
+Czynność zaplanowana bez zezwolenia.||K
+Czynność zaplanowana bez wcześniejszej kontroli.||K
+Niezidentyfikowana zależność między czynnościami.||K
+Niezidentyfikowana zależność między wykonawcami.||K
+Praca krytyczna bez planu awaryjnego.||K
+Nagła zmiana priorytetów.||E
+Ciągłe przeplanowywanie.||K
+Zbyt optymistyczne planowanie.||K
+Nierealne czasy trwania.||K
+Wydajność niższa od planowanej.||C
+Wydajność wyższa od planowanej, ale bez aktualizacji planu.||C
+Brak koordynacji między zmianami.||K
 @Kolizje między wykonawcami
-Dwóch wykonawców potrzebuje tej samej przestrzeni.
-Dwóch wykonawców potrzebuje tego samego dźwigu.
-Dwóch wykonawców potrzebuje tego samego dojazdu.
-Dwóch wykonawców potrzebuje tego samego sprzętu.
-Jeden wykonawca blokuje drugiego.
-Jeden wykonawca pracuje w strefie potrzebnej innemu.
-Jeden wykonawca zmienia robotę wykonaną przez innego.
-Jeden wykonawca uszkadza cudzą robotę.
-Jeden wykonawca demontuje coś zamontowanego przez innego.
-Jeden wykonawca zakrywa robotę, która wymagała odbioru.
-Jeden wykonawca montuje coś, zanim inny skończy.
-Niezgodne sekwencje robót.
-Niezdefiniowana odpowiedzialność za interfejs.
-Żaden wykonawca nie przyjmuje odpowiedzialności.
-Obaj wykonawcy uważają, że odpowiedzialny jest drugi.
-Spór o granice robót.
-Spór o zakres.
-Spór o dostęp.
-Spór o terminy.
-Spór o szkody.
-Spór o jakość.
-Spór o obmiary.
-Spór o roboty dodatkowe.
+Dwóch wykonawców potrzebuje tej samej przestrzeni.||C
+Dwóch wykonawców potrzebuje tego samego dźwigu.||C
+Dwóch wykonawców potrzebuje tego samego dojazdu.||C
+Dwóch wykonawców potrzebuje tego samego sprzętu.||C
+Jeden wykonawca blokuje drugiego.||E
+Jeden wykonawca pracuje w strefie potrzebnej innemu.||E
+Jeden wykonawca zmienia robotę wykonaną przez innego.||E
+Jeden wykonawca uszkadza cudzą robotę.||E
+Jeden wykonawca demontuje coś zamontowanego przez innego.||E
+Jeden wykonawca zakrywa robotę, która wymagała odbioru.||E
+Jeden wykonawca montuje coś, zanim inny skończy.||E
+Niezgodne sekwencje robót.||C
+Niezdefiniowana odpowiedzialność za interfejs.||K
+Żaden wykonawca nie przyjmuje odpowiedzialności.||C
+Obaj wykonawcy uważają, że odpowiedzialny jest drugi.||C
+Spór o granice robót.||E
+Spór o zakres.||E
+Spór o dostęp.||E
+Spór o terminy.||E
+Spór o szkody.||E
+Spór o jakość.||E
+Spór o obmiary.||E
+Spór o roboty dodatkowe.||E
 @Materiały
-Brak materiału.
-Niewystarczająca ilość materiału.
-Materiał niewłaściwy.
-Materiał niekompatybilny.
-Materiał o błędnej specyfikacji.
-Materiał niewłaściwego producenta.
-Materiał bez certyfikatu.
-Materiał bez dokumentacji.
-Materiał bez identyfikowalności.
-Materiał uszkodzony.
-Materiał zanieczyszczony.
-Materiał przeterminowany.
-Materiał niewłaściwie składowany.
-Materiał narażony na wilgoć.
-Materiał narażony na niewłaściwą temperaturę.
-Materiał zgubiony.
-Materiał skradziony.
-Materiał składowany zbyt daleko.
-Materiał zablokowany przez innego wykonawcę.
-Materiał dostarczony za późno.
-Materiał dostarczony zbyt wcześnie.
-Materiał dostarczony poza kolejnością.
-Nieprawidłowa ilość.
-Materiał zamówiony błędnie.
-Materiał zamówiony zbyt późno.
-Materiał otrzymany inny niż zamówiony.
-Materiał bez kontroli przy odbiorze dostawy.
-Materiał bez oznaczenia.
-Materiał wymieszany z innymi materiałami.
-Materiał, którego nie można użyć z powodu zmiany projektu.
+Brak materiału.||C
+Niewystarczająca ilość materiału.||C
+Materiał niewłaściwy.||C
+Materiał niekompatybilny.||C
+Materiał o błędnej specyfikacji.||C
+Materiał niewłaściwego producenta.||C
+Materiał bez certyfikatu.||C
+Materiał bez dokumentacji.||C
+Materiał bez identyfikowalności.||C
+Materiał uszkodzony.||C
+Materiał zanieczyszczony.||C
+Materiał przeterminowany.||C
+Materiał niewłaściwie składowany.||C
+Materiał narażony na wilgoć.||C
+Materiał narażony na niewłaściwą temperaturę.||C
+Materiał zgubiony.||E
+Materiał skradziony.||E
+Materiał składowany zbyt daleko.||C
+Materiał zablokowany przez innego wykonawcę.||C
+Materiał dostarczony za późno.||E
+Materiał dostarczony zbyt wcześnie.||E
+Materiał dostarczony poza kolejnością.||E
+Nieprawidłowa ilość.||C
+Materiał zamówiony błędnie.||K
+Materiał zamówiony zbyt późno.||K
+Materiał otrzymany inny niż zamówiony.||E
+Materiał bez kontroli przy odbiorze dostawy.||C
+Materiał bez oznaczenia.||C
+Materiał wymieszany z innymi materiałami.||C
+Materiał, którego nie można użyć z powodu zmiany projektu.||C
 @Transport i logistyka
-Opóźniona ciężarówka.
-Ciężarówka, która nie może wjechać.
-Zablokowany dojazd.
-Niewłaściwy pojazd.
-Pojazd bez zezwolenia.
-Pojazd zbyt duży.
-Zablokowana trasa.
-Warunki pogodowe uniemożliwiają transport.
-Dostawa w niewłaściwych godzinach.
-Dostawa bez koordynacji.
-Rozładunek niemożliwy.
-Brak miejsca na rozładunek.
-Dźwig niedostępny.
-Dźwig zajęty.
-Dźwig uszkodzony.
-Niewystarczający sprzęt dźwigowy.
-Źle przygotowany ładunek.
-Ładunek uszkodzony podczas transportu.
-Materiał rozładowany w niewłaściwym miejscu.
-Materiał dostarczony w niewłaściwej kolejności.
+Opóźniona ciężarówka.||E
+Ciężarówka, która nie może wjechać.||C
+Zablokowany dojazd.||C
+Niewłaściwy pojazd.||C
+Pojazd bez zezwolenia.||C
+Pojazd zbyt duży.||C
+Zablokowana trasa.||C
+Warunki pogodowe uniemożliwiają transport.||C
+Dostawa w niewłaściwych godzinach.||K
+Dostawa bez koordynacji.||K
+Rozładunek niemożliwy.||C
+Brak miejsca na rozładunek.||C
+Dźwig niedostępny.||C
+Dźwig zajęty.||C
+Dźwig uszkodzony.||E
+Niewystarczający sprzęt dźwigowy.||C
+Źle przygotowany ładunek.||K
+Ładunek uszkodzony podczas transportu.||E
+Materiał rozładowany w niewłaściwym miejscu.||E
+Materiał dostarczony w niewłaściwej kolejności.||E
 @Maszyny i narzędzia
-Maszyna uszkodzona.
-Narzędzie uszkodzone.
-Niewłaściwe narzędzie.
-Niewystarczająca liczba narzędzi.
-Narzędzie współdzielone.
-Narzędzie bez przeglądu.
-Sprzęt bez certyfikatu.
-Sprzęt z wygasłym certyfikatem.
-Sprzęt używany niewłaściwie.
-Maszyna nieodpowiednia do pracy.
-Brak paliwa.
-Brak operatora.
-Operator bez kwalifikacji.
-Sprzęt zajęty przez inną brygadę.
-Niewykonana konserwacja.
-Awaria podczas pracy.
-Brak części zamiennej.
+Maszyna uszkodzona.||C
+Narzędzie uszkodzone.||C
+Niewłaściwe narzędzie.||C
+Niewystarczająca liczba narzędzi.||C
+Narzędzie współdzielone.||C
+Narzędzie bez przeglądu.||C
+Sprzęt bez certyfikatu.||C
+Sprzęt z wygasłym certyfikatem.||C
+Sprzęt używany niewłaściwie.||E
+Maszyna nieodpowiednia do pracy.||C
+Brak paliwa.||C
+Brak operatora.||C
+Operator bez kwalifikacji.||C
+Sprzęt zajęty przez inną brygadę.||C
+Niewykonana konserwacja.||K
+Awaria podczas pracy.||E
+Brak części zamiennej.||C
 @Elektryka
-Brak zasilania tymczasowego.
-Niewystarczające zasilanie.
-Rozdzielnica tymczasowa przeciążona.
-Nieprawidłowe zabezpieczenie.
-Uszkodzony kabel tymczasowy.
-Kabel bez ochrony mechanicznej.
-Nieprawidłowe połączenie.
-Niewłaściwe uziemienie.
-Brak połączeń wyrównawczych.
-Nieprawidłowe oznaczenie obwodów.
-Kabel błędnie oznaczony.
-Nieprawidłowy obwód.
-Nieprawidłowe napięcie.
-Nieprawidłowa kolejność faz.
-Nieprawidłowa polaryzacja.
-Zwarcie.
-Zadziałanie zabezpieczenia.
-Niewystarczająca izolacja.
-Wynik pomiaru poza tolerancją.
-Niekompatybilne urządzenie elektryczne.
-Zakłócenia elektromagnetyczne.
-Nieprawidłowe okablowanie.
-Pełna drabinka lub korytko kablowe.
-Nieprawidłowy promień gięcia.
-Kabel zbyt krótki.
-Kabel zbyt długi.
-Zablokowana trasa kablowa.
-Nieprzygotowane przepusty.
-Nieprawidłowy dławik.
-Nieprawidłowe uszczelnienie.
-Połączenie bez właściwego momentu dokręcenia.
-Moment dokręcenia niezarejestrowany.
-Nieprawidłowa końcówka.
-Nieprawidłowa listwa zaciskowa.
-Nieprawidłowe oznakowanie.
-Brak dokumentacji z pomiarów i prób.
-Próba niewykonana.
-Próba zakończona wynikiem negatywnym.
-Urządzenie niedopuszczone do załączenia napięcia.
+!Zobacz też w „Jakość”: Próba zakończona wynikiem negatywnym.
+Brak zasilania tymczasowego.||C
+Niewystarczające zasilanie.||C
+Rozdzielnica tymczasowa przeciążona.||C
+Nieprawidłowe zabezpieczenie.||C
+Uszkodzony kabel tymczasowy.||C
+Kabel bez ochrony mechanicznej.||C
+Nieprawidłowe połączenie.||C
+Niewłaściwe uziemienie.||C
+Brak połączeń wyrównawczych.||C
+Nieprawidłowe oznaczenie obwodów.||C
+Kabel błędnie oznaczony.||C
+Nieprawidłowy obwód.||C
+Nieprawidłowe napięcie.||C
+Nieprawidłowa kolejność faz.||C
+Nieprawidłowa polaryzacja.||C
+Zwarcie.||E
+Zadziałanie zabezpieczenia.||E
+Niewystarczająca izolacja.||C
+Wynik pomiaru poza tolerancją.||C
+Niekompatybilne urządzenie elektryczne.||C
+Zakłócenia elektromagnetyczne.||C
+Nieprawidłowe okablowanie.||C
+Pełna drabinka lub korytko kablowe.||C
+Nieprawidłowy promień gięcia.||C
+Kabel zbyt krótki.||C
+Kabel zbyt długi.||C
+Zablokowana trasa kablowa.||C
+Nieprzygotowane przepusty.||C
+Nieprawidłowy dławik.||C
+Nieprawidłowe uszczelnienie.||C
+Połączenie bez właściwego momentu dokręcenia.||C
+Moment dokręcenia niezarejestrowany.||C
+Nieprawidłowa końcówka.||C
+Nieprawidłowa listwa zaciskowa.||C
+Nieprawidłowe oznakowanie.||C
+Brak dokumentacji z pomiarów i prób.||C
+Próba niewykonana.||K
+Urządzenie niedopuszczone do załączenia napięcia.||C
 @Roboty zanikowe i ukryte
 !Zasada: zanim praca stanie się niewidoczna, wytwórz wystarczające dowody, by można ją było później odtworzyć.
-Kabel w ziemi.
-Rura w ziemi.
-Uziemienie w ziemi.
-Połączenie pod ziemią.
-Zbrojenie zalane betonem.
-Instalacja w ścianie.
-Instalacja pod posadzką lub nawierzchnią.
-Zakryta hydroizolacja.
-Izolacja, do której później nie ma dostępu.
-Zakryte kotwy.
-Spoina, do której później nie ma dostępu.
-Połączenie później zakryte.
-Element konstrukcyjny później ukryty.
-Praca wykonana bez zdjęcia.
-Praca wykonana bez pomiaru.
-Praca wykonana bez kontroli.
-Praca zakryta przed zatwierdzeniem.
-Rzeczywista lokalizacja inna niż na rysunku.
-Brak dokumentacji powykonawczej („as built”).
-Dokumentacja niezgodna z wykonaniem.
-Niemożność późniejszego ustalenia, kto wykonał pracę.
-Niemożność wykazania, jak coś było zainstalowane przed zakryciem.
+!Zobacz też w „Dokumentacja”: Brak dokumentacji powykonawczej („as built”).
+Kabel w ziemi.||C
+Rura w ziemi.||C
+Uziemienie w ziemi.||C
+Połączenie pod ziemią.||C
+Zbrojenie zalane betonem.||C
+Instalacja w ścianie.||C
+Instalacja pod posadzką lub nawierzchnią.||C
+Zakryta hydroizolacja.||C
+Izolacja, do której później nie ma dostępu.||C
+Zakryte kotwy.||C
+Spoina, do której później nie ma dostępu.||C
+Połączenie później zakryte.||C
+Element konstrukcyjny później ukryty.||C
+Praca wykonana bez zdjęcia.||K
+Praca wykonana bez pomiaru.||K
+Praca wykonana bez kontroli.||K
+Praca zakryta przed zatwierdzeniem.||K
+Rzeczywista lokalizacja inna niż na rysunku.||C
+Dokumentacja niezgodna z wykonaniem.||C
+Niemożność późniejszego ustalenia, kto wykonał pracę.||C
+Niemożność wykazania, jak coś było zainstalowane przed zakryciem.||C
 @Dokumentacja
-Brak rysunku.
-Rysunek niekompletny.
-Rysunek błędny.
-Rysunek nieaktualny.
-Dwa różne rysunki dla tej samej instalacji.
-Sprzeczna specyfikacja.
-Dokument bez rewizji.
-Błędna rewizja.
-Dokument niezatwierdzony.
-Dokument zatwierdzony, ale nierozesłany.
-Dokument rozesłany w błędnej wersji.
-Informacja ustna bez udokumentowania.
-RFI (zapytanie) bez odpowiedzi.
-RFI z opóźnioną odpowiedzią.
-RFI z niejednoznaczną odpowiedzią.
-Dokumentacja jednego wykonawcy jest sprzeczna z dokumentacją drugiego.
-Różne nazwy tego samego elementu.
-Różne kody tego samego elementu.
-Różne wymiary.
-Różne współrzędne.
-Różne rzędne.
-Błędna dokumentacja powykonawcza („as built”).
-Brak dokumentacji powykonawczej („as built”).
-Niekompletny protokół kontroli.
-Protokół podpisany przez niewłaściwą osobę.
-Niewystarczające dowody fotograficzne.
-Zdjęcie bez lokalizacji.
-Zdjęcie bez daty.
-Dokument bez identyfikowalności.
+Brak rysunku.||C
+Rysunek niekompletny.||C
+Rysunek błędny.||C
+Rysunek nieaktualny.||C
+Dwa różne rysunki dla tej samej instalacji.||C
+Sprzeczna specyfikacja.||C
+Dokument bez rewizji.||C
+Błędna rewizja.||C
+Dokument niezatwierdzony.||C
+Dokument zatwierdzony, ale nierozesłany.||K
+Dokument rozesłany w błędnej wersji.||K
+Informacja ustna bez udokumentowania.||K
+RFI (zapytanie) bez odpowiedzi.||C
+RFI z opóźnioną odpowiedzią.||C
+RFI z niejednoznaczną odpowiedzią.||C
+Dokumentacja jednego wykonawcy jest sprzeczna z dokumentacją drugiego.||C
+Różne nazwy tego samego elementu.||C
+Różne kody tego samego elementu.||C
+Różne wymiary.||C
+Różne współrzędne.||C
+Różne rzędne.||C
+Błędna dokumentacja powykonawcza („as built”).||C
+Brak dokumentacji powykonawczej („as built”).||C
+Niekompletny protokół kontroli.||C
+Protokół podpisany przez niewłaściwą osobę.||C
+Niewystarczające dowody fotograficzne.||C
+Zdjęcie bez lokalizacji.||C
+Zdjęcie bez daty.||C
+Dokument bez identyfikowalności.||C
 @Jakość
-Niezgodność.
-Wada widoczna.
-Wada ukryta.
-Praca poza tolerancją.
-Materiał niezgodny ze specyfikacją.
-Nieprawidłowy montaż.
-Poprawki.
-Powtarzające się wady.
-Kontrola zakończona wynikiem negatywnym.
-Próba zakończona wynikiem negatywnym.
-Praca wykonana bez kontroli.
-Praca zakryta przed kontrolą.
-Brak dokumentacji jakościowej.
-Brak certyfikatu.
-Brak protokołu z prób.
-Błędny wynik próby.
-Sprzęt odrzucony.
-Naprawa tymczasowa bez zgody.
-Rozwiązanie tymczasowe, które przypadkowo stało się stałe.
+!Zobacz też w „Decyzje”: Rozwiązanie tymczasowe, które przypadkowo stało się stałe.
+!Zobacz też w „Roboty zanikowe i ukryte”: Praca wykonana bez kontroli, Praca zakryta przed kontrolą.
+Niezgodność.||C
+Wada widoczna.||C
+Wada ukryta.||C
+Praca poza tolerancją.||C
+Materiał niezgodny ze specyfikacją.||C
+Nieprawidłowy montaż.||C
+Poprawki.||E
+Powtarzające się wady.||E
+Kontrola zakończona wynikiem negatywnym.||E
+Próba zakończona wynikiem negatywnym.||E
+Brak dokumentacji jakościowej.||C
+Brak certyfikatu.||C
+Brak protokołu z prób.||C
+Błędny wynik próby.||C
+Sprzęt odrzucony.||E
+Naprawa tymczasowa bez zgody.||K
 @Bezpieczeństwo / BHP
-Brak ŚOI (środków ochrony indywidualnej).
-Niewłaściwe ŚOI.
-Uszkodzone ŚOI.
-Nieużywanie ŚOI.
-Praca na wysokości bez zabezpieczenia.
-Ryzyko upadku.
-Spadające przedmioty.
-Praca pod zawieszonym ładunkiem.
-Nieprawidłowe podnoszenie ładunku (dźwigowanie).
-Niebezpieczny wykop.
-Rów bez zabezpieczenia.
-Zagrożenie elektryczne.
-Przypadkowe załączenie napięcia.
-Nieprawidłowe blokowanie i oznakowanie.
-Brak LOTO.
-Praca w przestrzeni zamkniętej.
-Brak zezwolenia na wejście.
-Niebezpieczna atmosfera.
-Zagrożenie pożarowe.
-Źle składowane materiały łatwopalne.
-Spawanie bez zezwolenia.
-Prace gorące bez zabezpieczenia.
-Zablokowane wyjście ewakuacyjne.
-Niedostępna gaśnica.
-Niewystarczające oznakowanie.
-Niewystarczające oświetlenie.
-Niewystarczająca wentylacja.
-Zablokowana droga ewakuacyjna.
-Wyciek.
-Zanieczyszczenie.
-Wypadek.
-Zdarzenie potencjalnie wypadkowe.
-Incydent.
-Niebezpieczny stan.
-Niebezpieczne zachowanie.
+!Zobacz też w „Sytuacje awaryjne”: Wyciek, Wypadek, Przypadkowe załączenie napięcia.
+Brak ŚOI (środków ochrony indywidualnej).||C
+Niewłaściwe ŚOI.||C
+Uszkodzone ŚOI.||C
+Nieużywanie ŚOI.||E
+Praca na wysokości bez zabezpieczenia.||C
+Ryzyko upadku.||C
+Spadające przedmioty.||E
+Praca pod zawieszonym ładunkiem.||C
+Nieprawidłowe podnoszenie ładunku (dźwigowanie).||E
+Niebezpieczny wykop.||C
+Rów bez zabezpieczenia.||C
+Zagrożenie elektryczne.||C
+Nieprawidłowe blokowanie i oznakowanie.||C
+Brak LOTO.||C
+Praca w przestrzeni zamkniętej.||C
+Brak zezwolenia na wejście.||C
+Niebezpieczna atmosfera.||C
+Zagrożenie pożarowe.||C
+Źle składowane materiały łatwopalne.||C
+Spawanie bez zezwolenia.||C
+Prace gorące bez zabezpieczenia.||C
+Zablokowane wyjście ewakuacyjne.||C
+Niedostępna gaśnica.||C
+Niewystarczające oznakowanie.||C
+Niewystarczające oświetlenie.||C
+Niewystarczająca wentylacja.||C
+Zablokowana droga ewakuacyjna.||C
+Zanieczyszczenie.||E
+Zdarzenie potencjalnie wypadkowe.||E
+Incydent.||E
+Niebezpieczny stan.||C
+Niebezpieczne zachowanie.||E
 @Pozwolenia i zezwolenia
-Brak zezwolenia.
-Zezwolenie wygasłe.
-Zezwolenie niewłaściwe.
-Zezwolenie dla złej strefy.
-Zezwolenie dla złej czynności.
-Praca rozpoczęta przed wydaniem zezwolenia.
-Zezwolenie podpisane przez niewłaściwą osobę.
-Warunki zezwolenia niespełnione.
-Zmiana warunków po wydaniu zezwolenia.
-Zezwolenie nieprzekazane brygadzie.
-Zezwolenie zamknięte przed zakończeniem pracy.
-Praca wymagająca dodatkowej, niezidentyfikowanej zgody.
+Brak zezwolenia.||C
+Zezwolenie wygasłe.||C
+Zezwolenie niewłaściwe.||C
+Zezwolenie dla złej strefy.||C
+Zezwolenie dla złej czynności.||C
+Praca rozpoczęta przed wydaniem zezwolenia.||E
+Zezwolenie podpisane przez niewłaściwą osobę.||C
+Warunki zezwolenia niespełnione.||C
+Zmiana warunków po wydaniu zezwolenia.||E
+Zezwolenie nieprzekazane brygadzie.||K
+Zezwolenie zamknięte przed zakończeniem pracy.||E
+Praca wymagająca dodatkowej, niezidentyfikowanej zgody.||C
 @Umowy i zakres
-Praca poza zakresem.
-Praca objęta umową, ale uznana za dodatkową.
-Praca dodatkowa zlecona ustnie.
-Zmiana bez formalnego polecenia.
-Spór o odpowiedzialność.
-Spór o obmiar.
-Spór o ilości.
-Spór o jakość.
-Spór o termin.
-Wykonawca żądający dodatkowych kosztów.
-Wykonawca odrzucający polecenie.
-Podwykonawca, którego umowa jest niedostępna dla zespołu wykonawczego.
-Nieznane granice odpowiedzialności.
-Niezdefiniowane interfejsy umowne.
-Obowiązki jednego wykonawcy nieznane drugiemu.
-Praca wykonana bez zgody umownej.
+!Zobacz też w „Kolizje między wykonawcami”: Spór o obmiar, Spór o jakość, Spór o termin.
+Praca poza zakresem.||C
+Praca objęta umową, ale uznana za dodatkową.||C
+Praca dodatkowa zlecona ustnie.||K
+Zmiana bez formalnego polecenia.||K
+Spór o odpowiedzialność.||E
+Spór o ilości.||E
+Wykonawca żądający dodatkowych kosztów.||E
+Wykonawca odrzucający polecenie.||E
+Podwykonawca, którego umowa jest niedostępna dla zespołu wykonawczego.||K
+Nieznane granice odpowiedzialności.||K
+Niezdefiniowane interfejsy umowne.||K
+Obowiązki jednego wykonawcy nieznane drugiemu.||K
+Praca wykonana bez zgody umownej.||K
 @Koszty i postęp
-Błędnie zgłoszony postęp fizyczny.
-Postęp dokumentacyjny inny niż fizyczny.
-Fakturowanie powyżej rzeczywistego postępu.
-Błędny obmiar.
-Błędna ilość wykonana.
-Błędna ilość zatwierdzona do rozliczenia.
-Praca opłacona, ale niezakończona.
-Materiał zafakturowany, ale niezamontowany.
-Materiał zmagazynowany, ale błędnie zafakturowany.
-Podwójne rozliczenie.
-Praca dodatkowa bez dokumentacji.
-Niezidentyfikowane poprawki.
-Koszt spowodowany przez innego wykonawcę.
-Koszt spowodowany zmianą ze strony klienta.
-Koszt spowodowany opóźnieniem.
-Koszt spowodowany kolizją.
+Błędnie zgłoszony postęp fizyczny.||C
+Postęp dokumentacyjny inny niż fizyczny.||C
+Fakturowanie powyżej rzeczywistego postępu.||C
+Błędny obmiar.||C
+Błędna ilość wykonana.||C
+Błędna ilość zatwierdzona do rozliczenia.||C
+Praca opłacona, ale niezakończona.||C
+Materiał zafakturowany, ale niezamontowany.||C
+Materiał zmagazynowany, ale błędnie zafakturowany.||C
+Podwójne rozliczenie.||E
+Praca dodatkowa bez dokumentacji.||C
+Niezidentyfikowane poprawki.||C
+Koszt spowodowany przez innego wykonawcę.||E
+Koszt spowodowany zmianą ze strony klienta.||E
+Koszt spowodowany opóźnieniem.||E
+Koszt spowodowany kolizją.||E
 @Planowanie i opóźnienia
-Opóźnienie materiału.
-Opóźnienie projektu.
-Opóźnienie zatwierdzenia.
-Opóźnienie kontroli.
-Opóźnienie podwykonawcy.
-Opóźnienie z braku personelu.
-Opóźnienie z powodu maszyn.
-Opóźnienie z powodu pogody.
-Opóźnienie z powodu bezpieczeństwa.
-Opóźnienie z powodu zmiany.
-Opóźnienie z powodu informacji.
-Opóźnienie z powodu innego wykonawcy.
-Opóźnienie z powodu decyzji klienta.
-Opóźnienie z powodu wady.
-Opóźnienie z powodu poprawek.
-Opóźnienie z powodu dokumentacji.
-Opóźnienie kumulujące się.
-Opóźnienie czynności blokującej kilka kolejnych.
+Opóźnienie materiału.||E
+Opóźnienie projektu.||E
+Opóźnienie zatwierdzenia.||E
+Opóźnienie kontroli.||E
+Opóźnienie podwykonawcy.||E
+Opóźnienie z braku personelu.||E
+Opóźnienie z powodu maszyn.||E
+Opóźnienie z powodu pogody.||E
+Opóźnienie z powodu bezpieczeństwa.||E
+Opóźnienie z powodu zmiany.||E
+Opóźnienie z powodu informacji.||E
+Opóźnienie z powodu innego wykonawcy.||E
+Opóźnienie z powodu decyzji klienta.||E
+Opóźnienie z powodu wady.||E
+Opóźnienie z powodu poprawek.||E
+Opóźnienie z powodu dokumentacji.||E
+Opóźnienie kumulujące się.||E
+Opóźnienie czynności blokującej kilka kolejnych.||E
 @Interfejs techniczny między branżami
-Elektryka a konstrukcja.
-Elektryka a HVAC.
-Elektryka a instalacje wodno-kanalizacyjne.
-Elektryka a ochrona przeciwpożarowa.
-Elektryka a architektura.
-Korytko kablowe zajmujące miejsce potrzebne dla rur.
-Rura zajmująca miejsce korytka.
-Instalacja przechodząca przez konstrukcję.
-Instalacja kolidująca z drzwiami.
-Urządzenie niemieszczące się w dostępnej przestrzeni.
-Brak przepustu.
-Przepust w złym miejscu.
-Niewystarczający zapas miejsca.
-Rzeczywiste wymiary inne niż w modelu.
-BIM inny niż rzeczywistość.
-Projekt elektryczny niezgodny z instalacją mechaniczną.
-Niezgodna kolejność montażu między branżami.
+Elektryka a konstrukcja.||C
+Elektryka a HVAC.||C
+Elektryka a instalacje wodno-kanalizacyjne.||C
+Elektryka a ochrona przeciwpożarowa.||C
+Elektryka a architektura.||C
+Korytko kablowe zajmujące miejsce potrzebne dla rur.||C
+Rura zajmująca miejsce korytka.||C
+Instalacja przechodząca przez konstrukcję.||C
+Instalacja kolidująca z drzwiami.||C
+Urządzenie niemieszczące się w dostępnej przestrzeni.||C
+Brak przepustu.||C
+Przepust w złym miejscu.||C
+Niewystarczający zapas miejsca.||C
+Rzeczywiste wymiary inne niż w modelu.||C
+BIM inny niż rzeczywistość.||C
+Projekt elektryczny niezgodny z instalacją mechaniczną.||K
+Niezgodna kolejność montażu między branżami.||K
 @Warunki fizyczne na miejscu
-Niewystarczająca przestrzeń.
-Trudny dostęp.
-Brak dostępu.
-Niewystarczająca wysokość.
-Nieprzewidziana przeszkoda.
-Inne warunki gruntowe.
-Woda gruntowa.
-Niestabilny grunt.
-Poziom wód gruntowych.
-Nieznana istniejąca konstrukcja.
-Nieznana istniejąca instalacja.
-Istniejący kabel bez dokumentacji.
-Istniejąca rura bez dokumentacji.
-Odkryty azbest lub inny niebezpieczny materiał.
-Zanieczyszczenie gruntu.
-Warunki inne niż przewidziane w projekcie.
+!Zobacz też w „Problemy z istniejącymi instalacjami”: Nieznana istniejąca instalacja, Istniejący kabel bez dokumentacji, Istniejąca rura bez dokumentacji.
+Niewystarczająca przestrzeń.||C
+Trudny dostęp.||C
+Brak dostępu.||C
+Niewystarczająca wysokość.||C
+Nieprzewidziana przeszkoda.||C
+Inne warunki gruntowe.||C
+Woda gruntowa.||C
+Niestabilny grunt.||C
+Poziom wód gruntowych.||C
+Nieznana istniejąca konstrukcja.||C
+Odkryty azbest lub inny niebezpieczny materiał.||C
+Zanieczyszczenie gruntu.||C
+Warunki inne niż przewidziane w projekcie.||C
 @Pogoda i czynniki zewnętrzne
-Deszcz.
-Śnieg.
-Lód.
-Wiatr.
-Ekstremalna temperatura.
-Burza.
-Powódź.
-Upał.
-Warunki uniemożliwiające dźwiganie.
-Warunki uniemożliwiające pracę na wysokości.
-Warunki wpływające na materiały.
-Warunki wpływające na betonowanie.
-Warunki wpływające na roboty ziemne.
-Warunki wpływające na transport.
+!Zobacz też w „Sytuacje awaryjne”: Powódź.
+Deszcz.||C
+Śnieg.||C
+Lód.||C
+Wiatr.||C
+Ekstremalna temperatura.||C
+Burza.||C
+Upał.||C
+Warunki uniemożliwiające dźwiganie.||C
+Warunki uniemożliwiające pracę na wysokości.||C
+Warunki wpływające na materiały.||C
+Warunki wpływające na betonowanie.||C
+Warunki wpływające na roboty ziemne.||C
+Warunki wpływające na transport.||C
 @Komunikacja
-Polecenie ustne.
-Sprzeczne polecenia.
-Informacja nieprzekazana.
-Informacja przekazana zbyt późno.
-Język.
-Błędne tłumaczenie.
-Spotkanie bez protokołu.
-Protokół nierozesłany.
-Nieznana osoba odpowiedzialna.
-Decyzja bez osoby odpowiedzialnej.
-Osoba odpowiedzialna bez uprawnień.
-Informacja wysłana do niewłaściwej osoby.
-Zmiana nocna bez informacji od poprzedniej zmiany.
-Zmiana zakomunikowana jednemu wykonawcy, ale nie pozostałym.
+!Zobacz też w „Personel i zasoby ludzkie”: Język.
+Polecenie ustne.||K
+Sprzeczne polecenia.||K
+Informacja nieprzekazana.||K
+Informacja przekazana zbyt późno.||K
+Błędne tłumaczenie.||K
+Spotkanie bez protokołu.||K
+Protokół nierozesłany.||K
+Nieznana osoba odpowiedzialna.||C
+Decyzja bez osoby odpowiedzialnej.||C
+Osoba odpowiedzialna bez uprawnień.||C
+Informacja wysłana do niewłaściwej osoby.||K
+Zmiana nocna bez informacji od poprzedniej zmiany.||K
+Zmiana zakomunikowana jednemu wykonawcy, ale nie pozostałym.||K
 @Decyzje
-Nikt nie podejmuje decyzji.
-Opóźniona decyzja.
-Decyzja podjęta bez wystarczających informacji.
-Decyzja podjęta bez konsultacji z osobą odpowiedzialną.
-Decyzja techniczna bez zatwierdzenia.
-Dwie osoby odpowiedzialne wydają różne polecenia.
-Decyzja ustna bez udokumentowania.
-Decyzja tymczasowa niezamknięta.
-Rozwiązanie tymczasowe, które staje się stałe.
-Problem eskalowany zbyt późno.
-Problem eskalowany niepotrzebnie.
-Nikt nie wie, kto ma uprawnienia do decyzji.
+Nikt nie podejmuje decyzji.||K
+Opóźniona decyzja.||E
+Decyzja podjęta bez wystarczających informacji.||K
+Decyzja podjęta bez konsultacji z osobą odpowiedzialną.||K
+Decyzja techniczna bez zatwierdzenia.||K
+Dwie osoby odpowiedzialne wydają różne polecenia.||K
+Decyzja ustna bez udokumentowania.||K
+Decyzja tymczasowa niezamknięta.||C
+Rozwiązanie tymczasowe, które staje się stałe.||K
+Problem eskalowany zbyt późno.||E
+Problem eskalowany niepotrzebnie.||E
+Nikt nie wie, kto ma uprawnienia do decyzji.||C
 @Zmiany
-Zmiana projektu.
-Zmiana materiału.
-Zmiana producenta.
-Zmiana trasy.
-Zmiana sekwencji.
-Zmiana zakresu.
-Zmiana zgłoszona przez klienta.
-Zmiana zgłoszona przez wykonawcę.
-Zmiana wywołana kolizją.
-Zmiana wywołana warunkami rzeczywistymi.
-Zmiana niewprowadzona na rysunkach.
-Zmiana wykonana bez zatwierdzenia.
-Zmiana zatwierdzona, ale niezakomunikowana.
-Zmiana wpływająca na innych wykonawców.
-Zmiana powodująca poprawki.
+Zmiana projektu.||K
+Zmiana materiału.||K
+Zmiana producenta.||K
+Zmiana trasy.||K
+Zmiana sekwencji.||K
+Zmiana zakresu.||K
+Zmiana zgłoszona przez klienta.||K
+Zmiana zgłoszona przez wykonawcę.||K
+Zmiana wywołana kolizją.||K
+Zmiana wywołana warunkami rzeczywistymi.||K
+Zmiana niewprowadzona na rysunkach.||C
+Zmiana wykonana bez zatwierdzenia.||E
+Zmiana zatwierdzona, ale niezakomunikowana.||K
+Zmiana wpływająca na innych wykonawców.||E
+Zmiana powodująca poprawki.||E
 @Problemy z informacją
-Brak informacji.
-Informacja niekompletna.
-Informacja sprzeczna.
-Informacja nieaktualna.
-Informacja niedostępna.
-Informacja w innym języku.
-Informacja trudna do interpretacji.
-Informacja rozesłana częściowo.
-Informacja bez osoby odpowiedzialnej.
-Informacja bez daty.
-Informacja bez rewizji.
-Informacja bez identyfikowalności.
+Brak informacji.||C
+Informacja niekompletna.||C
+Informacja sprzeczna.||C
+Informacja nieaktualna.||C
+Informacja niedostępna.||C
+Informacja w innym języku.||C
+Informacja trudna do interpretacji.||C
+Informacja rozesłana częściowo.||C
+Informacja bez osoby odpowiedzialnej.||C
+Informacja bez daty.||C
+Informacja bez rewizji.||C
+Informacja bez identyfikowalności.||C
 @Problemy z istniejącymi instalacjami
-Nieznany istniejący kabel.
-Nieznana istniejąca rura.
-Istniejący obwód bez dokumentacji.
-Istniejące urządzenie inne niż na rysunku.
-Istniejąca instalacja wcześniej zmodyfikowana.
-Nieprawidłowe oznakowanie.
-Instalacja pod napięciem, która powinna być odizolowana.
-Istniejąca usługa, której nie można wyłączyć.
-Interfejs ze starą instalacją.
-Błędna dokumentacja historyczna.
-Ryzyko uszkodzenia istniejącej infrastruktury.
+!Zobacz też w „Elektryka”: Nieprawidłowe oznakowanie.
+Nieznany istniejący kabel.||C
+Nieznana istniejąca rura.||C
+Istniejący obwód bez dokumentacji.||C
+Istniejące urządzenie inne niż na rysunku.||C
+Istniejąca instalacja wcześniej zmodyfikowana.||C
+Instalacja pod napięciem, która powinna być odizolowana.||C
+Istniejąca usługa, której nie można wyłączyć.||C
+Interfejs ze starą instalacją.||C
+Błędna dokumentacja historyczna.||C
+Ryzyko uszkodzenia istniejącej infrastruktury.||C
 @Sytuacje awaryjne
-Przerwa w zasilaniu.
-Pożar.
-Zalanie.
-Wyciek.
-Wypadek.
-Uraz.
-Ewakuacja.
-Awaria sprzętu krytycznego.
-Uszkodzenie konstrukcji.
-Pęknięcie rury.
-Nieszczelność.
-Przypadkowe załączenie napięcia.
-Utrata łączności.
-Zablokowany dostęp.
-Ekstremalne zjawisko pogodowe.
+!Zobacz też w „Transport i logistyka”: Zablokowany dostęp.
+Przerwa w zasilaniu.||E
+Pożar.||E
+Zalanie.||E
+Wyciek.||E
+Wypadek.||E
+Uraz.||E
+Ewakuacja.||E
+Awaria sprzętu krytycznego.||E
+Uszkodzenie konstrukcji.||E
+Pęknięcie rury.||E
+Nieszczelność.||E
+Przypadkowe załączenie napięcia.||E
+Utrata łączności.||E
+Ekstremalne zjawisko pogodowe.||E
 @Problemy „rzadkie”, ale możliwe
-Materiał znika z magazynu.
-Znika sprzęt.
-Osoba nieupoważniona wchodzi do strefy z ograniczonym dostępem.
-Osoba używa identyfikatora innej osoby.
-Wykonawca nagle opuszcza projekt.
-Podwykonawca popada w niewypłacalność.
-Dostawca przestaje dostarczać komponent.
-Producent przestaje produkować urządzenie.
-Zainstalowane urządzenie okazuje się później przestarzałe.
-Certyfikat okazuje się nieważny.
-Dokument okazuje się fałszywy.
-Materiał dostarczony z dokumentacją innej partii.
-Urządzenie przychodzi z innym numerem seryjnym.
-Rysunek producenta jest sprzeczny z rysunkiem projektu.
-Niekompatybilne oprogramowanie do programowania.
-Uszkodzony plik projektu.
-Utrata danych.
-Utrata dokumentacji historycznej.
-Zmiana przepisów w trakcie projektu.
-Odmienna interpretacja normy.
-Wymóg klienta niezgodny z wcześniej zatwierdzonym rozwiązaniem.
-Odkrycie sytuacji, której nikt nie przewidział.
-Pozornie prawidłowa decyzja, która powoduje problem wtórny.
+Materiał znika z magazynu.||E
+Znika sprzęt.||E
+Osoba nieupoważniona wchodzi do strefy z ograniczonym dostępem.||E
+Osoba używa identyfikatora innej osoby.||E
+Wykonawca nagle opuszcza projekt.||E
+Podwykonawca popada w niewypłacalność.||E
+Dostawca przestaje dostarczać komponent.||E
+Producent przestaje produkować urządzenie.||E
+Zainstalowane urządzenie okazuje się później przestarzałe.||C
+Certyfikat okazuje się nieważny.||C
+Dokument okazuje się fałszywy.||C
+Materiał dostarczony z dokumentacją innej partii.||E
+Urządzenie przychodzi z innym numerem seryjnym.||E
+Rysunek producenta jest sprzeczny z rysunkiem projektu.||C
+Niekompatybilne oprogramowanie do programowania.||C
+Uszkodzony plik projektu.||C
+Utrata danych.||E
+Utrata dokumentacji historycznej.||E
+Zmiana przepisów w trakcie projektu.||E
+Odmienna interpretacja normy.||C
+Wymóg klienta niezgodny z wcześniej zatwierdzonym rozwiązaniem.||C
+Odkrycie sytuacji, której nikt nie przewidział.||E
+Pozornie prawidłowa decyzja, która powoduje problem wtórny.||K
 `};
 const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+let tagF='';
 function parse(t){const cs=[];let c,g;t.split('\n').forEach(l=>{l=l.trim();if(!l)return;const k=l[0],v=l.slice(1);
- if(k=='@'){c={t:v,g:[],n:'',k:0};g=null;cs.push(c)}
+ if(k=='@'){c={t:v,g:[],n:[],k:0};g=null;cs.push(c)}
  else if(k=='#'){g={h:v,i:[]};c.g.push(g)}
- else if(k=='!'){c.n=v}
- else{if(!g){g={h:'',i:[]};c.g.push(g)}g.i.push(l);c.k++}});return cs}
+ else if(k=='!'){c.n.push(v)}
+ else{if(!g){g={h:'',i:[]};c.g.push(g)}const p=l.split('||');g.i.push({x:p[0],t:p[1]||'C'});c.k++}});return cs}
 function renderLib(){
  const u=U[lang],q=norm($('q').value.trim()),cs=parse(LIB[lang]),
-  was=[...document.querySelectorAll('#libAcc details[open]')].map(x=>x.id);
+  was=[...document.querySelectorAll('#libAcc details[open]')].map(x=>x.id),act=q||tagF;
  $('libT').textContent=u.t;$('libP').textContent=u.p;$('libN').textContent=u.n;$('q').placeholder=u.ph;
  $('lopen').textContent=u.open;$('lclose').textContent=u.close;
+ $('legend').innerHTML=['','K','C','E'].map(k=>`<button class="btn${tagF==k?' on':''}" data-f="${k}">${k?`<span class="tg tg${k}" style="margin-right:.4rem">${u.tga[k]}</span>${u.tgl[k]}`:u.all}</button>`).join('')+`<small>${['K','C','E'].map(k=>`<b class="tg${k}">${u.tgl[k]}</b> = ${u.tgd[k]}`).join(' · ')}</small>`;
  let tot=0,shown=0,h='';
  cs.forEach((c,i)=>{tot+=c.k;
-  const gs=c.g.map(g=>({h:g.h,i:q?g.i.filter(x=>norm(x).includes(q)):g.i})).filter(g=>g.i.length);
+  const gs=c.g.map(g=>({h:g.h,i:g.i.filter(x=>(!q||norm(x.x).includes(q))&&(!tagF||x.t==tagF))})).filter(g=>g.i.length);
   const n=gs.reduce((a,g)=>a+g.i.length,0);if(!n)return;shown+=n;
-  h+=`<details id="c${i}"${(q||was.includes('c'+i))?' open':''}><summary><span class="num">${String(i+1).padStart(2,'0')}</span><h3>${c.t}</h3><span class="badge">${q?n+' '+u.of+' '+c.k:c.k}</span></summary><div class="lbody">${gs.map(g=>(g.h?`<h5>${g.h}</h5>`:'')+'<ul>'+g.i.map(x=>`<li>${x}</li>`).join('')+'</ul>').join('')}${c.n?`<div class="note">${c.n}</div>`:''}</div></details>`});
+  h+=`<details id="c${i}"${(act||was.includes('c'+i))?' open':''}><summary><span class="num">${String(i+1).padStart(2,'0')}</span><h3>${c.t}</h3><span class="badge">${act?n+' '+u.of+' '+c.k:c.k}</span></summary><div class="lbody">${gs.map(g=>(g.h?`<h5>${g.h}</h5>`:'')+'<ul>'+g.i.map(x=>`<li><i class="tg tg${x.t}" title="${u.tgl[x.t]}">${u.tga[x.t]}</i>${x.x}</li>`).join('')+'</ul>').join('')}${c.n.map(n=>`<div class="note">${n}</div>`).join('')}</div></details>`});
  $('libAcc').innerHTML=h||`<p class="cnt">${u.none}</p>`;
- $('cnt').textContent=(q?shown+' '+u.of+' ':'')+tot+' '+u.it;
+ $('cnt').textContent=(act?shown+' '+u.of+' ':'')+tot+' '+u.it;
 }
+$('legend').onclick=e=>{const b=e.target.closest('button');if(!b)return;tagF=b.dataset.f;renderLib()};
 const _r=render;render=function(){_r();renderLib()};
 $('q').oninput=renderLib;
 $('lopen').onclick=()=>document.querySelectorAll('#libAcc details').forEach(d=>d.open=true);
 $('lclose').onclick=()=>document.querySelectorAll('#libAcc details').forEach(d=>d.open=false);
 renderLib();
 </script>
+<script>
+const Q={
+es:{anch:[['protocolo','Protocolo'],['escalacion','Escalación'],['semaforo','Semáforo'],['roles','Roles'],['ficha','Ficha de caso'],['biblioteca','Biblioteca']],
+ p0t:'PASO 0 · ¿HAY PELIGRO AHORA?',p0q:'¿Hay riesgo inmediato para personas, estructura o instalación? Se responde antes que cualquier otra cosa.',
+ yes:'SÍ',yesA:['asegurar','detener la actividad afectada','proteger a las personas','avisar al responsable competente'],yesN:'No se sigue el protocolo con normalidad. Aseguro + documento + escalo (ROJO).',
+ no:'NO',noA:'Continúa con ① PROBLEMA. Cada fase tiene abajo su pregunta clave: toca una para ver el detalle.',
+ tiles:['¿Qué ha ocurrido, dónde, cuándo y quién está implicado?','¿Es un hecho o una interpretación?','¿Afecta a seguridad, calidad, plazo, coste u organización?','¿Tengo información, autoridad y límites claros?','¿Qué alternativa es segura y viable?','¿Qué otra cosa podemos hacer? Eliminar la parada.','¿Quién hace qué, dónde, cuándo y con qué?','¿Queda claro qué pasó y por qué se decidió?','¿Cerrado o escalado?'],
+ escH:'ESCALAS si aparece cualquiera',gates:['Seguridad','Autoridad','Competencia técnica','Impacto','Conflicto contractual','Sin solución viable'],
+ semH:'SEMÁFORO',sem:[['#22c55e','Verde','actúo: decido, ejecuto, documento.'],['#facc15','Amarillo','actúo parcialmente y consulto.'],['#ef4444','Rojo','aseguro, documento y escalo.']],
+ rT:'Mapa de roles y escalación',rP:'Quién es quién y cuándo acudir a cada uno. Ruta habitual de escalación:',
+ route:['Empleado','Brigadista','Ingeniero de obra','Director de obra','Inversor / cliente'],
+ groups:[['Equipo de ejecución','',[['Empleado / trabajador','Detecta y comunica el problema. Informa de inmediato a su brigadista y se detiene si hay peligro inmediato.'],['Brigadista / jefe de brigada','Reorganización dentro de su cuadrilla; falta de personal, herramientas o frente de trabajo inmediato.'],['Subcontratista (responsable)','Alcance, recursos y plazos de su contrato; interfaz con otros contratistas.']]],
+ ['Dirección técnica de obra','',[['Ingeniero de obra','Dudas técnicas de ejecución, planos, secuencia y coordinación diaria.'],['Ingeniero de construcción','Soluciones constructivas, interfaces entre disciplinas, desviaciones respecto al proyecto.'],['Jefe de trabajos de la especialidad (kierownik robót)','Decisiones de su disciplina, por ejemplo instalaciones eléctricas: personal, secuencia y calidad de la especialidad.'],['Director de obra (kierownik budowy)','Impacto en plazo, coste o ruta crítica; riesgo grave; conflictos entre contratistas; decisiones fuera de tu autoridad.']]],
+ ['Calidad, control y seguridad','',[['Ingeniero de calidad','No conformidades, pruebas fallidas, trabajos ocultos antes de cubrirlos.'],['Responsable de seguridad (HSE)','Condiciones inseguras, incidentes, permisos de trabajo.'],['Comisiones de inspección y de control de trabajo','Inspecciones programadas, recepciones parciales, verificación de trabajos.']]],
+ ['Apoyo de la empresa','',[['Departamento de compras','Material faltante, incorrecto o retrasado; proveedores y pedidos.'],['Departamento de diseño','Planos contradictorios, RFI, cambios de diseño, interfaces entre disciplinas.'],['Departamento legal','Contratos, alcance, órdenes de cambio, reclamaciones, incumplimientos.'],['Abogados','Disputas serias, responsabilidad legal, accidentes graves, requerimientos de autoridades.']]],
+ ['Lado del cliente / inversor','cli',[['Inversor / cliente','Cambios de alcance, aprobaciones, costes adicionales, decisiones contractuales.'],['Representante del cliente / gestor del contrato','Instrucciones formales, órdenes de cambio, disputas de alcance.'],['Supervisión del inversor (inspektor nadzoru inwestorskiego)','Aprobación e inspección de trabajos, cierre de no conformidades, recepción (odbiór).'],['Proyectista / diseñador (projektant)','Modificación del proyecto, soluciones estructurales, interpretación de planos.'],['Calidad del cliente','Criterios de aceptación, auditorías, no conformidades.'],['Seguridad (HSE) del cliente','Permisos de trabajo en sus instalaciones, incidentes, normas del sitio.'],['Operaciones / mantenimiento del cliente','Instalaciones existentes, parada o aislamiento de servicios, energización.'],['Comisión de recepción','Recepción final y documentación de entrega.']]],
+ ['Autoridades externas','aut',[['Inspector de trabajo (Państwowa Inspekcja Pracy)','Inspecciones de condiciones de trabajo, accidentes laborales, horas y descansos.'],['Inspector de seguridad','Inspecciones de seguridad y salud en la obra.'],['Comisiones gubernamentales de control e inspección','Inspecciones oficiales, requerimientos y recepciones por parte de las autoridades.'],['Policía (Policja)','Robos, agresiones, amenazas, personas no autorizadas, hechos con posible carácter delictivo.'],['Policía de fronteras (Straż Graniczna)','Controles sobre la situación de estancia y trabajo de personal extranjero.']]]],
+ fiT:'Ficha de registro de caso',fiP:'Rellénala en pantalla o imprímela (A4). Los datos no se guardan al cerrar la página.',fiS:'Formulario del caso (secciones 1 a 9)',print:'Imprimir ficha',clear:'Limpiar'},
+pl:{anch:[['protocolo','Protokół'],['escalacion','Eskalacja'],['semaforo','Semafor'],['roles','Role'],['ficha','Karta przypadku'],['biblioteca','Biblioteka']],
+ p0t:'KROK 0 · CZY JEST ZAGROŻENIE TERAZ?',p0q:'Czy istnieje bezpośrednie zagrożenie dla ludzi, konstrukcji lub instalacji? To pytanie zadajesz przed wszystkim innym.',
+ yes:'TAK',yesA:['zabezpieczyć','wstrzymać dotkniętą czynność','chronić ludzi','powiadomić właściwą osobę odpowiedzialną'],yesN:'Protokołu nie kontynuuje się w normalnym trybie. Zabezpieczam + dokumentuję + eskaluję (CZERWONY).',
+ no:'NIE',noA:'Przejdź do ① PROBLEM. Każda faza ma poniżej pytanie kluczowe: dotknij jej, aby zobaczyć szczegóły.',
+ tiles:['Co się stało, gdzie, kiedy i kto jest zaangażowany?','Czy to fakt, czy interpretacja?','Czy dotyczy bezpieczeństwa, jakości, terminu, kosztu lub organizacji?','Czy mam informacje, uprawnienia i jasne granice?','Które rozwiązanie jest bezpieczne i wykonalne?','Co jeszcze możemy zrobić? Usunąć przestój.','Kto co robi, gdzie, kiedy i czym?','Czy jasno wynika, co się stało i dlaczego tak zdecydowano?','Zamknięte czy eskalowane?'],
+ escH:'ESKALUJESZ, gdy pojawi się którakolwiek',gates:['Bezpieczeństwo','Uprawnienia','Kompetencje techniczne','Wpływ','Spór umowny','Brak wykonalnego rozwiązania'],
+ semH:'SEMAFOR',sem:[['#22c55e','Zielony','działam: decyduję, wykonuję, dokumentuję.'],['#facc15','Żółty','działam częściowo i konsultuję.'],['#ef4444','Czerwony','zabezpieczam, dokumentuję i eskaluję.']],
+ rT:'Mapa ról i eskalacji',rP:'Kto jest kim i kiedy się do niego zwracać. Typowa ścieżka eskalacji:',
+ route:['Pracownik','Brygadzista','Inżynier budowy','Kierownik budowy','Inwestor / Klient'],
+ groups:[['Zespół wykonawczy','',[['Pracownik','Zauważa i zgłasza problem. Natychmiast informuje brygadzistę i przerywa pracę, jeśli jest bezpośrednie zagrożenie.'],['Brygadzista','Reorganizacja w ramach brygady; brak ludzi, narzędzi lub bezpośredniego frontu robót.'],['Podwykonawca (osoba odpowiedzialna)','Zakres, zasoby i terminy jego umowy; interfejs z innymi wykonawcami.']]],
+ ['Kierownictwo techniczne budowy','',[['Inżynier budowy','Wątpliwości techniczne przy wykonaniu, rysunki, kolejność robót i codzienna koordynacja.'],['Inżynier budownictwa','Rozwiązania budowlane, interfejsy między branżami, odstępstwa od projektu.'],['Kierownik robót','Decyzje w swojej branży, np. instalacje elektryczne: ludzie, kolejność i jakość robót.'],['Kierownik budowy','Wpływ na termin, koszt lub ścieżkę krytyczną; poważne ryzyko; spory między wykonawcami; decyzje poza Twoimi uprawnieniami.']]],
+ ['Jakość, kontrola i bezpieczeństwo','',[['Inżynier ds. jakości','Niezgodności, negatywne próby, roboty zanikowe przed zakryciem.'],['Specjalista BHP','Niebezpieczne warunki, incydenty, zezwolenia na pracę.'],['Komisje kontroli i inspekcji robót','Planowe kontrole, odbiory częściowe, weryfikacja wykonanych robót.']]],
+ ['Zaplecze firmy','',[['Dział zakupów','Brakujący, błędny lub opóźniony materiał; dostawcy i zamówienia.'],['Dział projektowy','Sprzeczne rysunki, RFI, zmiany projektowe, interfejsy między branżami.'],['Dział prawny','Umowy, zakres, polecenia zmian, roszczenia, naruszenia.'],['Prawnicy','Poważne spory, odpowiedzialność prawna, ciężkie wypadki, wezwania organów.']]],
+ ['Strona Klienta / Inwestora','cli',[['Inwestor / Klient','Zmiany zakresu, zatwierdzenia, dodatkowe koszty, decyzje umowne.'],['Przedstawiciel Klienta / zarządzający kontraktem','Formalne polecenia, polecenia zmian, spory o zakres.'],['Inspektor nadzoru inwestorskiego','Zatwierdzanie i kontrola robót, zamykanie niezgodności, odbiór.'],['Projektant','Zmiana projektu, rozwiązania konstrukcyjne, interpretacja rysunków.'],['Dział jakości Klienta','Kryteria akceptacji, audyty, niezgodności.'],['BHP Klienta','Zezwolenia na pracę w jego obiektach, incydenty, zasady obowiązujące na terenie.'],['Eksploatacja / utrzymanie ruchu Klienta','Istniejące instalacje, wyłączenie lub odizolowanie mediów, załączanie napięcia.'],['Komisja odbioru','Odbiór końcowy i dokumentacja przekazania.']]],
+ ['Organy zewnętrzne','aut',[['Państwowa Inspekcja Pracy','Kontrole warunków pracy, wypadki przy pracy, czas pracy i odpoczynek.'],['Inspektor bezpieczeństwa','Kontrole bezpieczeństwa i higieny pracy na budowie.'],['Państwowe komisje kontroli i inspekcji','Oficjalne kontrole, wezwania i odbiory przez organy.'],['Policja','Kradzieże, agresja, groźby, osoby nieupoważnione, zdarzenia o możliwym charakterze przestępczym.'],['Straż Graniczna','Kontrole legalności pobytu i pracy cudzoziemców.']]]],
+ fiT:'Karta rejestracji przypadku',fiP:'Wypełnij na ekranie lub wydrukuj (A4). Dane nie są zapisywane po zamknięciu strony.',fiS:'Formularz przypadku (sekcje 1–9)',print:'Drukuj kartę',clear:'Wyczyść'}};
+const FI={
+es:[['1. Identificación',[['i','Nº de caso'],['i','Fecha y hora'],['i','Ubicación / zona / frente'],['i','Registrado por'],['i','Participantes']]],
+['① Problema',[['a','¿Qué ha ocurrido?'],['i','Actividad afectada'],['i','Personas implicadas'],['c','Tipo de problema',['técnico','logístico','contractual','organizativo','de seguridad']],['i','Referencia en la biblioteca (categoría)']]],
+['② Verificación',[['b','Hechos verificados'],['b','Interpretaciones o afirmaciones sin verificar'],['c','Comprobado con',['planos','especificaciones','medidas','fotografías','documentación','subcontratista','estado de materiales y equipos']]]],
+['③ Impacto',[['c','Afecta a',['Seguridad','Calidad','Plazo','Coste','Organización']],['a','Detalle del impacto'],['a','Consecuencias futuras: ¿la solución de hoy crea un problema mañana?']]],
+['Paso 0 · ④ Análisis · ⑤ Decisión',[['r','Paso 0: ¿peligro inmediato?',['Sí','No']],['i','A — solución original'],['i','B — solución alternativa'],['i','C — reorganización del trabajo'],['i','D — solución temporal'],['a','Decisión adoptada y motivo'],['r','Solución',['Temporal','Definitiva']],['r','¿Reversible?',['Sí','No']],['i','Vigente / revisar hasta']]],
+['Semáforo y escalación',[['r','Semáforo',['Verde — actúo','Amarillo — actúo parcialmente y consulto','Rojo — escalo inmediatamente']],['c','Puertas de escalación activadas',['Seguridad','Autoridad','Competencia técnica','Impacto','Conflicto contractual','Sin solución viable']],['i','Escalado a (nombre y rol)'],['i','Fecha y hora de escalación'],['i','Autorizado por (nombre y rol)'],['i','Fecha de autorización']]],
+['⑥ Reorganización · ⑦ Ejecución',[['a','Reorganización aplicada (frentes alternativos, brigada trasladada…)'],['a','Quién hace qué, dónde y cuándo'],['a','Recursos y condiciones que deben cumplirse']]],
+['⑧ Documentación',[['c','Evidencias',['fotografías','vídeos','medidas','planos marcados','comunicaciones','actas y decisiones','autorizaciones']],['i','Ubicación de archivos / referencias']]],
+['⑨ Seguimiento',[['r','¿Problema resuelto?',['Sí','No','Parcialmente']],['r','¿La solución temporal sigue siendo válida?',['Sí','No','No aplica']],['a','Consecuencias nuevas o trabajos afectados'],['i','Fecha de revisión'],['r','Resultado',['CLOSED','ESCALATE / REOPEN']],['i','Firma y fecha']]]],
+pl:[['1. Identyfikacja',[['i','Nr przypadku'],['i','Data i godzina'],['i','Lokalizacja / strefa / front robót'],['i','Zarejestrował'],['i','Uczestnicy']]],
+['① Problem',[['a','Co się stało?'],['i','Dotknięta czynność'],['i','Osoby zaangażowane'],['c','Rodzaj problemu',['techniczny','logistyczny','umowny','organizacyjny','bezpieczeństwa']],['i','Odniesienie w bibliotece (kategoria)']]],
+['② Weryfikacja',[['b','Fakty zweryfikowane'],['b','Interpretacje lub twierdzenia niezweryfikowane'],['c','Sprawdzono na podstawie',['rysunków','specyfikacji','pomiarów','zdjęć','dokumentacji','podwykonawcy','stanu materiałów i sprzętu']]]],
+['③ Wpływ',[['c','Dotyczy',['Bezpieczeństwo','Jakość','Termin','Koszt','Organizacja']],['a','Szczegóły wpływu'],['a','Skutki w przyszłości: czy dzisiejsze rozwiązanie stworzy problem jutro?']]],
+['Krok 0 · ④ Analiza · ⑤ Decyzja',[['r','Krok 0: bezpośrednie zagrożenie?',['Tak','Nie']],['i','A — rozwiązanie pierwotne'],['i','B — rozwiązanie alternatywne'],['i','C — reorganizacja pracy'],['i','D — rozwiązanie tymczasowe'],['a','Przyjęta decyzja i uzasadnienie'],['r','Rozwiązanie',['Tymczasowe','Docelowe']],['r','Odwracalne?',['Tak','Nie']],['i','Obowiązuje / do przeglądu do']]],
+['Semafor i eskalacja',[['r','Semafor',['Zielony — działam','Żółty — działam częściowo i konsultuję','Czerwony — eskaluję natychmiast']],['c','Aktywne bramki eskalacji',['Bezpieczeństwo','Uprawnienia','Kompetencje techniczne','Wpływ','Spór umowny','Brak wykonalnego rozwiązania']],['i','Eskalowano do (imię i rola)'],['i','Data i godzina eskalacji'],['i','Zatwierdził (imię i rola)'],['i','Data zatwierdzenia']]],
+['⑥ Reorganizacja · ⑦ Wykonanie',[['a','Zastosowana reorganizacja (alternatywne fronty, przeniesiona brygada…)'],['a','Kto co robi, gdzie i kiedy'],['a','Zasoby i warunki do spełnienia']]],
+['⑧ Dokumentacja',[['c','Dowody',['zdjęcia','filmy','pomiary','zaznaczone rysunki','komunikacja','protokoły i decyzje','zatwierdzenia']],['i','Lokalizacja plików / odniesienia']]],
+['⑨ Monitorowanie',[['r','Czy problem rozwiązany?',['Tak','Nie','Częściowo']],['r','Czy rozwiązanie tymczasowe nadal jest ważne?',['Tak','Nie','Nie dotyczy']],['a','Nowe skutki lub dotknięte roboty'],['i','Data przeglądu'],['r','Wynik',['CLOSED','ESCALATE / REOPEN']],['i','Podpis i data']]]]};
+const fl=a=>a.map((x,i)=>(i?'<b>→</b>':'')+`<span>${x}</span>`).join('');
+function fld(f,k){const[t,l,o]=f;
+ if(t=='i')return `<label class="f"><span>${l}</span><input type="text"></label>`;
+ if(t=='a'||t=='b')return `<label class="f${t=='a'?' w':''}"><span>${l}</span><textarea rows="${t=='a'?3:5}"></textarea></label>`;
+ return `<fieldset class="f w"><legend>${l}</legend>${o.map(x=>`<label class="o"><input type="${t=='c'?'checkbox':'radio'}"${t=='r'?` name="r${k}"`:''}> ${x}</label>`).join('')}</fieldset>`}
+function renderX(){
+ const d=Q[lang],dd=D[lang];
+ $('anch').innerHTML=d.anch.map(a=>`<a href="#${a[0]}">${a[1]}</a>`).join('');
+ $('p0').innerHTML=`<div class="l"><h2>${d.p0t}</h2><p>${d.p0q}</p></div><div class="rr"><div class="y"><h3>${d.yes}</h3><div class="flow">${fl(d.yesA)}</div><p><b>${d.yesN}</b></p></div><div class="n"><h3>${d.no}</h3><p>${d.noA}</p></div></div>`;
+ $('chain').className='quick';
+ $('chain').innerHTML=dd.S.map((s,i)=>`<button data-i="${i}"><b>${s[0]} ${s[1]}</b><span>${d.tiles[i]}</span></button>`).join('');
+ $('strip').innerHTML=`<div><h4>${d.escH}</h4>${d.gates.map(g=>`<a class="pill" href="#escalacion">${g}</a>`).join('')}</div><div><h4>${d.semH}</h4>${d.sem.map(s=>`<div><span class="dot" style="--c:${s[0]}"></span><b>${s[1]}</b> — ${s[2]}</div>`).join('')}</div>`;
+ $('rolT').textContent=d.rT;$('rolP').textContent=d.rP;$('route').innerHTML=fl(d.route);
+ $('rolG').innerHTML=d.groups.map(g=>`<div class="rg ${g[1]}"><h3>${g[0]}</h3><dl>${g[2].map(r=>`<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join('')}</dl></div>`).join('');
+ const old=[...document.querySelectorAll('#fiForm input,#fiForm textarea')].map(x=>x.type=='text'||x.tagName=='TEXTAREA'?x.value:x.checked);
+ let k=0;$('fiForm').innerHTML=FI[lang].map(b=>`<div class="fb"><h3>${b[0]}</h3><div class="fg">${b[1].map(f=>fld(f,k++)).join('')}</div></div>`).join('');
+ if(old.length)[...document.querySelectorAll('#fiForm input,#fiForm textarea')].forEach((x,i)=>{if(x.type=='text'||x.tagName=='TEXTAREA')x.value=old[i]||'';else x.checked=!!old[i]});
+ $('fiS').textContent=d.fiS;$('fiT').textContent=d.fiT;$('fiP').textContent=d.fiP;$('fiPrint').textContent=d.print;$('fiClear').textContent=d.clear;
+}
+let fiWas=null;
+function prePrint(){const a=$('fiAll');if(fiWas===null)fiWas=a.open;a.open=true;if(document.body.classList.contains('pf')){document.documentElement.lang=lang;document.title=Q[lang].fiT}}
+function postPrint(){document.body.classList.remove('pf');if(fiWas!==null){$('fiAll').open=fiWas;fiWas=null}document.title=D[lang].h1}
+$('fiPrint').onclick=()=>{document.body.classList.add('pf');prePrint();window.print()};
+addEventListener('beforeprint',prePrint);
+addEventListener('afterprint',postPrint);
+document.addEventListener('click',e=>{const a=e.target.closest('a[href="#ficha"]');if(a)$('fiAll').open=true});
+$('fiClear').onclick=()=>document.querySelectorAll('#fiForm input,#fiForm textarea').forEach(x=>{if(x.type=='text'||x.tagName=='TEXTAREA')x.value='';else x.checked=false});
+const _r2=render;render=function(){_r2();renderX()};
+renderX();
+</script>
 </body>
+
 </html>
