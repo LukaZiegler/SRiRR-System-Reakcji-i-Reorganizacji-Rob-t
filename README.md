@@ -78,7 +78,5 @@ Dla osób pracujących na budowach i w projektach przemysłowych, w szczególno�
 
 Projekt jest udostępniony na licencji [MIT](LICENSE). Możesz go swobodnie używać, kopiować, modyfikować i rozpowszechniać, pod warunkiem zachowania informacji o prawach autorskich i treści licencji. Oprogramowanie i treści są dostarczane „tak jak są”, bez jakiejkolwiek gwarancji; zastrzeżenie dotyczące zakresu i nieoficjalnego charakteru protokołu (patrz wyżej) pozostaje w mocy.
 
-Copyright (c) 2026 Erinson Villarroel
+Copyright (c) 2020 Erinson Villarroel
 
-
-_Do uzupełnienia przez autora (np. CC BY-NC 4.0, MIT lub „wszelkie prawa zastrzeżone”)._
