@@ -191,7 +191,7 @@ dialog .df{padding:.9rem 1.5rem;border-top:1px solid var(--ln);text-align:right}
 </header>
 <div class="tools">
 <button class="btn" id="scopeBtn"></button>
-<div class="lang"><button class="btn" data-l="es">ES</button><button class="btn" data-l="pl">PL</button></div>
+<div class="lang"><button class="btn" data-l="es">ES</button><button class="btn" data-l="pl">PL</button><button class="btn" data-l="en">EN</button></div>
 </div>
 </div>
 
@@ -353,6 +353,70 @@ pl:{
  ['ŻÓŁTY — Działam częściowo i konsultuję','#facc15',['istnieje niepewność','potrzebuję potwierdzenia','może wpłynąć na inne branże','są istotne konsekwencje','potrzebuję zgody','może wpłynąć na harmonogram'],'Zabezpieczam + reorganizuję + przygotowuję alternatywy + konsultuję. Budowa trwa na innych frontach, dopóki nie zapadnie decyzja.','Gdy:'],
  ['CZERWONY — Eskaluję natychmiast','#ef4444',['istnieje zagrożenie','jest ryzyko konstrukcyjne','nie mam uprawnień','nie mam wystarczających informacji technicznych','jest istotna zmiana projektu','istnieje poważny spór umowny','decyzja może mieć poważne lub nieodwracalne skutki','nie istnieje bezpieczne i wykonalne rozwiązanie'],'Zabezpieczam + dokumentuję + eskaluję.','Gdy:']],
  chain:'PROBLEM → WERYFIKACJA → WPŁYW → ANALIZA → DECYZJA → REORGANIZACJA → WYKONANIE → DOKUMENTACJA → MONITOROWANIE'
+}
+,en:{
+ h1:'SRR — Site Reaction and Reorganisation System',
+ sub:'A personal framework for analysis and decision-making in unforeseen situations',
+ scopeBtn:'Scope notice',discLnk:'View disclaimer',ok:'Understood',
+ tx:[['Safety','Is it safe to act?'],['Authority','Am I authorised to decide this?'],['Feasibility','Do we have the time and resources?'],['Future','Will today\'s solution create a problem tomorrow?']],
+ ph:'Protocol phases',open:'Open all',close:'Close all',
+ esc:'<em>Escalation</em> protocol',escP:'You escalate when <b>any one</b> of these six gates appears. They do not all have to apply.',
+ sem:'Decision traffic light',semP:'The three levels summarise the whole protocol.',
+ disc:['<b>This project represents a personal method of organisation and analysis for unforeseen events on site.</b> It is not an official procedure and does not replace regulations, the project, company procedures, instructions from those in charge, professional authorisations or legal requirements, whether under official Polish regulations or those of the European Union.','Its purpose is to structure the reaction to problems through a sequence of verification → impact assessment → analysis → decision → reorganisation → documentation → follow-up, keeping decisions within the corresponding limits of safety, competence and authority.','It does not aim to eliminate the improvisation inherent to a construction site, but to prevent an unforeseen event from turning into an improvised, uncontrolled decision.'],
+ scopeT:'Scope notice and unofficial nature',
+ scopeP:['This document is a personal, indicative proposal. It is not an official site procedure, technical standard, safety procedure, work instruction or guide for the management, execution, supervision or signing-off of works.','Its sole purpose is to present a personal method of organisation and analysis for unforeseen situations on site, in order to avoid impulsive decisions and structure the response through verification of the problem, assessment of its impact, analysis of alternatives, reorganisation of the work, documentation and follow-up.','This system does not replace applicable legislation, technical projects and specifications, internal company procedures, instructions from site managers, decisions of the designer, required authorisations, health and safety rules, or any other mandatory documentation or procedure.','It does not seek to establish which technical solution must be carried out for a specific problem, nor does it give the user authority to approve modifications, additional works, design changes, structural solutions or any other action requiring professional, contractual or legal authorisation.','In situations that exceed the competence, authority, available information or decision-making capacity of the person applying this method, the matter must be escalated to the competent person.','Consequently, this document must be understood as a personal framework for reasoning and organisation, not as a technical or legal procedure for carrying out construction work.'],
+ S:[
+ ['①','PROBLEM','What happened?',[
+  ['Questions',0,[L(['What happened?','Where?','When?','Which activity is affected?','Who is involved?'])]],
+  ['Classification',0,[P('Is it a… problem?'),L(['technical','logistical','contractual','organisational','safety'])]],
+  ['Rule',0,[N('Describe facts, not culprits. At this stage you decide nothing yet: you only identify the problem.')]]]],
+ ['②','VERIFICATION','Is the problem really what it seems?',[
+  ['Rule',0,[P('Decisions are not made solely on the basis of what one person says.')]],
+  ['I check',0,[L(['the actual state of the site','drawings','specifications','measurements','photographs','available documentation','information from the subcontractor','condition of materials and equipment','the people responsible involved'])]],
+  ['Goal',0,[P('Separate fact from interpretation of the fact.'),N('Example: a subcontractor says “We cannot work because the other crew has not finished”. You check exactly what is missing: it may be only 3 m, with 80 % of the work front available. The site is not stopped: a front is partially blocked.')]]]],
+ ['③','IMPACT','What does it really affect?',[
+  ['1. Safety',0,[L(['Is there a danger to people?','Is there a risk to the structure or materials?','Could an accident occur?','Must the activity be secured or stopped immediately?'])]],
+  ['2. Quality',0,[L(['Could a non-conformity arise?','Could it cause rework?','Could it affect later works?'])]],
+  ['3. Schedule',0,[L(['How much time could be lost?','Does it affect the critical path?','Does it block other crews?'])]],
+  ['4. Cost',0,[L(['unproductive labour hours','idle machinery','wasted material','additional works','possible claims'])]],
+  ['5. Organisation',0,[L(['How many people are blocked?','Which other teams depend on this activity?','Can the crew be moved?'])]],
+  ['6. Future consequences',0,[P('The key part of the method:'),N('Could today\'s solution create a problem tomorrow?')]]]],
+ ['④','ANALYSIS','What can I do, and within what limits?',[
+  ['A. Immediate safety',0,[P('Is there an immediate danger? If so:'),F(['secure','stop the affected activity','protect people','notify the competent person in charge']),N('As long as immediate danger exists, the protocol is not continued as normal.')]],
+  ['B. Available technical documentation',0,[L(['project','drawings','specifications','instructions','protocols','manufacturer documentation','existing revisions']),N('Do I have enough information to make a technically safe decision? If not, that is already an escalation criterion.')]],
+  ['C. Authorisations',0,[P('Do I have the authority to decide this? Reorganising a crew is not the same as modifying a structural solution.'),N('Do not confuse technical ability to propose with authority to approve.')]],
+  ['D. Long-term consequences',0,[L(['does it affect later works?','does it affect installations?','does it affect finishes?','does it affect inspections?','does it affect the handover (odbiór)?','does it affect the final documentation?','could it create a maintenance problem?','is the solution reversible?'])]],
+  ['E. Temporary or permanent',0,[P('Mandatory question: is the solution temporary or final?'),L(['for how long?','until what condition?','who carries out the final solution?','what happens if it lasts longer than planned?'])]],
+  ['F. Reversible or irreversible',0,[P('Can I safely return to the original solution?'),N('The more irreversible the intervention, the more careful the decision must be.')]]]],
+ ['⑤','DECISION','Is there a feasible solution?',[
+  ['Alternatives',0,[L(['A — original solution','B — alternative solution','C — work reorganisation','D — temporary solution']),P('You assess each alternative against all the criteria, then choose.')]],
+  ['Evaluation criteria',W,[{t:'tbl',h:['Criterion','Question'],v:[['Safety','Is it safe?'],['Technical','Is it technically feasible?'],['Documentation','Is it backed up?'],['Authorisation','Do I have the authority?'],['Time','Does it allow us to keep the schedule?'],['Resources','Do we have the people, materials and equipment?'],['Quality','Does it meet the requirements?'],['Future','Does it create later problems?'],['Reversibility','Can we go back?']]}]]]],
+ ['⑥','REORGANISATION','How do we stop the problem from becoming a stoppage?',[
+  ['Key question',0,[P('Before saying “the activity is blocked”, ask:'),N('What else can we do?')]],
+  ['Example: the façade material has not arrived',W,[P('Weak reaction: we wait for the material.'),P('Right reaction:'),F(['check the delivery date','determine the impact','check the available work fronts','temporarily move the crew','bring forward another activity','keep logistics running in parallel'])]],
+  ['Result',W,[N('You have not removed the problem. You have removed the stoppage.')]]]],
+ ['⑦','EXECUTION','Decision made: how do we carry it out?',[
+  ['Define',0,[L(['who does what','where','when','with which resources','which conditions must be met'])]],
+  ['If the solution is temporary',0,[N('Define when it must be reviewed or replaced.')]]]],
+ ['⑧','DOCUMENTATION','Before, during and after, when relevant',[
+  ['Evidence',0,[L(['photographs','videos, where appropriate','measurements','location','marked-up drawings','date and time','participants','communications','decisions','agreements and approvals','solution carried out'])]],
+  ['Purpose',0,[P('Documenting is not only about proving who was at fault. In two weeks someone must be able to understand:'),F(['what happened','what was decided','why it was decided','what was carried out'])]]]],
+ ['⑨','FOLLOW-UP','Closing the cycle',[
+  ['Questions',0,[L(['Was the problem really solved?','Is the temporary solution still valid?','Was it carried out correctly?','Did it cause new consequences?','Does the documentation need updating?','Does it affect later works?','Do we need a final solution?'])]],
+  ['Result',0,[F(['CLOSED','ESCALATE / REOPEN'])]]]]
+ ],
+ G:[
+ ['SAFETY','There is a risk that I cannot control within my competence.',['structural risk','serious danger to workers','hazardous condition','significant accident or incident'],'Secure first, then escalate.'],
+ ['AUTHORITY','The solution requires an approval that I do not have.',['design change','structural change','contract change','acceptance of out-of-scope works','approval by the client or designer'],'Do not try to solve it on your own. Escalate with a prepared proposal.'],
+ ['TECHNICAL COMPETENCE','I do not have enough information or knowledge to guarantee the solution is correct. Example: a structural problem appears that I cannot assess safely.',['photographs','measurements','drawings','problem identified','alternatives considered'],'Do not improvise. Escalate, handing over all of the above.'],
+ ['IMPACT','The problem may significantly affect schedule, cost or the critical path. Example: a decision could cause a 7-day delay.',['even if I can solve part of the problem, the scale of the impact may justify escalation'],'Escalate with the impact quantified.'],
+ ['CONTRACTUAL DISPUTE','Two parties hold different positions on who must do something. Example: “That is not in our scope”.',['do not turn a contractual dispute into a personal one'],'Escalate: contract → scope → responsibility → decision. Meanwhile, keep other activities going.'],
+ ['NO FEASIBLE SOLUTION','This is the last gate. All alternatives have been tried.',['A → not feasible','B → not feasible','C → not feasible','D → not feasible'],'ESCALATE.']],
+ T:[
+ ['GREEN — I act','#22c55e',['the risk is under control','the solution is known','I have sufficient documentation','I have the authority','the solution is technically feasible','I have the resources','it does not create unacceptable consequences'],'I decide + execute + document.','I can decide when:'],
+ ['YELLOW — I act partially and consult','#facc15',['there is uncertainty','I need confirmation','it may affect other disciplines','there are important consequences','I need an authorisation','it may affect the schedule'],'I secure + reorganise + prepare alternatives + consult. Work continues on other fronts while the decision is pending.','When:'],
+ ['RED — I escalate immediately','#ef4444',['there is danger','there is structural risk','I do not have the authority','I do not have enough technical information','there is a major project modification','there is a significant contractual conflict','the decision may have serious or irreversible consequences','there is no safe and feasible solution'],'I secure + document + escalate.','When:']],
+ chain:'PROBLEM → VERIFICATION → IMPACT → ANALYSIS → DECISION → REORGANISATION → EXECUTION → DOCUMENTATION → FOLLOW-UP'
 }};
 const $=id=>document.getElementById(id),li=a=>'<ul>'+a.map(x=>`<li>${x}</li>`).join('')+'</ul>';
 const rc=c=>c.t=='ul'?li(c.v):c.t=='p'?`<p>${c.v}</p>`:c.t=='note'?`<div class="note">${c.v}</div>`:c.t=='flow'?'<div class="flow">'+c.v.map((x,i)=>(i?'<b>→</b>':'')+`<span>${x}</span>`).join('')+'</div>':'<table><tr>'+c.h.map(x=>`<th>${x}</th>`).join('')+'</tr>'+c.v.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')+'</table>';
@@ -387,7 +451,8 @@ if(!st.get('srr_disc_seen')){st.set('srr_disc_seen','1');$('disc').showModal()}
 </script>
 <script>
 const U={es:{t:'Biblioteca de problemas',p:'Catálogo de problemas frecuentes y poco frecuentes de obra, compilado por el autor entre 2003 y 2020 a partir de su experiencia y de experiencias conocidas de otros profesionales. No incluye soluciones: cada problema se trata aplicando el protocolo SRiRR (① a ⑨).',n:'Cómo usarla: localiza el problema → descríbelo en ① PROBLEMA → sigue el protocolo completo y las puertas de escalación.',ph:'Buscar problema…',open:'Abrir todo',close:'Cerrar todo',of:'de',it:'problemas',none:'Sin resultados.',all:'Todos',tga:{K:'CAU',C:'CON',E:'EVE'},tgl:{K:'Causa',C:'Condición',E:'Evento'},tgd:{K:'lo que origina o facilita el problema',C:'estado o situación existente',E:'hecho que ocurre'}},
-pl:{t:'Biblioteka problemów',p:'Katalog częstych i rzadkich problemów budowy, opracowany przez autora w latach 2003–2020 na podstawie własnego doświadczenia oraz doświadczeń innych profesjonalistów. Nie zawiera rozwiązań: każdy problem rozpatruje się, stosując protokół SRiRR (① do ⑨).',n:'Jak korzystać: znajdź problem → opisz go w ① PROBLEM → przejdź cały protokół i bramki eskalacji.',ph:'Szukaj problemu…',open:'Rozwiń wszystko',close:'Zwiń wszystko',of:'z',it:'problemów',none:'Brak wyników.',all:'Wszystkie',tga:{K:'PRZ',C:'STA',E:'ZDA'},tgl:{K:'Przyczyna',C:'Stan',E:'Zdarzenie'},tgd:{K:'co powoduje lub ułatwia problem',C:'istniejący stan lub sytuacja',E:'fakt, który się wydarzył'}}};
+pl:{t:'Biblioteka problemów',p:'Katalog częstych i rzadkich problemów budowy, opracowany przez autora w latach 2003–2020 na podstawie własnego doświadczenia oraz doświadczeń innych profesjonalistów. Nie zawiera rozwiązań: każdy problem rozpatruje się, stosując protokół SRiRR (① do ⑨).',n:'Jak korzystać: znajdź problem → opisz go w ① PROBLEM → przejdź cały protokół i bramki eskalacji.',ph:'Szukaj problemu…',open:'Rozwiń wszystko',close:'Zwiń wszystko',of:'z',it:'problemów',none:'Brak wyników.',all:'Wszystkie',tga:{K:'PRZ',C:'STA',E:'ZDA'},tgl:{K:'Przyczyna',C:'Stan',E:'Zdarzenie'},tgd:{K:'co powoduje lub ułatwia problem',C:'istniejący stan lub sytuacja',E:'fakt, który się wydarzył'}}
+,en:{t:'Problem library',p:'A catalogue of frequent and infrequent construction-site problems, compiled by the author between 2003 and 2020 from his own experience and from the known experiences of other professionals. It includes no solutions: each problem is handled by applying the SRR protocol (① to ⑨).',n:'How to use it: find the problem → describe it in ① PROBLEM → follow the full protocol and the escalation gates.',ph:'Search problem…',open:'Open all',close:'Close all',of:'of',it:'problems',none:'No results.',all:'All',tga:{K:'CAU',C:'CON',E:'EVE'},tgl:{K:'Cause',C:'Condition',E:'Event'},tgd:{K:'what originates or enables the problem',C:'existing state or situation',E:'a fact that occurs'}}};
 const LIB={es:`
 @Personal y recursos humanos
 #Disponibilidad
@@ -1525,7 +1590,576 @@ Odmienna interpretacja normy.||C
 Wymóg klienta niezgodny z wcześniej zatwierdzonym rozwiązaniem.||C
 Odkrycie sytuacji, której nikt nie przewidział.||E
 Pozornie prawidłowa decyzja, która powoduje problem wtórny.||K
-`};
+`,en:`
+@Personnel and human resources
+#Availability
+Lack of staff.||K
+Insufficient staff for the volume of work.||K
+Staff arriving late.||E
+Staff leaving their post.||E
+Staff not showing up.||E
+Unforeseen absences.||E
+Sick leave.||E
+Excessive turnover.||K
+Staff replaced without information handover.||K
+Key staff absent.||K
+Lack of supervisor.||K
+Lack of crew leader.||K
+Lack of qualified staff.||K
+Qualified staff assigned to another area.||K
+Staff shared between several work fronts.||K
+Oversized crews.||K
+Undersized crews.||K
+Staff waiting for instructions.
+Staff waiting for materials.
+Staff waiting for machinery.
+Staff waiting for permits.
+Staff waiting for inspection.
+Staff waiting for a technical decision.
+#Competence
+Worker without sufficient training.||K
+Worker performing a task they are not authorised for.||K
+Expired certification.
+Missing certification.
+Operator without authorisation.||K
+Electrician without the required qualification.||K
+Staff unaware of the procedure.||K
+Staff misreading a drawing.||K
+Staff unaware of the risks.||K
+New staff without induction.||K
+Foreign staff who do not correctly understand instructions.||K
+Language problems.||K
+Communication problems between crews.||K
+Information given verbally and later denied.||E
+@Fatigue and human behaviour
+!SRR does not diagnose people. It records observable facts, measures taken and evidence, especially in sensitive matters.
+#Fatigue
+Excessive working hours.||K
+Shifts that are too long.||K
+Lack of rest.||K
+Accumulated night work.||K
+Fatigue after several consecutive days.||K
+Drowsy worker.
+Reduced concentration.
+Errors caused by tiredness.||E
+#Alcohol, substances and medication
+Worker working under the influence of alcohol.
+Suspected substance use.
+Worker who shows up unfit for work.||E
+Alcohol consumption during the working day.||E
+Substance use during the working day.||E
+Medication that may affect the ability to perform certain tasks.
+#Smoking and fire risk
+Worker smoking in a prohibited area.||E
+Smoking near flammable materials.||E
+Smoking in an area with explosion risk.||E
+Incorrect use of e-cigarettes where prohibited.||E
+#Conflicts and conduct
+Fights between workers.||E
+Threats.||E
+Harassment.||E
+Aggressive behaviour.||E
+Negligent behaviour.||E
+#Safety non-compliance
+Deliberate non-compliance with procedures.||E
+Worker refusing to use PPE.||E
+Worker removing a guard or protection.||E
+Worker deliberately working unsafely.||E
+#Pressure and concealment
+Excessive pressure to finish the work.||K
+A "do it fast and fix it later" culture.||K
+Concealment of errors.||E
+Concealment of accidents.||E
+Concealment of damage.||E
+Falsification of records.||E
+@Work organisation
+Work without planning.||K
+Insufficient planning.||K
+Planning incompatible with real conditions.||K
+Incorrect sequence.||K
+Sequence changed without updating the schedule.||K
+Two crews scheduled simultaneously in the same area.
+Following work started before the previous work is finished.||E
+Work front not prepared.
+Activity scheduled without resources.||K
+Activity scheduled without material.||K
+Activity scheduled without documentation.||K
+Activity scheduled without authorisation.||K
+Activity scheduled without prior inspection.||K
+Unidentified dependency between activities.||K
+Unidentified dependency between contractors.||K
+Critical work without contingency.||K
+Urgent change of priorities.||E
+Continuous rescheduling.||K
+Optimistic planning.||K
+Unrealistic durations.||K
+Productivity lower than planned.
+Productivity higher than planned but planning not updated.
+Lack of coordination between shifts.||K
+@Interference between contractors
+Two contractors need the same space.
+Two contractors need the same crane.
+Two contractors need the same access.
+Two contractors need the same equipment.
+One contractor blocks another.||E
+One contractor works in an area needed by another.||E
+One contractor modifies work done by another.||E
+One contractor damages another's work.||E
+One contractor dismantles something installed by another.||E
+One contractor covers work that was due to be inspected.||E
+One contractor installs something before another has finished.||E
+Incompatible sequences.
+Responsibility for an interface not defined.||K
+No contractor accepts responsibility.
+Both contractors consider the other responsible.
+Dispute over work boundaries.||E
+Dispute over scope.||E
+Dispute over access.||E
+Dispute over timing.||E
+Dispute over damage.||E
+Dispute over quality.||E
+Dispute over measurements.||E
+Dispute over additional work.||E
+@Materials
+Non-existent material.
+Insufficient material.
+Wrong material.
+Incompatible material.
+Material of incorrect specification.
+Material from the wrong manufacturer.
+Material without certification.
+Material without documentation.
+Material without traceability.
+Damaged material.
+Contaminated material.
+Expired material.
+Incorrectly stored material.
+Material exposed to moisture.
+Material exposed to incorrect temperature.
+Lost material.||E
+Stolen material.||E
+Material stored too far away.
+Material blocked by another contractor.
+Material delivered late.||E
+Material delivered too early.||E
+Material delivered out of sequence.||E
+Incorrect quantity.
+Material ordered incorrectly.||K
+Material ordered too late.||K
+Material received differs from what was ordered.||E
+Material without receiving inspection.
+Material without identification.
+Material mixed with other materials.
+Material that cannot be used because of a design change.
+@Transport and logistics
+Delayed truck.||E
+Truck that cannot enter.
+Blocked access.
+Wrong vehicle.
+Unauthorised vehicle.
+Vehicle too large.
+Blocked route.
+Weather conditions prevent transport.
+Delivery at the wrong time.||K
+Uncoordinated delivery.||K
+Unloading impossible.
+Lack of space for unloading.
+Crane unavailable.
+Crane busy.
+Crane breakdown.||E
+Insufficient lifting equipment.
+Poorly prepared load.||K
+Load damaged during transport.||E
+Material unloaded in the wrong place.||E
+Material delivered in the wrong order.||E
+@Machinery and tools
+Machine breakdown.
+Tool breakdown.
+Wrong tool.
+Insufficient tools.
+Shared tool.
+Tool without inspection.
+Equipment without certificate.
+Equipment with expired certificate.
+Equipment used incorrectly.||E
+Machine unsuitable for the work.
+Lack of fuel.
+Lack of operator.
+Unqualified operator.
+Equipment occupied by another crew.
+Maintenance not carried out.||K
+Failure during operation.||E
+Spare part not available.
+@Electrical
+!See also in "Quality": Failed test.
+Lack of temporary power supply.
+Insufficient power supply.
+Overloaded temporary board.
+Incorrect protection.
+Damaged temporary cable.
+Cable without mechanical protection.
+Incorrect connection.
+Poor earthing.
+Lack of equipotential bonding.
+Incorrect circuit identification.
+Incorrectly identified cable.
+Wrong circuit.
+Wrong voltage.
+Incorrect phase sequence.
+Incorrect polarity.
+Short circuit.||E
+Protection trip.||E
+Insufficient insulation.
+Measurement result out of tolerance.
+Incompatible electrical equipment.
+Electromagnetic interference.
+Incorrect wiring.
+Cable tray full.
+Incorrect bending radius.
+Cable too short.
+Cable too long.
+Cable route blocked.
+Penetration not prepared.
+Incorrect cable gland.
+Incorrect sealing.
+Connection without adequate torque.
+Torque not recorded.
+Incorrect terminal.
+Incorrect terminal block.
+Incorrect labelling.
+Lack of test documentation.
+Test not carried out.||K
+Equipment not released for energisation.
+@Concealed works
+!Rule: before losing visibility of a piece of work, generate enough evidence to be able to reconstruct it later.
+!See also in "Documentation": Lack of "as built" record.
+Buried cable.
+Buried pipe.
+Buried earthing.
+Underground connection.
+Reinforcement covered by concrete.
+Installation inside a wall.
+Installation under paving.
+Waterproofing covered over.
+Insulation later inaccessible.
+Anchors covered.
+Weld later inaccessible.
+Connection later covered.
+Structural element later hidden.
+Work carried out without a photograph.||K
+Work carried out without measurement.||K
+Work carried out without inspection.||K
+Work covered before approval.||K
+Actual location differs from the drawing.
+Documentation does not match what was executed.
+Impossible to determine later who carried out the work.
+Impossible to prove how it was installed before it was covered.
+@Documentation
+Non-existent drawing.
+Incomplete drawing.
+Incorrect drawing.
+Obsolete drawing.
+Two different drawings for the same installation.
+Contradictory specification.
+Document without revision.
+Incorrect revision.
+Unapproved document.
+Document approved but not distributed.||K
+Document distributed in the wrong version.||K
+Verbal information not documented.||K
+RFI unanswered.
+RFI answered late.
+RFI answered ambiguously.
+One contractor's documentation contradicts another's.
+Different names for the same item.
+Different codes for the same item.
+Different dimensions.
+Different coordinates.
+Different elevations.
+Incorrect "as built".
+Missing "as built".
+Incomplete inspection record.
+Record signed by the wrong person.
+Insufficient photographic evidence.
+Photograph without location.
+Photograph without date.
+Document without traceability.
+@Quality
+!See also in "Decisions": Temporary solution accidentally becoming permanent.
+!See also in "Concealed works": Work carried out without inspection, Work covered before inspection.
+Non-conformity.
+Visible defect.
+Hidden defect.
+Work out of tolerance.
+Material out of specification.
+Incorrect installation.
+Rework.||E
+Repeated defects.||E
+Failed inspection.||E
+Failed test.||E
+Lack of quality documentation.
+Lack of certificate.
+Lack of test protocol.
+Incorrect test result.
+Rejected equipment.||E
+Temporary repair without authorisation.||K
+@Safety / HSE
+!See also in "Emergencies": Spill, Accident, Accidental energisation.
+Lack of PPE.
+Wrong PPE.
+Damaged PPE.
+PPE not used.||E
+Work at height without protection.
+Risk of falling.
+Falling objects.||E
+Working under suspended loads.
+Incorrect lifting.||E
+Unsafe excavation.
+Unprotected trench.
+Electrical hazard.
+Incorrect lockout/tagout.
+Lack of LOTO.
+Work in a confined space.
+Lack of entry permit.
+Hazardous atmosphere.
+Fire risk.
+Flammable material poorly stored.
+Welding without a permit.
+Hot work without protection.
+Emergency exit blocked.
+Fire extinguisher inaccessible.
+Insufficient signage.
+Insufficient lighting.
+Insufficient ventilation.
+Evacuation route blocked.
+Contamination.||E
+Near miss.||E
+Incident.||E
+Unsafe condition.
+Unsafe act.||E
+@Permits and authorisations
+Non-existent permit.
+Expired permit.
+Incorrect permit.
+Permit for the wrong area.
+Permit for the wrong activity.
+Work started before the permit.||E
+Permit signed by the wrong person.
+Permit conditions not met.
+Change of conditions after the permit was issued.||E
+Permit not communicated to the crew.||K
+Permit closed before completion.||E
+Work that requires an additional, unidentified authorisation.
+@Contracts and scope
+!See also in "Interference between contractors": Dispute over measurement, Dispute over quality, Dispute over timing.
+Work outside scope.
+Work included but considered additional.
+Additional work requested verbally.||K
+Change without a formal order.||K
+Dispute over responsibility.||E
+Dispute over quantities.||E
+Contractor claiming additional cost.||E
+Contractor rejecting an instruction.||E
+Subcontractor whose contract is not available to the execution team.||K
+Responsibility limits unknown.||K
+Contractual interfaces not defined.||K
+One contractor's obligations unknown to another.||K
+Work done without contractual authorisation.||K
+@Costs and progress
+Physical progress incorrectly declared.
+Documentary progress differs from physical.
+Invoicing above actual progress.
+Incorrect measurement.
+Incorrect quantity executed.
+Incorrect quantity certified.
+Work paid but not finished.
+Material invoiced but not installed.
+Material stored but incorrectly invoiced.
+Double counting.||E
+Undocumented additional work.
+Unidentified rework.
+Cost caused by another contractor.||E
+Cost caused by a client change.||E
+Cost caused by delay.||E
+Cost caused by interference.||E
+@Planning and delays
+Material delay.||E
+Design delay.||E
+Approval delay.||E
+Inspection delay.||E
+Subcontractor delay.||E
+Delay due to lack of staff.||E
+Delay due to machinery.||E
+Delay due to weather.||E
+Delay due to safety.||E
+Delay due to change.||E
+Delay due to information.||E
+Delay due to another contractor.||E
+Delay due to client decision.||E
+Delay due to defect.||E
+Delay due to rework.||E
+Delay due to documentation.||E
+Cumulative delay.||E
+Delay in an activity that blocks several following ones.||E
+@Technical interface between disciplines
+Electrical vs structure.
+Electrical vs HVAC.
+Electrical vs plumbing.
+Electrical vs fire protection.
+Electrical vs architecture.
+Cable tray occupying space needed for pipes.
+Pipe occupying tray space.
+Installation passing through structure.
+Installation incompatible with door.
+Equipment incompatible with available space.
+Non-existent penetration.
+Penetration in the wrong location.
+Insufficient provision.
+Actual dimensions differ from the model.
+BIM differs from reality.
+Electrical design incompatible with mechanical installation.||K
+Installation sequence incompatible between disciplines.||K
+@Physical site conditions
+!See also in "Problems with existing installations": Unknown existing installation, Undocumented existing cable, Undocumented existing pipe.
+Insufficient space.
+Difficult access.
+No access.
+Insufficient height.
+Unforeseen obstacle.
+Different ground condition.
+Groundwater.
+Unstable ground.
+Water table.
+Unknown existing structure.
+Asbestos or other hazardous material discovered.
+Ground contamination.
+Conditions different from those foreseen in the design.
+@Weather and external factors
+!See also in "Emergencies": Flood.
+Rain.
+Snow.
+Ice.
+Wind.
+Extreme temperature.
+Storm.
+Heat wave.
+Conditions that prevent lifting.
+Conditions that prevent work at height.
+Conditions that affect materials.
+Conditions that affect concreting.
+Conditions that affect excavation.
+Conditions that affect transport.
+@Communication
+!See also in "Personnel and human resources": Language.
+Verbal instruction.||K
+Contradictory instruction.||K
+Information not passed on.||K
+Information passed on too late.||K
+Incorrect translation.||K
+Meeting without minutes.||K
+Minutes not distributed.||K
+Unknown person responsible.
+Decision without a person responsible.
+Person responsible without authority.
+Information sent to the wrong person.||K
+Night crew without information from the previous shift.||K
+Change communicated to one contractor but not the others.||K
+@Decisions
+Nobody makes the decision.||K
+Delayed decision.||E
+Decision made without sufficient information.||K
+Decision made without consulting the person responsible.||K
+Technical decision without authorisation.||K
+Two managers give different instructions.||K
+Verbal decision not documented.||K
+Provisional decision not closed.
+Temporary solution that becomes permanent.||K
+Problem escalated too late.||E
+Problem escalated unnecessarily.||E
+Nobody knows who has the authority to decide.
+@Changes
+Design change.||K
+Material change.||K
+Manufacturer change.||K
+Route change.||K
+Sequence change.||K
+Scope change.||K
+Change requested by the client.||K
+Change requested by the contractor.||K
+Change caused by an interference.||K
+Change caused by actual conditions.||K
+Change not reflected in the drawings.
+Change executed without approval.||E
+Change approved but not communicated.||K
+Change that affects other contractors.||E
+Change that generates rework.||E
+@Information problems
+Non-existent information.
+Incomplete information.
+Contradictory information.
+Obsolete information.
+Inaccessible information.
+Information in another language.
+Information difficult to interpret.
+Information partially distributed.
+Information without a person responsible.
+Information without a date.
+Information without revision.
+Information without traceability.
+@Problems with existing installations
+!See also in "Electrical": Incorrect labelling.
+Unknown existing cable.
+Unknown existing pipe.
+Undocumented existing circuit.
+Existing equipment differs from the drawing.
+Existing installation previously modified.
+Energised installation that should be isolated.
+Existing service that cannot be shut down.
+Interface with old installation.
+Incorrect historical documentation.
+Risk of damaging existing infrastructure.
+@Emergencies
+!See also in "Transport and logistics": Access blockage.
+Power cut.||E
+Fire.||E
+Flood.||E
+Spill.||E
+Accident.||E
+Injury.||E
+Evacuation.||E
+Critical equipment failure.||E
+Structural damage.||E
+Pipe burst.||E
+Leak.||E
+Accidental energisation.||E
+Loss of communication.||E
+Extreme weather event.||E
+@"Unusual" but possible problems
+Material disappears from the store.||E
+Equipment disappears.||E
+Unauthorised person enters a restricted area.||E
+Person uses another person's ID.||E
+Contractor suddenly abandons the project.||E
+Subcontractor becomes insolvent.||E
+Supplier stops supplying a component.||E
+Manufacturer stops producing an item of equipment.||E
+Installed equipment later turns out to be obsolete.
+Certificate turns out to be invalid.
+Document turns out to be forged.
+Material delivered with documentation belonging to another batch.||E
+Equipment arrives with a different serial number.||E
+Manufacturer drawing contradicts project drawing.
+Incompatible programming software.
+Corrupt project file.
+Data loss.||E
+Loss of historical documentation.||E
+Change of regulations during the project.||E
+Different interpretation of a standard.
+Client requirement incompatible with a previously approved solution.
+Discovery of a condition that nobody had foreseen.||E
+Apparently correct decision that creates a secondary problem.||K
+`
+};
 const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 let tagF='';
 function parse(t){const cs=[];let c,g;t.split('\n').forEach(l=>{l=l.trim();if(!l)return;const k=l[0],v=l.slice(1);
@@ -1534,7 +2168,7 @@ function parse(t){const cs=[];let c,g;t.split('\n').forEach(l=>{l=l.trim();if(!l
  else if(k=='!'){c.n.push(v)}
  else{if(!g){g={h:'',i:[]};c.g.push(g)}const p=l.split('||');g.i.push({x:p[0],t:p[1]||'C'});c.k++}});return cs}
 function renderLib(){
- const u=U[lang],q=norm($('q').value.trim()),cs=parse(LIB[lang]),
+ const u=U[lang],q=norm($('q').value.trim()),cs=parse(LIB[lang]||LIB.es),
   was=[...document.querySelectorAll('#libAcc details[open]')].map(x=>x.id),act=q||tagF;
  $('libT').textContent=u.t;$('libP').textContent=u.p;$('libN').textContent=u.n;$('q').placeholder=u.ph;
  $('lopen').textContent=u.open;$('lclose').textContent=u.close;
@@ -1587,7 +2221,23 @@ pl:{anch:[['protocolo','Protokół'],['escalacion','Eskalacja'],['semaforo','Sem
  ['Zaplecze firmy','',[['Dział zakupów','Brakujący, błędny lub opóźniony materiał; dostawcy i zamówienia.'],['Dział projektowy','Sprzeczne rysunki, RFI, zmiany projektowe, interfejsy między branżami.'],['Dział prawny','Umowy, zakres, polecenia zmian, roszczenia, naruszenia.'],['Prawnicy','Poważne spory, odpowiedzialność prawna, ciężkie wypadki, wezwania organów.']]],
  ['Strona Klienta / Inwestora','cli',[['Inwestor / Klient','Zmiany zakresu, zatwierdzenia, dodatkowe koszty, decyzje umowne.'],['Przedstawiciel Klienta / zarządzający kontraktem','Formalne polecenia, polecenia zmian, spory o zakres.'],['Inspektor nadzoru inwestorskiego','Zatwierdzanie i kontrola robót, zamykanie niezgodności, odbiór.'],['Projektant','Zmiana projektu, rozwiązania konstrukcyjne, interpretacja rysunków.'],['Dział jakości Klienta','Kryteria akceptacji, audyty, niezgodności.'],['BHP Klienta','Zezwolenia na pracę w jego obiektach, incydenty, zasady obowiązujące na terenie.'],['Eksploatacja / utrzymanie ruchu Klienta','Istniejące instalacje, wyłączenie lub odizolowanie mediów, załączanie napięcia.'],['Komisja odbioru','Odbiór końcowy i dokumentacja przekazania.']]],
  ['Organy zewnętrzne','aut',[['Państwowa Inspekcja Pracy','Kontrole warunków pracy, wypadki przy pracy, czas pracy i odpoczynek.'],['Inspektor bezpieczeństwa','Kontrole bezpieczeństwa i higieny pracy na budowie.'],['Państwowe komisje kontroli i inspekcji','Oficjalne kontrole, wezwania i odbiory przez organy.'],['Policja','Kradzieże, agresja, groźby, osoby nieupoważnione, zdarzenia o możliwym charakterze przestępczym.'],['Straż Graniczna','Kontrole legalności pobytu i pracy cudzoziemców.']]]],
- fiT:'Karta rejestracji przypadku',fiP:'Wypełnij na ekranie lub wydrukuj (A4). Dane nie są zapisywane po zamknięciu strony.',fiS:'Formularz przypadku (sekcje 1–9)',print:'Drukuj kartę',clear:'Wyczyść'}};
+ fiT:'Karta rejestracji przypadku',fiP:'Wypełnij na ekranie lub wydrukuj (A4). Dane nie są zapisywane po zamknięciu strony.',fiS:'Formularz przypadku (sekcje 1–9)',print:'Drukuj kartę',clear:'Wyczyść'}
+,en:{anch:[['protocolo','Protocol'],['escalacion','Escalation'],['semaforo','Traffic light'],['roles','Roles'],['ficha','Case form'],['biblioteca','Library']],
+ p0t:'STEP 0 · IS THERE DANGER NOW?',p0q:'Is there an immediate risk to people, the structure or the installation? Answer this before anything else.',
+ yes:'YES',yesA:['secure','stop the affected activity','protect people','notify the competent person in charge'],yesN:'The protocol is not followed as normal. I secure + document + escalate (RED).',
+ no:'NO',noA:'Continue with ① PROBLEM. Each phase has its key question below: tap one to see the detail.',
+ tiles:['What happened, where, when and who is involved?','Is it a fact or an interpretation?','Does it affect safety, quality, schedule, cost or organisation?','Do I have information, authority and clear limits?','Which alternative is safe and feasible?','What else can we do? Remove the stoppage.','Who does what, where, when and with what?','Is it clear what happened and why it was decided?','Closed or escalated?'],
+ escH:'YOU ESCALATE if any one appears',gates:['Safety','Authority','Technical competence','Impact','Contractual dispute','No feasible solution'],
+ semH:'TRAFFIC LIGHT',sem:[['#22c55e','Green','I act: decide, execute, document.'],['#facc15','Yellow','I act partially and consult.'],['#ef4444','Red','I secure, document and escalate.']],
+ rT:'Roles and escalation map',rP:'Who is who and when to turn to each. Usual escalation route:',
+ route:['Worker','Foreman','Site engineer','Site manager','Investor / Client'],
+ groups:[['Execution team','',[['Worker','Detects and reports the problem. Informs the foreman immediately and stops work if there is immediate danger.'],['Foreman / crew leader','Reorganisation within the crew; lack of people, tools or an immediate work front.'],['Subcontractor (responsible person)','Scope, resources and deadlines of the contract; interface with other contractors.']]],
+ ['Site technical management','',[['Site engineer','Technical doubts on execution, drawings, sequence and daily coordination.'],['Construction engineer','Construction solutions, interfaces between disciplines, deviations from the design.'],['Works manager of the discipline (kierownik robót)','Decisions in their discipline, e.g. electrical installations: staff, sequence and quality of the works.'],['Site manager (kierownik budowy)','Impact on schedule, cost or critical path; serious risk; conflicts between contractors; decisions beyond your authority.']]],
+ ['Quality, control and safety','',[['Quality engineer','Non-conformities, failed tests, concealed works before covering.'],['Safety officer (HSE)','Unsafe conditions, incidents, work permits.'],['Inspection and works-control commissions','Scheduled inspections, partial acceptances, verification of works.']]],
+ ['Company support','',[['Purchasing department','Missing, incorrect or delayed material; suppliers and orders.'],['Design department','Contradictory drawings, RFIs, design changes, interfaces between disciplines.'],['Legal department','Contracts, scope, change orders, claims, breaches.'],['Lawyers','Serious disputes, legal liability, serious accidents, requests from authorities.']]],
+ ['Client / investor side','cli',[['Investor / Client','Scope changes, approvals, additional costs, contractual decisions.'],['Client representative / contract manager','Formal instructions, change orders, scope disputes.'],['Investor supervision (inspektor nadzoru inwestorskiego)','Approval and inspection of works, closing non-conformities, acceptance (odbiór).'],['Designer (projektant)','Design modification, structural solutions, interpretation of drawings.'],['Client quality','Acceptance criteria, audits, non-conformities.'],['Client safety (HSE)','Work permits on their premises, incidents, site rules.'],['Client operations / maintenance','Existing installations, shutdown or isolation of services, energisation.'],['Acceptance commission','Final acceptance and handover documentation.']]],
+ ['External authorities','aut',[['Labour Inspectorate (Państwowa Inspekcja Pracy)','Inspections of working conditions, workplace accidents, working hours and rest.'],['Safety inspector','Health and safety inspections on site.'],['Government control and inspection commissions','Official inspections, requests and acceptances by the authorities.'],['Police (Policja)','Theft, assault, threats, unauthorised persons, events of possible criminal nature.'],['Border Guard (Straż Graniczna)','Checks on the legality of foreigners\' stay and work.']]]],
+ fiT:'Case registration form',fiP:'Fill it in on screen or print it (A4). Data is not saved when the page is closed.',fiS:'Case form (sections 1 to 9)',print:'Print form',clear:'Clear'}};
 const FI={
 es:[['1. Identificación',[['i','Nº de caso'],['i','Fecha y hora'],['i','Ubicación / zona / frente'],['i','Registrado por'],['i','Participantes']]],
 ['① Problema',[['a','¿Qué ha ocurrido?'],['i','Actividad afectada'],['i','Personas implicadas'],['c','Tipo de problema',['técnico','logístico','contractual','organizativo','de seguridad']],['i','Referencia en la biblioteca (categoría)']]],
@@ -1606,7 +2256,16 @@ pl:[['1. Identyfikacja',[['i','Nr przypadku'],['i','Data i godzina'],['i','Lokal
 ['Semafor i eskalacja',[['r','Semafor',['Zielony — działam','Żółty — działam częściowo i konsultuję','Czerwony — eskaluję natychmiast']],['c','Aktywne bramki eskalacji',['Bezpieczeństwo','Uprawnienia','Kompetencje techniczne','Wpływ','Spór umowny','Brak wykonalnego rozwiązania']],['i','Eskalowano do (imię i rola)'],['i','Data i godzina eskalacji'],['i','Zatwierdził (imię i rola)'],['i','Data zatwierdzenia']]],
 ['⑥ Reorganizacja · ⑦ Wykonanie',[['a','Zastosowana reorganizacja (alternatywne fronty, przeniesiona brygada…)'],['a','Kto co robi, gdzie i kiedy'],['a','Zasoby i warunki do spełnienia']]],
 ['⑧ Dokumentacja',[['c','Dowody',['zdjęcia','filmy','pomiary','zaznaczone rysunki','komunikacja','protokoły i decyzje','zatwierdzenia']],['i','Lokalizacja plików / odniesienia']]],
-['⑨ Monitorowanie',[['r','Czy problem rozwiązany?',['Tak','Nie','Częściowo']],['r','Czy rozwiązanie tymczasowe nadal jest ważne?',['Tak','Nie','Nie dotyczy']],['a','Nowe skutki lub dotknięte roboty'],['i','Data przeglądu'],['r','Wynik',['CLOSED','ESCALATE / REOPEN']],['i','Podpis i data']]]]};
+['⑨ Monitorowanie',[['r','Czy problem rozwiązany?',['Tak','Nie','Częściowo']],['r','Czy rozwiązanie tymczasowe nadal jest ważne?',['Tak','Nie','Nie dotyczy']],['a','Nowe skutki lub dotknięte roboty'],['i','Data przeglądu'],['r','Wynik',['CLOSED','ESCALATE / REOPEN']],['i','Podpis i data']]]]
+,en:[['1. Identification',[['i','Case no.'],['i','Date and time'],['i','Location / zone / work front'],['i','Recorded by'],['i','Participants']]],
+['① Problem',[['a','What happened?'],['i','Affected activity'],['i','People involved'],['c','Type of problem',['technical','logistical','contractual','organisational','safety']],['i','Library reference (category)']]],
+['② Verification',[['b','Verified facts'],['b','Unverified interpretations or statements'],['c','Checked against',['drawings','specifications','measurements','photographs','documentation','subcontractor','condition of materials and equipment']]]],
+['③ Impact',[['c','Affects',['Safety','Quality','Schedule','Cost','Organisation']],['a','Impact details'],['a','Future consequences: does today\'s solution create a problem tomorrow?']]],
+['Step 0 · ④ Analysis · ⑤ Decision',[['r','Step 0: immediate danger?',['Yes','No']],['i','A — original solution'],['i','B — alternative solution'],['i','C — work reorganisation'],['i','D — temporary solution'],['a','Decision taken and reason'],['r','Solution',['Temporary','Final']],['r','Reversible?',['Yes','No']],['i','In force / review until']]],
+['Traffic light and escalation',[['r','Traffic light',['Green — I act','Yellow — I act partially and consult','Red — I escalate immediately']],['c','Escalation gates triggered',['Safety','Authority','Technical competence','Impact','Contractual dispute','No feasible solution']],['i','Escalated to (name and role)'],['i','Date and time of escalation'],['i','Authorised by (name and role)'],['i','Date of authorisation']]],
+['⑥ Reorganisation · ⑦ Execution',[['a','Reorganisation applied (alternative fronts, crew moved…)'],['a','Who does what, where and when'],['a','Resources and conditions to be met']]],
+['⑧ Documentation',[['c','Evidence',['photographs','videos','measurements','marked-up drawings','communications','minutes and decisions','authorisations']],['i','File location / references']]],
+['⑨ Follow-up',[['r','Problem solved?',['Yes','No','Partially']],['r','Is the temporary solution still valid?',['Yes','No','Not applicable']],['a','New consequences or affected works'],['i','Review date'],['r','Result',['CLOSED','ESCALATE / REOPEN']],['i','Signature and date']]]]};
 const fl=a=>a.map((x,i)=>(i?'<b>→</b>':'')+`<span>${x}</span>`).join('');
 function fld(f,k){const[t,l,o]=f;
  if(t=='i')return `<label class="f"><span>${l}</span><input type="text"></label>`;
