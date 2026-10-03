@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SRR — Sistema de Reacción y Reorganización de Obra</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c1016;--p:#131921;--p2:#1a222d;--ln:#283341;--tx:#d9e0e8;--mu:#8a97a8;--ac:#38bdf8;--g:#22c55e;--y:#facc15;--r:#ef4444;
+--hd:'Barlow Condensed','Arial Narrow',sans-serif;--bd:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif}
+*{box-sizing:border-box;margin:0}
+html{font-size:clamp(14px,.5vw + 9px,30px);scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:var(--bd);line-height:1.5;min-height:100vh;
+background-image:linear-gradient(rgba(56,189,248,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.045) 1px,transparent 1px);background-size:2.2rem 2.2rem}
+main{width:min(100%,110rem);margin:0 auto;padding:clamp(1rem,2.5vw,3rem)}
+h1,h2,h3{font-family:var(--hd);font-weight:600;line-height:1.1}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:1.6rem}
+header{border-left:.35rem solid var(--ac);padding:.2rem 0 .2rem 1.2rem;flex:1;min-width:18rem}
+h1{font-size:clamp(1.9rem,3.8vw,3.8rem);letter-spacing:.01em}
+header p{color:var(--mu);margin-top:.4rem}
+.tools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.btn{font:600 .85rem var(--bd);background:transparent;color:var(--ac);border:1px solid var(--ac);padding:.4rem .9rem;cursor:pointer;transition:.15s}
+.btn:hover,.btn:focus-visible,.btn.on{background:var(--ac);color:#04121a;outline:none}
+.lang{display:flex}.lang .btn+.btn{border-left:0}
+.chain{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.6rem}
+.chain button{font:600 .85rem var(--hd);letter-spacing:.04em;background:var(--p);color:var(--tx);border:1px solid var(--ln);padding:.35rem .7rem;cursor:pointer;transition:.15s}
+.chain button:hover,.chain button:focus-visible{border-color:var(--ac);color:var(--ac);outline:none}
+.chain i{font-style:normal;color:var(--ac);margin-right:.4rem}
+.tx{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.8rem;margin-bottom:1.6rem}
+.tx div{background:var(--p);border:1px solid var(--ln);border-top:.2rem solid var(--ac);padding:.9rem 1rem}
+.tx h3{font-size:1.25rem;color:var(--ac)}
+.tx p{font-size:.95rem}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:.7rem;flex-wrap:wrap}
+.bar h2{font-size:1.5rem;color:var(--mu);font-weight:500;letter-spacing:.05em}
+.bar .btn{margin-left:.4rem}
+details{background:var(--p);border:1px solid var(--ln);border-left:.3rem solid var(--ln);margin-bottom:.55rem;transition:border-color .2s}
+details[open]{border-left-color:var(--ac);background:var(--p2)}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:1rem;padding:.9rem 1.1rem}
+summary::-webkit-details-marker{display:none}
+summary:focus-visible{outline:2px solid var(--ac);outline-offset:-2px}
+summary:hover{background:rgba(56,189,248,.06)}
+.num{font:700 1.6rem var(--hd);color:var(--ac);min-width:2.2rem}
+summary h3{font-size:clamp(1.25rem,1.9vw,1.9rem);flex:1;letter-spacing:.01em}
+summary h3 small{font:400 .9rem var(--bd);color:var(--mu);margin-left:.8rem;letter-spacing:0}
+summary::after{content:"+";font:500 1.8rem var(--hd);color:var(--ac);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+.body{padding:.4rem 1.2rem 1.3rem 4.4rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(19rem,1fr));gap:1.1rem;animation:o .25s ease}
+@keyframes o{from{opacity:0;transform:translateY(-.4rem)}to{opacity:1;transform:none}}
+.blk{background:rgba(0,0,0,.22);border:1px solid var(--ln);padding:.9rem 1rem}
+.blk.wide{grid-column:1/-1}
+.blk h4{font:600 1.15rem var(--hd);color:var(--ac);margin-bottom:.45rem;letter-spacing:.03em}
+.blk p{font-size:.95rem;margin-bottom:.4rem}
+ul{list-style:none;padding:0}
+.blk li{position:relative;padding:.14rem 0 .14rem 1.1rem;font-size:.95rem}
+.blk li::before{content:"";position:absolute;left:0;top:.8em;width:.5rem;height:2px;background:var(--ac)}
+.flow{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center}
+.flow span{background:var(--bg);border:1px solid var(--ln);padding:.25rem .6rem;font-size:.9rem}
+.flow b{color:var(--ac)}
+.note{border-left:.25rem solid var(--y);background:rgba(250,204,21,.07);padding:.6rem .9rem;font-size:.93rem}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+td,th{border:1px solid var(--ln);padding:.4rem .6rem;text-align:left}
+th{background:var(--bg);color:var(--ac);font-family:var(--hd);font-size:1.05rem}
+td:first-child{font-weight:600;white-space:nowrap}
+.sec{margin-top:2.6rem}
+.sec>h2{font-size:clamp(1.7rem,3vw,2.8rem);border-bottom:2px solid var(--ln);padding-bottom:.4rem;margin-bottom:.4rem}
+.sec>h2 em{font-style:normal;color:var(--r)}
+.sec>p{color:var(--mu);margin-bottom:1rem}
+.gates{display:grid;grid-template-columns:repeat(auto-fit,minmax(22rem,1fr));gap:.9rem}
+.gate{background:var(--p);border:1px solid var(--ln);border-top:.25rem solid var(--r);padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.5rem}
+.gate h3{font-size:1.5rem}
+.gate h3 i{font-style:normal;color:var(--r);margin-right:.5rem}
+.gate .c{font-size:.95rem}
+.gate ul{font-size:.9rem;color:var(--mu)}
+.gate li::before{content:"› ";color:var(--r)}
+.gate .a{margin-top:auto;border-top:1px dashed var(--ln);padding-top:.5rem;font-size:.92rem;font-weight:600}
+.gate.last{border-top-color:var(--tx);grid-column:1/-1}
+.sem{display:grid;grid-template-columns:repeat(auto-fit,minmax(24rem,1fr));gap:.9rem}
+.lt{background:var(--p);border:1px solid var(--ln);border-top:.45rem solid var(--c);padding:1rem 1.2rem}
+.lt h3{font-size:1.8rem;color:var(--c);display:flex;align-items:center;gap:.6rem}
+.lt h3::before{content:"";width:1rem;height:1rem;border-radius:50%;background:var(--c);box-shadow:0 0 .8rem var(--c)}
+.lt .w{color:var(--mu);font-size:.85rem;margin:.5rem 0 .2rem}
+.lt ul{font-size:.93rem}
+.lt li{padding:.1rem 0 .1rem 1rem;position:relative}
+.lt li::before{content:"";position:absolute;left:0;top:.75em;width:.4rem;height:.4rem;background:var(--c)}
+.lt .do{margin-top:.8rem;padding:.55rem .8rem;background:rgba(0,0,0,.3);border:1px solid var(--c);font-weight:600;font-size:.95rem}
+footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--ln);color:var(--mu);font-size:.85rem;text-align:center;display:flex;flex-direction:column;gap:.5rem;align-items:center}
+footer b{color:var(--tx);font-weight:500}
+footer .lnk{background:none;border:0;color:var(--ac);cursor:pointer;font:inherit;text-decoration:underline}
+dialog{background:var(--p2);color:var(--tx);border:1px solid var(--ac);border-top:.35rem solid var(--ac);padding:0;width:min(92vw,52rem);max-height:88vh;margin:auto;overflow:hidden;flex-direction:column}
+dialog[open]{display:flex;animation:o .25s ease}
+dialog::backdrop{background:rgba(3,6,10,.78);backdrop-filter:blur(3px)}
+dialog h2{font-size:1.8rem;padding:1.1rem 1.5rem .5rem}
+dialog .dc{padding:.3rem 1.5rem 1rem;overflow:auto}
+dialog .dc p{margin-bottom:.8rem;font-size:.97rem}
+dialog .df{padding:.9rem 1.5rem;border-top:1px solid var(--ln);text-align:right}
+@media(max-width:700px){.body{padding:.3rem .8rem 1rem}summary{padding:.8rem}.gate.last{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{details .body{display:grid}body{background:#fff}dialog{display:none!important}}
+</style>
+</head>
+<body>
+<main>
+<div class="top">
+<header>
+<h1 id="h1"></h1>
+<p id="sub"></p>
+</header>
+<div class="tools">
+<button class="btn" id="scopeBtn"></button>
+<div class="lang"><button class="btn" data-l="es">ES</button><button class="btn" data-l="pl">PL</button></div>
+</div>
+</div>
+
+<nav class="chain" id="chain"></nav>
+<section class="tx" id="tx"></section>
+
+<div class="bar"><h2 id="phT"></h2><span><button class="btn" id="open"></button><button class="btn" id="close"></button></span></div>
+<div id="acc"></div>
+
+<section class="sec" id="escalacion"><h2 id="escT"></h2><p id="escP"></p><div class="gates" id="gates"></div></section>
+<section class="sec" id="semaforo"><h2 id="semT"></h2><p id="semP"></p><div class="sem" id="sem"></div></section>
+
+<footer>
+<div id="chainF"></div>
+<b>Protocol prepared by Erinson Villarroel, Industrial Electrical Engineer.</b>
+<button class="lnk" id="discLnk"></button>
+</footer>
+</main>
+
+<dialog id="disc" aria-labelledby="discT"><h2 id="discT">Disclaimer</h2><div class="dc" id="discB"></div><div class="df"><button class="btn on" data-close></button></div></dialog>
+<dialog id="scope" aria-labelledby="scopeT"><h2 id="scopeT"></h2><div class="dc" id="scopeB"></div><div class="df"><button class="btn on" data-close></button></div></dialog>
+
+<script>
+const L=a=>({t:'ul',v:a}),P=s=>({t:'p',v:s}),F=a=>({t:'flow',v:a}),N=s=>({t:'note',v:s}),W=1;
+const D={
+es:{
+ h1:'SRR — Sistema de Reacción y Reorganización de Obra',
+ sub:'Marco personal de análisis y toma de decisiones ante situaciones imprevistas',
+ scopeBtn:'Aviso de alcance',discLnk:'Ver disclaimer',ok:'Entendido',
+ tx:[['Seguridad','¿Es seguro actuar?'],['Autoridad','¿Estoy autorizado para decidirlo?'],['Viabilidad','¿Tenemos tiempo y recursos?'],['Futuro','¿La solución de hoy genera un problema mañana?']],
+ ph:'Fases del protocolo',open:'Abrir todo',close:'Cerrar todo',
+ esc:'Protocolo de <em>escalación</em>',escP:'Se escala cuando aparece <b>cualquiera</b> de estas seis puertas. No hace falta que se cumplan todas.',
+ sem:'Semáforo de decisión',semP:'Los tres niveles resumen el protocolo completo.',
+ disc:['<b>Este proyecto representa un método personal de organización y análisis ante imprevistos en obra.</b> No es un procedimiento oficial ni sustituye normativa, proyecto, procedimientos de empresa, instrucciones de responsables, autorizaciones profesionales o requisitos legales, ya sean de la normativa oficial polaca o de la Unión Europea.','Su propósito es estructurar la reacción ante problemas mediante una secuencia de verificación → evaluación del impacto → análisis → decisión → reorganización → documentación → seguimiento, manteniendo las decisiones dentro de los límites de seguridad, competencia y autoridad correspondientes.','No se pretende eliminar la improvisación propia de una obra, sino evitar que un imprevisto derive en una decisión improvisada y no controlada.'],
+ scopeT:'Aviso de alcance y carácter no oficial',
+ scopeP:['Este documento es una propuesta personal de carácter orientativo y no constituye un procedimiento oficial de obra, una norma técnica, un procedimiento de seguridad, una instrucción de trabajo ni una guía para la dirección, ejecución, supervisión o firma de obras.','Su finalidad es exclusivamente presentar un método personal de organización y análisis ante situaciones imprevistas en un entorno de obra, con el objetivo de evitar decisiones impulsivas y estructurar la respuesta mediante la verificación del problema, evaluación de su impacto, análisis de alternativas, reorganización del trabajo, documentación y seguimiento.','Este sistema no sustituye la legislación aplicable, los proyectos y especificaciones técnicas, los procedimientos internos de la empresa, las instrucciones de los responsables de obra, las decisiones del diseñador/proyectista, las autorizaciones requeridas, las normas de seguridad y salud ni cualquier otra documentación o procedimiento obligatorio.','No pretende establecer qué solución técnica debe ejecutarse ante un problema concreto, ni atribuye al usuario autoridad para aprobar modificaciones, trabajos adicionales, cambios de proyecto, soluciones estructurales o cualquier otra actuación que requiera autorización profesional, contractual o legal.','Ante situaciones que excedan las competencias, autoridad, información disponible o capacidad de decisión de la persona que aplica este método, la actuación debe ser escalada al responsable competente.','En consecuencia, este documento debe entenderse como un marco personal de razonamiento y organización, no como un procedimiento técnico o legal para ejecutar una obra.'],
+ S:[
+ ['①','PROBLEMA','¿Qué ha ocurrido?',[
+  ['Preguntas',0,[L(['¿Qué ha ocurrido?','¿Dónde?','¿Cuándo?','¿Qué actividad está afectada?','¿Quién está implicado?'])]],
+  ['Clasificación',0,[P('¿Es un problema…?'),L(['técnico','logístico','contractual','organizativo','de seguridad'])]],
+  ['Regla',0,[N('Describe hechos, no culpables. Aún no se decide nada: solo se identifica el problema.')]]]],
+ ['②','VERIFICACIÓN','¿El problema realmente es lo que parece?',[
+  ['Principio',0,[P('No se toman decisiones basándose únicamente en lo que dice una persona.')]],
+  ['Compruebo',0,[L(['estado real de la obra','planos','especificaciones','medidas','fotografías','documentación disponible','información del subcontratista','estado de materiales y equipos','responsables involucrados'])]],
+  ['Objetivo',0,[P('Separar el hecho de la interpretación del hecho.'),N('Ejemplo: el subcontratista dice «No podemos trabajar porque el otro equipo no terminó». Se comprueba qué parte falta exactamente: puede que solo falten 3 m y el 80 % del frente esté disponible. No hay una obra parada: hay un frente parcialmente bloqueado.')]]]],
+ ['③','IMPACTO','¿Qué está afectando realmente?',[
+  ['1. Seguridad',0,[L(['¿Hay peligro para personas?','¿Hay riesgo para estructura o materiales?','¿Puede producirse un accidente?','¿Hay que asegurar o detener una actividad de inmediato?'])]],
+  ['2. Calidad',0,[L(['¿Puede generar una no conformidad?','¿Puede provocar retrabajo?','¿Puede afectar a trabajos posteriores?'])]],
+  ['3. Plazo',0,[L(['¿Cuánto tiempo puede perderse?','¿Afecta a la ruta crítica?','¿Bloquea otras cuadrillas?'])]],
+  ['4. Coste',0,[L(['horas improductivas','maquinaria parada','material desperdiciado','trabajos adicionales','posibles reclamaciones'])]],
+  ['5. Organización',0,[L(['¿Cuántas personas quedan bloqueadas?','¿Qué otros equipos dependen de esta actividad?','¿Se puede trasladar la brigada?'])]],
+  ['6. Consecuencias futuras',0,[P('Parte clave del método:'),N('¿La solución de hoy puede crear un problema mañana?')]]]],
+ ['④','ANÁLISIS','¿Qué puedo hacer y con qué límites?',[
+  ['A. Seguridad inmediata',0,[P('¿Existe un riesgo inmediato? Si es así:'),F(['asegurar','detener la actividad afectada','proteger a las personas','avisar al responsable competente']),N('Mientras exista peligro inmediato no se continúa el protocolo con normalidad.')]],
+  ['B. Documentación técnica',0,[L(['proyecto','planos','especificaciones','instrucciones','protocolos','documentación del fabricante','revisiones existentes']),N('¿Tengo información suficiente para decidir de forma técnicamente segura? Si no, ya hay criterio de escalación.')]],
+  ['C. Autorizaciones',0,[P('¿Tengo autoridad para decidir esto? Reorganizar una cuadrilla no es lo mismo que modificar una solución estructural.'),N('No confundir capacidad técnica para proponer con autoridad para aprobar.')]],
+  ['D. Consecuencias a largo plazo',0,[L(['¿afecta a trabajos posteriores?','¿afecta a instalaciones?','¿afecta a acabados?','¿afecta a inspecciones?','¿afecta a la recepción de obra (odbiór)?','¿afecta a la documentación final?','¿puede crear un problema en mantenimiento?','¿la solución es reversible?'])]],
+  ['E. Temporal o permanente',0,[P('Pregunta obligatoria: ¿la solución es temporal o definitiva?'),L(['¿cuánto tiempo?','¿hasta qué condición?','¿quién ejecuta la solución definitiva?','¿qué ocurre si dura más de lo previsto?'])]],
+  ['F. Reversible o irreversible',0,[P('¿Puedo volver con seguridad a la solución original?'),N('Cuanto más irreversible la intervención, más prudente debe ser la decisión.')]]]],
+ ['⑤','DECISIÓN','¿Existe una solución viable?',[
+  ['Alternativas',0,[L(['A — solución original','B — solución alternativa','C — reorganización del trabajo','D — solución temporal']),P('Cada alternativa se evalúa contra todos los criterios y después se elige.')]],
+  ['Criterios de evaluación',W,[{t:'tbl',h:['Criterio','Pregunta'],v:[['Seguridad','¿Es segura?'],['Técnica','¿Es técnicamente viable?'],['Documentación','¿Está respaldada?'],['Autorización','¿Tengo autoridad?'],['Tiempo','¿Permite mantener el programa?'],['Recursos','¿Tenemos personal, material y equipos?'],['Calidad','¿Cumple los requisitos?'],['Futuro','¿Genera problemas posteriores?'],['Reversibilidad','¿Podemos volver atrás?']]}]]]],
+ ['⑥','REORGANIZACIÓN','¿Cómo evito que un problema se convierta en una parada?',[
+  ['Pregunta clave',0,[P('Antes de decir «la actividad está bloqueada», preguntar:'),N('¿Qué otra cosa podemos hacer?')]],
+  ['Ejemplo: no llega el material de fachada',W,[P('Reacción débil: esperamos el material.'),P('Reacción correcta:'),F(['verificar plazo de entrega','determinar el impacto','revisar frentes disponibles','trasladar la brigada temporalmente','adelantar otra actividad','mantener la logística en paralelo'])]],
+  ['Resultado',W,[N('No se eliminó el problema. Se eliminó la parada.')]]]],
+ ['⑦','EJECUCIÓN','Decisión tomada: ¿cómo se ejecuta?',[
+  ['Definir',0,[L(['quién hace qué','dónde','cuándo','con qué recursos','qué condiciones deben cumplirse'])]],
+  ['Si la solución es temporal',0,[N('Definir cuándo debe revisarse o sustituirse.')]]]],
+ ['⑧','DOCUMENTACIÓN','Antes, durante y después cuando sea relevante',[
+  ['Evidencias',0,[L(['fotografías','vídeos cuando proceda','medidas','ubicación','planos marcados','fecha y hora','participantes','comunicaciones','decisiones','autorizaciones','solución ejecutada'])]],
+  ['Finalidad',0,[P('Documentar no es solo demostrar quién tuvo la culpa. Dentro de dos semanas alguien debe poder entender:'),F(['qué ocurrió','qué se decidió','por qué se decidió','qué se ejecutó'])]]]],
+ ['⑨','SEGUIMIENTO','Cierre del ciclo',[
+  ['Preguntas',0,[L(['¿El problema realmente está resuelto?','¿La solución temporal sigue siendo válida?','¿Se ejecutó correctamente?','¿Generó consecuencias nuevas?','¿Hay que actualizar documentación?','¿Hay trabajos posteriores afectados?','¿Necesitamos una solución definitiva?'])]],
+  ['Resultado',0,[F(['CLOSED','ESCALATE / REOPEN'])]]]]
+ ],
+ G:[
+ ['SEGURIDAD','Existe un riesgo que no puedo controlar dentro de mi ámbito.',['riesgo estructural','riesgo grave para trabajadores','condición insegura','accidente o incidente relevante'],'Asegurar primero y escalar.'],
+ ['AUTORIDAD','La solución requiere una autorización que no tengo.',['modificación del proyecto','modificación estructural','cambio contractual','aceptar un trabajo fuera del alcance','aprobación del inversor o diseñador'],'No intentes resolverlo por tu cuenta. Escala con una propuesta preparada.'],
+ ['COMPETENCIA TÉCNICA','No tengo información o conocimiento suficiente para garantizar que la solución es correcta. Ejemplo: aparece un problema estructural que no puedo valorar con seguridad.',['fotografías','medidas','planos','problema identificado','alternativas consideradas'],'No improvises. Escala entregando todo lo anterior.'],
+ ['IMPACTO','El problema puede afectar significativamente al plazo, coste o ruta crítica. Ejemplo: una decisión puede generar 7 días de retraso.',['aunque pueda resolver una parte, la magnitud del impacto puede justificar escalar'],'Escala con el impacto cuantificado.'],
+ ['CONFLICTO CONTRACTUAL','Dos partes tienen posiciones distintas sobre quién debe hacer algo. Ejemplo: «No está en nuestro alcance».',['no convertir una discusión contractual en personal'],'Escala: contrato → alcance → responsabilidad → decisión. Mientras tanto, mantén otras actividades.'],
+ ['SIN SOLUCIÓN VIABLE','Es la última puerta. Se probaron todas las alternativas.',['A → no viable','B → no viable','C → no viable','D → no viable'],'ESCALAR.']],
+ T:[
+ ['VERDE — Actúo','#22c55e',['el riesgo está controlado','la solución es conocida','tengo documentación suficiente','tengo autoridad','la solución es técnicamente viable','tengo recursos','no genera consecuencias inaceptables'],'Decido + ejecuto + documento.','Puedo decidir cuando:'],
+ ['AMARILLO — Actúo parcialmente y consulto','#facc15',['existe incertidumbre','necesito confirmación','puede afectar a otras disciplinas','hay consecuencias importantes','necesito una autorización','puede afectar al programa'],'Aseguro + reorganizo + preparo alternativas + consulto. La obra continúa en otros frentes mientras llega la decisión.','Cuando:'],
+ ['ROJO — Escalo inmediatamente','#ef4444',['existe peligro','hay riesgo estructural','no tengo autoridad','no tengo información técnica suficiente','hay una modificación importante del proyecto','existe un conflicto contractual significativo','la decisión puede tener consecuencias graves o irreversibles','no existe una solución segura y viable'],'Aseguro + documento + escalo.','Cuando:']],
+ chain:'PROBLEMA → VERIFICACIÓN → IMPACTO → ANÁLISIS → DECISIÓN → REORGANIZACIÓN → EJECUCIÓN → DOCUMENTACIÓN → SEGUIMIENTO'
+},
+pl:{
+ h1:'SRiRR — System Reakcji i Reorganizacji Robót',
+ sub:'Osobisty model analizy i podejmowania decyzji w sytuacjach nieprzewidzianych',
+ scopeBtn:'Zakres i charakter dokumentu',discLnk:'Zobacz zastrzeżenie',ok:'Rozumiem',
+ tx:[['Bezpieczeństwo','Czy bezpiecznie jest działać?'],['Uprawnienia','Czy jestem upoważniony do podjęcia tej decyzji?'],['Wykonalność','Czy mamy czas i zasoby?'],['Przyszłość','Czy dzisiejsze rozwiązanie nie stworzy problemu jutro?']],
+ ph:'Fazy protokołu',open:'Rozwiń wszystko',close:'Zwiń wszystko',
+ esc:'Protokół <em>eskalacji</em>',escP:'Eskalujesz, gdy pojawi się <b>którakolwiek</b> z tych sześciu bramek. Nie muszą zajść wszystkie.',
+ sem:'Semafor decyzyjny',semP:'Trzy poziomy podsumowują cały protokół.',
+ disc:['<b>Ten projekt przedstawia osobistą metodę organizacji i analizy w sytuacjach nieprzewidzianych na budowie.</b> Nie jest oficjalną procedurą i nie zastępuje przepisów, projektu, procedur firmy, poleceń przełożonych, uprawnień zawodowych ani wymogów prawnych, zarówno oficjalnych przepisów polskich, jak i Unii Europejskiej.','Jego celem jest uporządkowanie reakcji na problemy w sekwencji: weryfikacja → ocena wpływu → analiza → decyzja → reorganizacja → dokumentacja → monitorowanie, przy zachowaniu decyzji w granicach odpowiedniego bezpieczeństwa, kompetencji i uprawnień.','Celem nie jest eliminacja improwizacji typowej dla budowy, lecz zapobieganie temu, by nieprzewidziana sytuacja kończyła się improwizowaną i niekontrolowaną decyzją.'],
+ scopeT:'Informacja o zakresie i nieoficjalnym charakterze',
+ scopeP:['Niniejszy dokument jest osobistą propozycją o charakterze orientacyjnym i nie stanowi oficjalnej procedury budowlanej, normy technicznej, procedury bezpieczeństwa, instrukcji roboczej ani wytycznych dotyczących kierowania, wykonywania, nadzorowania lub podpisywania robót.','Jego jedynym celem jest przedstawienie osobistej metody organizacji i analizy w sytuacjach nieprzewidzianych na budowie, aby unikać decyzji impulsywnych i porządkować reakcję poprzez weryfikację problemu, ocenę jego wpływu, analizę alternatyw, reorganizację pracy, dokumentację i monitorowanie.','System nie zastępuje obowiązujących przepisów prawa, projektów i specyfikacji technicznych, wewnętrznych procedur firmy, poleceń kierownictwa budowy, decyzji projektanta, wymaganych uprawnień, przepisów bezpieczeństwa i higieny pracy ani żadnej innej obowiązkowej dokumentacji lub procedury.','Nie ma na celu określania, jakie rozwiązanie techniczne należy wykonać w konkretnym przypadku, ani nadawania użytkownikowi uprawnień do zatwierdzania zmian, robót dodatkowych, zmian projektowych, rozwiązań konstrukcyjnych lub innych działań wymagających zgody zawodowej, umownej lub prawnej.','W sytuacjach przekraczających kompetencje, uprawnienia, dostępne informacje lub możliwość podjęcia decyzji przez osobę stosującą tę metodę, sprawa musi zostać eskalowana do właściwej osoby odpowiedzialnej.','W konsekwencji niniejszy dokument należy rozumieć jako osobisty model rozumowania i organizacji, a nie jako procedurę techniczną lub prawną dotyczącą prowadzenia robót.'],
+ S:[
+ ['①','PROBLEM','Co się stało?',[
+  ['Pytania',0,[L(['Co się stało?','Gdzie?','Kiedy?','Jaka czynność jest dotknięta?','Kto jest zaangażowany?'])]],
+  ['Klasyfikacja',0,[P('Czy to problem…?'),L(['techniczny','logistyczny','umowny','organizacyjny','bezpieczeństwa'])]],
+  ['Zasada',0,[N('Opisuj fakty, a nie winnych. Na tym etapie nic jeszcze nie decydujesz: tylko identyfikujesz problem.')]]]],
+ ['②','WERYFIKACJA','Czy problem naprawdę jest taki, jak się wydaje?',[
+  ['Zasada',0,[P('Decyzji nie podejmuje się wyłącznie na podstawie tego, co mówi jedna osoba.')]],
+  ['Sprawdzam',0,[L(['rzeczywisty stan budowy','rysunki','specyfikacje','pomiary','zdjęcia','dostępną dokumentację','informacje od podwykonawcy','stan materiałów i sprzętu','zaangażowane osoby odpowiedzialne'])]],
+  ['Cel',0,[P('Oddzielić fakt od interpretacji faktu.'),N('Przykład: podwykonawca mówi „Nie możemy pracować, bo druga ekipa nie skończyła”. Sprawdzasz, czego dokładnie brakuje: może brakować tylko 3 m, a 80 % frontu robót jest dostępne. Nie ma zatrzymanej budowy: jest częściowo zablokowany front.')]]]],
+ ['③','WPŁYW','Na co naprawdę to wpływa?',[
+  ['1. Bezpieczeństwo',0,[L(['Czy istnieje zagrożenie dla ludzi?','Czy istnieje ryzyko dla konstrukcji lub materiałów?','Czy może dojść do wypadku?','Czy trzeba natychmiast zabezpieczyć lub wstrzymać czynność?'])]],
+  ['2. Jakość',0,[L(['Czy może powstać niezgodność?','Czy może spowodować poprawki?','Czy może wpłynąć na późniejsze roboty?'])]],
+  ['3. Termin',0,[L(['Ile czasu można stracić?','Czy dotyczy ścieżki krytycznej?','Czy blokuje inne brygady?'])]],
+  ['4. Koszt',0,[L(['nieprodukcyjne roboczogodziny','postój maszyn','zmarnowany materiał','dodatkowe roboty','możliwe roszczenia'])]],
+  ['5. Organizacja',0,[L(['Ile osób jest zablokowanych?','Które inne zespoły zależą od tej czynności?','Czy można przenieść brygadę?'])]],
+  ['6. Skutki w przyszłości',0,[P('Kluczowa część metody:'),N('Czy dzisiejsze rozwiązanie może stworzyć problem jutro?')]]]],
+ ['④','ANALIZA','Co mogę zrobić i w jakich granicach?',[
+  ['A. Natychmiastowe bezpieczeństwo',0,[P('Czy istnieje bezpośrednie zagrożenie? Jeśli tak:'),F(['zabezpieczyć','wstrzymać dotkniętą czynność','chronić ludzi','powiadomić właściwą osobę odpowiedzialną']),N('Dopóki istnieje bezpośrednie zagrożenie, protokołu nie kontynuuje się w normalnym trybie.')]],
+  ['B. Dostępna dokumentacja techniczna',0,[L(['projekt','rysunki','specyfikacje','instrukcje','protokoły','dokumentacja producenta','istniejące rewizje']),N('Czy mam wystarczające informacje, by podjąć technicznie bezpieczną decyzję? Jeśli nie, to już kryterium eskalacji.')]],
+  ['C. Uprawnienia',0,[P('Czy mam uprawnienia do podjęcia tej decyzji? Reorganizacja brygady to nie to samo, co zmiana rozwiązania konstrukcyjnego.'),N('Nie myl zdolności technicznej do zaproponowania z uprawnieniem do zatwierdzenia.')]],
+  ['D. Skutki długoterminowe',0,[L(['czy wpływa na późniejsze roboty?','czy wpływa na instalacje?','czy wpływa na wykończenie?','czy wpływa na kontrole i inspekcje?','czy wpływa na odbiór?','czy wpływa na dokumentację końcową?','czy może stworzyć problem podczas eksploatacji i konserwacji?','czy rozwiązanie jest odwracalne?'])]],
+  ['E. Tymczasowe czy docelowe',0,[P('Obowiązkowe pytanie: czy rozwiązanie jest tymczasowe czy docelowe?'),L(['jak długo?','do jakiego warunku?','kto wykona rozwiązanie docelowe?','co się stanie, jeśli potrwa dłużej, niż planowano?'])]],
+  ['F. Odwracalne czy nieodwracalne',0,[P('Czy mogę bezpiecznie wrócić do rozwiązania pierwotnego?'),N('Im bardziej nieodwracalna ingerencja, tym ostrożniejsza musi być decyzja.')]]]],
+ ['⑤','DECYZJA','Czy istnieje wykonalne rozwiązanie?',[
+  ['Alternatywy',0,[L(['A — rozwiązanie pierwotne','B — rozwiązanie alternatywne','C — reorganizacja pracy','D — rozwiązanie tymczasowe']),P('Każdą alternatywę oceniasz według wszystkich kryteriów, a następnie wybierasz.')]],
+  ['Kryteria oceny',W,[{t:'tbl',h:['Kryterium','Pytanie'],v:[['Bezpieczeństwo','Czy jest bezpieczne?'],['Technika','Czy jest technicznie wykonalne?'],['Dokumentacja','Czy ma oparcie w dokumentach?'],['Uprawnienia','Czy mam uprawnienia?'],['Czas','Czy pozwala utrzymać harmonogram?'],['Zasoby','Czy mamy ludzi, materiały i sprzęt?'],['Jakość','Czy spełnia wymagania?'],['Przyszłość','Czy powoduje późniejsze problemy?'],['Odwracalność','Czy możemy się wycofać?']]}]]]],
+ ['⑥','REORGANIZACJA','Jak zapobiec zamianie problemu w przestój?',[
+  ['Kluczowe pytanie',0,[P('Zanim powiesz „czynność jest zablokowana”, zapytaj:'),N('Co jeszcze możemy zrobić?')]],
+  ['Przykład: nie dotarł materiał na elewację',W,[P('Słaba reakcja: czekamy na materiał.'),P('Właściwa reakcja:'),F(['sprawdzić termin dostawy','określić wpływ','sprawdzić dostępne fronty robót','tymczasowo przenieść brygadę','przyspieszyć inną czynność','utrzymać logistykę równolegle'])]],
+  ['Wynik',W,[N('Nie usunąłeś problemu. Usunąłeś przestój.')]]]],
+ ['⑦','WYKONANIE','Decyzja podjęta: jak ją wykonać?',[
+  ['Określić',0,[L(['kto co robi','gdzie','kiedy','jakimi zasobami','jakie warunki muszą być spełnione'])]],
+  ['Jeśli rozwiązanie jest tymczasowe',0,[N('Określić, kiedy należy je przejrzeć lub zastąpić.')]]]],
+ ['⑧','DOKUMENTACJA','Przed, w trakcie i po, gdy jest to istotne',[
+  ['Dowody',0,[L(['zdjęcia','filmy, gdy to właściwe','pomiary','lokalizacja','zaznaczone rysunki','data i godzina','uczestnicy','komunikacja','decyzje','uzgodnienia i zatwierdzenia','wykonane rozwiązanie'])]],
+  ['Cel',0,[P('Dokumentacja to nie tylko wykazanie, kto zawinił. Za dwa tygodnie ktoś musi móc zrozumieć:'),F(['co się stało','co postanowiono','dlaczego tak postanowiono','co wykonano'])]]]],
+ ['⑨','MONITOROWANIE','Zamknięcie cyklu',[
+  ['Pytania',0,[L(['Czy problem naprawdę został rozwiązany?','Czy rozwiązanie tymczasowe nadal jest ważne?','Czy zostało wykonane prawidłowo?','Czy wywołało nowe skutki?','Czy trzeba zaktualizować dokumentację?','Czy dotyczy późniejszych robót?','Czy potrzebujemy rozwiązania docelowego?'])]],
+  ['Wynik',0,[F(['CLOSED','ESCALATE / REOPEN'])]]]]
+ ],
+ G:[
+ ['BEZPIECZEŃSTWO','Istnieje ryzyko, którego nie mogę kontrolować w ramach swoich kompetencji.',['ryzyko konstrukcyjne','poważne zagrożenie dla pracowników','niebezpieczny stan','istotny wypadek lub incydent'],'Najpierw zabezpiecz, potem eskaluj.'],
+ ['UPRAWNIENIA','Rozwiązanie wymaga zgody, której nie mam.',['zmiana projektu','zmiana konstrukcyjna','zmiana umowy','przyjęcie robót spoza zakresu','zatwierdzenie przez inwestora lub projektanta'],'Nie próbuj rozwiązać tego na własną rękę. Eskaluj z przygotowaną propozycją.'],
+ ['KOMPETENCJE TECHNICZNE','Nie mam wystarczających informacji ani wiedzy, by zagwarantować, że rozwiązanie jest poprawne. Przykład: pojawia się problem konstrukcyjny, którego nie mogę bezpiecznie ocenić.',['zdjęcia','pomiary','rysunki','zidentyfikowany problem','rozważone alternatywy'],'Nie improwizuj. Eskaluj, przekazując wszystko powyższe.'],
+ ['WPŁYW','Problem może istotnie wpłynąć na termin, koszt lub ścieżkę krytyczną. Przykład: decyzja może spowodować 7 dni opóźnienia.',['nawet jeśli mogę rozwiązać część problemu, skala wpływu może uzasadniać eskalację'],'Eskaluj ze skwantyfikowanym wpływem.'],
+ ['SPÓR UMOWNY','Dwie strony mają różne stanowiska co do tego, kto ma coś wykonać. Przykład: „To nie jest w naszym zakresie”.',['nie zamieniaj sporu umownego w spór osobisty'],'Eskaluj: umowa → zakres → odpowiedzialność → decyzja. W międzyczasie utrzymaj inne czynności.'],
+ ['BRAK WYKONALNEGO ROZWIĄZANIA','To ostatnia bramka. Wypróbowano wszystkie alternatywy.',['A → niewykonalne','B → niewykonalne','C → niewykonalne','D → niewykonalne'],'ESKALUJ.']],
+ T:[
+ ['ZIELONY — Działam','#22c55e',['ryzyko jest kontrolowane','rozwiązanie jest znane','mam wystarczającą dokumentację','mam uprawnienia','rozwiązanie jest technicznie wykonalne','mam zasoby','nie powoduje niedopuszczalnych skutków'],'Decyduję + wykonuję + dokumentuję.','Mogę decydować, gdy:'],
+ ['ŻÓŁTY — Działam częściowo i konsultuję','#facc15',['istnieje niepewność','potrzebuję potwierdzenia','może wpłynąć na inne branże','są istotne konsekwencje','potrzebuję zgody','może wpłynąć na harmonogram'],'Zabezpieczam + reorganizuję + przygotowuję alternatywy + konsultuję. Budowa trwa na innych frontach, dopóki nie zapadnie decyzja.','Gdy:'],
+ ['CZERWONY — Eskaluję natychmiast','#ef4444',['istnieje zagrożenie','jest ryzyko konstrukcyjne','nie mam uprawnień','nie mam wystarczających informacji technicznych','jest istotna zmiana projektu','istnieje poważny spór umowny','decyzja może mieć poważne lub nieodwracalne skutki','nie istnieje bezpieczne i wykonalne rozwiązanie'],'Zabezpieczam + dokumentuję + eskaluję.','Gdy:']],
+ chain:'PROBLEM → WERYFIKACJA → WPŁYW → ANALIZA → DECYZJA → REORGANIZACJA → WYKONANIE → DOKUMENTACJA → MONITOROWANIE'
+}};
+const $=id=>document.getElementById(id),li=a=>'<ul>'+a.map(x=>`<li>${x}</li>`).join('')+'</ul>';
+const rc=c=>c.t=='ul'?li(c.v):c.t=='p'?`<p>${c.v}</p>`:c.t=='note'?`<div class="note">${c.v}</div>`:c.t=='flow'?'<div class="flow">'+c.v.map((x,i)=>(i?'<b>→</b>':'')+`<span>${x}</span>`).join('')+'</div>':'<table><tr>'+c.h.map(x=>`<th>${x}</th>`).join('')+'</tr>'+c.v.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')+'</table>';
+const st={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+let lang=st.get('srr_lang')||((navigator.language||'').startsWith('pl')?'pl':'es');
+function render(){
+ const d=D[lang],openIds=[...document.querySelectorAll('details[open]')].map(x=>x.id);
+ document.documentElement.lang=lang;document.title=d.h1;
+ $('h1').textContent=d.h1;$('sub').textContent=d.sub;$('scopeBtn').textContent=d.scopeBtn;$('discLnk').textContent=d.discLnk;
+ document.querySelectorAll('[data-l]').forEach(b=>b.classList.toggle('on',b.dataset.l==lang));
+ document.querySelectorAll('[data-close]').forEach(b=>b.textContent=d.ok);
+ $('tx').innerHTML=d.tx.map(t=>`<div><h3>${t[0]}</h3><p>${t[1]}</p></div>`).join('');
+ $('phT').textContent=d.ph;$('open').textContent=d.open;$('close').textContent=d.close;
+ $('acc').innerHTML=d.S.map((s,i)=>`<details id="s${i}"${openIds.includes('s'+i)?' open':''}><summary><span class="num">${s[0]}</span><h3>${s[1]}<small>${s[2]}</small></h3></summary><div class="body">${s[3].map(b=>`<div class="blk${b[1]?' wide':''}"><h4>${b[0]}</h4>${b[2].map(rc).join('')}</div>`).join('')}</div></details>`).join('');
+ $('chain').innerHTML=d.S.map((s,i)=>`<button data-i="${i}"><i>${s[0]}</i>${s[1]}</button>`).join('');
+ $('escT').innerHTML=d.esc;$('escP').innerHTML=d.escP;$('semT').textContent=d.sem;$('semP').textContent=d.semP;
+ $('gates').innerHTML=d.G.map((g,i)=>`<div class="gate${i==5?' last':''}"><h3><i>${i+1}</i>${g[0]}</h3><div class="c">${g[1]}</div>${li(g[2])}<div class="a">${g[3]}</div></div>`).join('');
+ $('sem').innerHTML=d.T.map(t=>`<div class="lt" style="--c:${t[1]}"><h3>${t[0]}</h3><div class="w">${t[4]}</div>${li(t[2])}<div class="do">${t[3]}</div></div>`).join('');
+ $('chainF').textContent=d.chain;
+ $('discB').innerHTML=d.disc.map(p=>`<p>${p}</p>`).join('');
+ $('scopeT').textContent=d.scopeT;$('scopeB').innerHTML=d.scopeP.map(p=>`<p>${p}</p>`).join('');
+}
+document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{lang=b.dataset.l;st.set('srr_lang',lang);render()});
+$('chain').onclick=e=>{const b=e.target.closest('button');if(!b)return;const d=$('s'+b.dataset.i);d.open=true;d.scrollIntoView({block:'start'})};
+$('open').onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=true);
+$('close').onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=false);
+$('scopeBtn').onclick=()=>$('scope').showModal();
+$('discLnk').onclick=()=>$('disc').showModal();
+document.querySelectorAll('dialog').forEach(dl=>{dl.addEventListener('click',e=>{if(e.target===dl||e.target.hasAttribute('data-close'))dl.close()})});
+render();
+if(!st.get('srr_disc_seen')){st.set('srr_disc_seen','1');$('disc').showModal()}
+</script>
+</body>
+</html>
